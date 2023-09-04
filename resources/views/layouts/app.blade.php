@@ -52,6 +52,18 @@
                                 </li>
                             @endif
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('pc-stock.index') }}">Pc Stock</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('tonner.index') }}">tonner</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('cartucho.index') }}">cartucho</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('impresora-stock.index') }}">impresoras stock</a>
+                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

@@ -14,6 +14,17 @@ class Cartucho extends Migration
     public function up()
     {
         //
+        Schema::create('cartucho', function (Blueprint $table) {
+            $table->id();
+            $table->string('color');
+            $table->string('codigo');
+            $table->string('uso_mensual');
+            $table->string('uso_semestral');
+            $table->string('uso_anual');
+            $table->string('marca_impresora');
+            $table->string('modelo_impresora');
+            $table->timestamps();
+        });
     }
 
     /**

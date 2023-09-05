@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Cartucho extends Migration
+class CreateSectoresTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,13 @@ class Cartucho extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('sectores', function (Blueprint $table) {
+            $table->id();
+            $table->string('edificio');
+            $table->string('piso');
+            $table->string('sector');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +29,6 @@ class Cartucho extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('sectores');
     }
 }

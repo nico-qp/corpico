@@ -29,3 +29,5 @@ Route::resource('pc-stock', App\Http\Controllers\PcStockController::class);
 Route::resource('impresora-stock', App\Http\Controllers\ImpresorasStockController::class);
 Route::resource('tonner', App\Http\Controllers\TonnerController::class);
 Route::resource('cartucho', App\Http\Controllers\CartuchoController::class);
+
+Route::resource('sectores', App\Http\Controllers\SectoreController::class);

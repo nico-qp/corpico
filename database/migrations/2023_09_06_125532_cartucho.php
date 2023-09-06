@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Tonner extends Migration
+class Cartucho extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,18 @@ class Tonner extends Migration
      */
     public function up()
     {
-        Schema::create('tonner', function (Blueprint $table) {
+        Schema::create('cartucho', function (Blueprint $table) {
             $table->id();
-            $table->string('modelo');
+            $table->string('color');
+            $table->string('codigo');
             $table->string('uso_mensual');
             $table->string('uso_semestral');
             $table->string('uso_anual');
+            $table->string('marca_impresora');
+            $table->string('modelo_impresora');
             $table->timestamps();
         });
+
     }
 
     /**

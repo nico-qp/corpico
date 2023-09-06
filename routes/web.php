@@ -21,6 +21,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
+Route::resource('pcs', App\Http\Controllers\PcController::class);
+Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class);
+
 Route::resource('pc-stock', App\Http\Controllers\PcStockController::class);
 Route::resource('impresora-stock', App\Http\Controllers\ImpresorasStockController::class);
 Route::resource('tonner', App\Http\Controllers\TonnerController::class);

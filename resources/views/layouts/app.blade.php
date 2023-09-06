@@ -52,6 +52,8 @@
                                 </li>
                             @endif
                         @else
+
+                        <!-- NAV AGREGADO -->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('pc-stock.index') }}">Pc Stock</a>
                         </li>
@@ -64,6 +66,15 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('impresora-stock.index') }}">impresoras stock</a>
                         </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('pcs.index') }}">PC</a>
+                                </li>
+                                
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ route('impresoras.index') }}">IMPRESORA</a>
+                                </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -71,8 +82,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                        onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 

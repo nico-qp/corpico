@@ -89,8 +89,6 @@ class PcStockController extends Controller
         request()->validate(PcStock::$rules);
 
         $resultado=$pcStock->update($request->all());
-        dd($resultado, $request->all());
-        die();
 
         return redirect()->route('pc-stock.index')
             ->with('success', 'PcStock updated successfully');

@@ -1,26 +1,25 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Update') }} Impresoras Stock
+    {{ __('Create') }} Impresora Stock
 @endsection
 
 @section('content')
     <section class="content container-fluid">
-        <div class="">
+        <div class="row">
             <div class="col-md-12">
 
                 @includeif('partials.errors')
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Impresoras Stock</span>
+                        <span class="card-title">{{ __('Create') }} Impresora Stock</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('impresora-stock.update', $impresorasStock->id) }}"  role="form" enctype="multipart/form-data">
-                            {{ method_field('PATCH') }}
+                        <form method="POST" action="{{ route('impresora-stock.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('impresoras-stock.form')
+                            @include('impresora-stock.form')
 
                         </form>
                     </div>

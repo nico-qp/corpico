@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Impresoras Stock
+    Impresora Stock
 @endsection
 
 @section('content')
@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Impresoras Stock') }}
+                                {{ __('Impresora Stock') }}
                             </span>
 
                              <div class="float-right">
@@ -45,19 +45,19 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($impresorasStocks as $impresorasStock)
+                                    @foreach ($impresoraStocks as $impresoraStock)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $impresorasStock->marca }}</td>
-											<td>{{ $impresorasStock->modelo }}</td>
-											<td>{{ $impresorasStock->cantidad }}</td>
-											<td>{{ $impresorasStock->ubicacion }}</td>
+											<td>{{ $impresoraStock->marca }}</td>
+											<td>{{ $impresoraStock->modelo }}</td>
+											<td>{{ $impresoraStock->cantidad }}</td>
+											<td>{{ $impresoraStock->ubicacion }}</td>
 
                                             <td>
-                                                <form action="{{ route('impresora-stock.destroy',$impresorasStock->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('impresora-stock.show',$impresorasStock->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('impresora-stock.edit',$impresorasStock->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('impresora-stock.destroy',$impresoraStock->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('impresora-stock.show',$impresoraStock->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('impresora-stock.edit',$impresoraStock->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -70,7 +70,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $impresorasStocks->links() !!}
+                {!! $impresoraStocks->links() !!}
             </div>
         </div>
     </div>

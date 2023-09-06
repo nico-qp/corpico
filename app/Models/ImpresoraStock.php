@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class ImpresorasStock
+ * Class ImpresoraStock
  *
  * @property $id
  * @property $marca
@@ -18,7 +18,7 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class ImpresorasStock extends Model
+class ImpresoraStock extends Model
 {
     
     static $rules = [

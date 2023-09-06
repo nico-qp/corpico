@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ImpresorasStock;
+use App\Models\ImpresoraStock;
 use Illuminate\Http\Request;
 
 /**
- * Class ImpresorasStockController
+ * Class ImpresoraStockController
  * @package App\Http\Controllers
  */
 class ImpresorasStockController extends Controller
@@ -18,10 +18,10 @@ class ImpresorasStockController extends Controller
      */
     public function index()
     {
-        $impresorasStocks = ImpresorasStock::paginate();
+        $impresoraStocks = ImpresoraStock::paginate();
 
-        return view('impresoras-stock.index', compact('impresorasStocks'))
-            ->with('i', (request()->input('page', 1) - 1) * $impresorasStocks->perPage());
+        return view('impresora-stock.index', compact('impresoraStocks'))
+            ->with('i', (request()->input('page', 1) - 1) * $impresoraStocks->perPage());
     }
 
     /**
@@ -31,8 +31,8 @@ class ImpresorasStockController extends Controller
      */
     public function create()
     {
-        $impresorasStock = new ImpresorasStock();
-        return view('impresoras-stock.create', compact('impresorasStock'));
+        $impresoraStock = new ImpresoraStock();
+        return view('impresora-stock.create', compact('impresoraStock'));
     }
 
     /**
@@ -43,12 +43,12 @@ class ImpresorasStockController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(ImpresorasStock::$rules);
+        request()->validate(ImpresoraStock::$rules);
 
-        $impresorasStock = ImpresorasStock::create($request->all());
+        $impresoraStock = ImpresoraStock::create($request->all());
 
         return redirect()->route('impresora-stock.index')
-            ->with('success', 'ImpresorasStock created successfully.');
+            ->with('success', 'ImpresoraStock created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class ImpresorasStockController extends Controller
      */
     public function show($id)
     {
-        $impresorasStock = ImpresorasStock::find($id);
+        $impresoraStock = ImpresoraStock::find($id);
 
-        return view('impresoras-stock.show', compact('impresorasStock'));
+        return view('impresora-stock.show', compact('impresoraStock'));
     }
 
     /**
@@ -72,26 +72,26 @@ class ImpresorasStockController extends Controller
      */
     public function edit($id)
     {
-        $impresorasStock = ImpresorasStock::find($id);
+        $impresoraStock = ImpresoraStock::find($id);
 
-        return view('impresoras-stock.edit', compact('impresorasStock'));
+        return view('impresora-stock.edit', compact('impresoraStock'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  ImpresorasStock $impresorasStock
+     * @param  ImpresoraStock $impresoraStock
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ImpresorasStock $impresorasStock)
+    public function update(Request $request, ImpresoraStock $impresoraStock)
     {
-        request()->validate(ImpresorasStock::$rules);
+        request()->validate(ImpresoraStock::$rules);
 
-        $impresorasStock->update($request->all());
+        $impresoraStock->update($request->all());
 
         return redirect()->route('impresora-stock.index')
-            ->with('success', 'ImpresorasStock updated successfully');
+            ->with('success', 'ImpresoraStock updated successfully');
     }
 
     /**
@@ -101,9 +101,9 @@ class ImpresorasStockController extends Controller
      */
     public function destroy($id)
     {
-        $impresorasStock = ImpresorasStock::find($id)->delete();
+        $impresoraStock = ImpresoraStock::find($id)->delete();
 
         return redirect()->route('impresora-stock.index')
-            ->with('success', 'ImpresorasStock deleted successfully');
+            ->with('success', 'ImpresoraStock deleted successfully');
     }
 }

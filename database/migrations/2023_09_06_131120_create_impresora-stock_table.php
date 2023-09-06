@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class ImpresorasStock extends Migration
+class CreateImpresoraStockTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class ImpresorasStock extends Migration
     public function up()
     {
         //
-        Schema::create('impresoras_stock', function (Blueprint $table) {
+        Schema::create('impresora_stock', function (Blueprint $table) {
             $table->id();
             $table->string('marca');
             $table->string('modelo');
@@ -22,6 +22,7 @@ class ImpresorasStock extends Migration
             $table->string('ubicacion');
             $table->timestamps();
         });
+
     }
 
     /**

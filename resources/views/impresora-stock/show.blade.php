@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $impresorasStock->name ?? "{{ __('Show') Impresoras Stock" }}
+    {{ $impresoraStock->name ?? "{{ __('Show') Impresora Stock" }}
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Impresoras Stock</span>
+                            <span class="card-title">{{ __('Show') }} Impresora Stock</span>
                         </div>
                         <div class="float-right">
                             <a class="btn btn-primary" href="{{ route('impresora-stock.index') }}"> {{ __('Back') }}</a>
@@ -22,19 +22,19 @@
                         
                         <div class="form-group">
                             <strong>Marca:</strong>
-                            {{ $impresorasStock->marca }}
+                            {{ $impresoraStock->marca }}
                         </div>
                         <div class="form-group">
                             <strong>Modelo:</strong>
-                            {{ $impresorasStock->modelo }}
+                            {{ $impresoraStock->modelo }}
                         </div>
                         <div class="form-group">
                             <strong>Cantidad:</strong>
-                            {{ $impresorasStock->cantidad }}
+                            {{ $impresoraStock->cantidad }}
                         </div>
                         <div class="form-group">
                             <strong>Ubicacion:</strong>
-                            {{ $impresorasStock->ubicacion }}
+                            {{ $impresoraStock->ubicacion }}
                         </div>
 
                     </div>

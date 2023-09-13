@@ -21,6 +21,8 @@ class CreatePcsTable extends Migration
             $table->foreign('id_geasys_user')->references('id')->on('geasys_users')->onDelete('cascade');
             $table->unsignedBigInteger('id_condicion');
             $table->foreign('id_condicion')->references('id')->on('conditions')->onDelete('cascade');
+            $table->unsignedBigInteger('id_sectore');
+            $table->foreign('id_sectore')->references('id')->on('sectores')->onDelete('cascade');
             $table->String('etiqueta');
             $table->String('nombre_pc');
             $table->String('ip_172');

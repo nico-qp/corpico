@@ -21,16 +21,20 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>So User:</strong>
-                            {{ $pc->SoUser->so_user }}
+                            <strong>Id So User:</strong>
+                            {{ $pc->id_so_user }}
                         </div>
                         <div class="form-group">
-                            <strong>Geasys User:</strong>
-                            {{ $pc->GeasysUser->geasys_user }}
+                            <strong>Id Geasys User:</strong>
+                            {{ $pc->id_geasys_user }}
                         </div>
                         <div class="form-group">
-                            <strong>Condicion:</strong>
-                            {{ $pc->condition->condicion }}
+                            <strong>Id Condicion:</strong>
+                            {{ $pc->id_condicion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Id Sectore:</strong>
+                            {{ $pc->id_sectore }}
                         </div>
                         <div class="form-group">
                             <strong>Etiqueta:</strong>

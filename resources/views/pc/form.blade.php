@@ -13,8 +13,13 @@
         </div>
         <div class="form-group">
             {{ Form::label('id_condicion') }}
-            {{ Form::select('id_condicion', $condition, $pc->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Id Condicion']) }}
+            {{ Form::select('id_condicion', $condicion, $pc->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Id Condicion']) }}
             {!! $errors->first('id_condicion', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('id_sectore') }}
+            {{ Form::select('id_sectore', $sectore, $pc->id_sectore, ['class' => 'form-control' . ($errors->has('id_sectore') ? ' is-invalid' : ''), 'placeholder' => 'Id Sectore']) }}
+            {!! $errors->first('id_sectore', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('etiqueta') }}

@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $id_so_user
  * @property $id_geasys_user
  * @property $id_condicion
+ * @property $id_sectore
  * @property $etiqueta
  * @property $nombre_pc
  * @property $ip_172
@@ -27,8 +28,12 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property Condition $condition
  * @property GeasysUser $geasysUser
+ * @property Impresora[] $impresoras
  * @property ImpSector[] $impSectors
+ * @property PcImp[] $pcImps
+ * @property PcPrograma[] $pcProgramas
  * @property PcSector[] $pcSectors
+ * @property Sectore $sectore
  * @property SoUser $soUser
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -40,6 +45,7 @@ class Pc extends Model
 		'id_so_user' => 'required',
 		'id_geasys_user' => 'required',
 		'id_condicion' => 'required',
+		'id_sectore' => 'required',
 		'etiqueta' => 'required',
 		'nombre_pc' => 'required',
 		'ip_172' => 'required',
@@ -60,7 +66,7 @@ class Pc extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_so_user','id_geasys_user','id_condicion','etiqueta','nombre_pc','ip_172','ip_10','mac','cpu','ram','so','marca','observaciones','uso_stock'];
+    protected $fillable = ['id_so_user','id_geasys_user','id_condicion','id_sectore','etiqueta','nombre_pc','ip_172','ip_10','mac','cpu','ram','so','marca','observaciones','uso_stock'];
 
 
     /**
@@ -82,6 +88,14 @@ class Pc extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function impresoras()
+    {
+        return $this->hasMany('App\Models\Impresora', 'id_pc', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function impSectors()
     {
         return $this->hasMany('App\Models\ImpSector', 'id_pc', 'id');
@@ -90,9 +104,33 @@ class Pc extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
+    public function pcImps()
+    {
+        return $this->hasMany('App\Models\PcImp', 'id_pc', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function pcProgramas()
+    {
+        return $this->hasMany('App\Models\PcPrograma', 'id_pc', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function pcSectors()
     {
         return $this->hasMany('App\Models\PcSector', 'id_pc', 'id');
+    }
+    
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function sectore()
+    {
+        return $this->hasOne('App\Models\Sectore', 'id', 'id_sectore');
     }
     
     /**

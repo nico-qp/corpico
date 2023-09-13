@@ -30,3 +30,5 @@ Route::resource('so-users', App\Http\Controllers\SoUserController::class);
 Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class);
 Route::resource('conditions', App\Http\Controllers\ConditionController::class);
 Route::resource('pc-imps', App\Http\Controllers\PcImpController::class);
+Route::resource('pc-programas', App\Http\Controllers\PcProgramaController::class);
+Route::resource('programa', App\Http\Controllers\ProgramaController::class);

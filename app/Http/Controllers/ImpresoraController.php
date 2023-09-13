@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Impresora;
 use App\Models\Pc;
+use App\Models\Uso;
+use App\Models\Sectore;
 use Illuminate\Http\Request;
 
 /**
@@ -34,7 +36,9 @@ class ImpresoraController extends Controller
     {
         $impresora = new Impresora();
         $pc = Pc::Pluck('nombre_pc','id');
-        return view('impresora.create', compact('impresora','pc'));
+        $uso = Uso::Pluck('uso_mensual','id');
+        $sector = Sectore::Pluck('sector','id');
+        return view('impresora.create', compact('impresora','pc','uso','sector'));
     }
 
     /**
@@ -76,8 +80,9 @@ class ImpresoraController extends Controller
     {
         $impresora = Impresora::find($id);
         $pc = Pc::Pluck('nombre_pc','id');
+        $uso = Uso::Pluck('uso_mensual','id');
 
-        return view('impresora.edit', compact('impresora','pc'));
+        return view('impresora.edit', compact('impresora','pc','uso'));
     }
 
     /**

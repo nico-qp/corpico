@@ -78,6 +78,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('pc-imps.index') }}">pc_imps</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('cart-ton.index') }}">cart-ton</a>
+                        </li>
 
 
                             <li class="nav-item dropdown">

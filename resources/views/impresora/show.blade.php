@@ -21,16 +21,24 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <strong>Id Cart Ton:</strong>
+                            {{ $impresora->id_cart_ton }}
+                        </div>
+                        <div class="form-group">
                             <strong>Id Sector:</strong>
                             {{ $impresora->id_sector }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Id Pc:</strong>
+                            {{ $impresora->id_pc }}
                         </div>
                         <div class="form-group">
                             <strong>Marca:</strong>
                             {{ $impresora->marca }}
                         </div>
                         <div class="form-group">
-                            <strong>Modelo Imp:</strong>
-                            {{ $impresora->modelo_imp }}
+                            <strong>Modelo:</strong>
+                            {{ $impresora->modelo }}
                         </div>
                         <div class="form-group">
                             <strong>Conexion:</strong>
@@ -39,14 +47,6 @@
                         <div class="form-group">
                             <strong>Nom Ip:</strong>
                             {{ $impresora->nom_ip }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Cartucho Toner:</strong>
-                            {{ $impresora->cartucho_toner }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Modelo Cart Ton:</strong>
-                            {{ $impresora->modelo_cart_ton }}
                         </div>
                         <div class="form-group">
                             <strong>Autonomia Resma:</strong>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Pc
+    So User
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Pc') }}
+                                {{ __('So User') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('pcs.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('so-users.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -37,47 +37,23 @@
                                         <th>No</th>
                                         
 										<th>So User</th>
-										<th>Geasys User</th>
-										<th>Condicion</th>
-										<th>Etiqueta</th>
-										<th>Nombre Pc</th>
-										<th>Ip 172</th>
-										<th>Ip 10</th>
-										<th>Mac</th>
-										<th>Cpu</th>
-										<th>Ram</th>
-										<th>So</th>
-										<th>Marca</th>
-										<th>Observaciones</th>
-										<th>Uso Stock</th>
+										<th>Contraseña</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($pcs as $pc)
+                                    @foreach ($soUsers as $soUser)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $pc->SoUser->so_user }}</td>
-											<td>{{ $pc->GeasysUser->geasys_user }}</td>
-											<td>{{ $pc->condition->condicion }}</td>
-											<td>{{ $pc->etiqueta }}</td>
-											<td>{{ $pc->nombre_pc }}</td>
-											<td>{{ $pc->ip_172 }}</td>
-											<td>{{ $pc->ip_10 }}</td>
-											<td>{{ $pc->mac }}</td>
-											<td>{{ $pc->cpu }}</td>
-											<td>{{ $pc->ram }}</td>
-											<td>{{ $pc->so }}</td>
-											<td>{{ $pc->marca }}</td>
-											<td>{{ $pc->observaciones }}</td>
-											<td>{{ $pc->uso_stock }}</td>
+											<td>{{ $soUser->so_user }}</td>
+											<td>{{ $soUser->contraseña }}</td>
 
                                             <td>
-                                                <form action="{{ route('pcs.destroy',$pc->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('pcs.show',$pc->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('pcs.edit',$pc->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('so-users.destroy',$soUser->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('so-users.show',$soUser->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('so-users.edit',$soUser->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -90,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $pcs->links() !!}
+                {!! $soUsers->links() !!}
             </div>
         </div>
     </div>

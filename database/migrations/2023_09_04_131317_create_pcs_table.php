@@ -15,17 +15,23 @@ class CreatePcsTable extends Migration
     {
         Schema::create('pcs', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_sector');
-            $table->foreign('id_sector')->references('id')->on('sectores')->onDelete('cascade');
-            $table->String('trabajador');
+            $table->unsignedBigInteger('id_so_user');
+            $table->foreign('id_so_user')->references('id')->on('so_users')->onDelete('cascade');
+            $table->unsignedBigInteger('id_geasys_user');
+            $table->foreign('id_geasys_user')->references('id')->on('geasys_users')->onDelete('cascade');
+            $table->unsignedBigInteger('id_condicion');
+            $table->foreign('id_condicion')->references('id')->on('conditions')->onDelete('cascade');
+            $table->String('etiqueta');
             $table->String('nombre_pc');
-            $table->String('usuario_geasys');
             $table->String('ip_172');
             $table->String('ip_10');
             $table->String('mac');
             $table->String('cpu');
             $table->String('ram');
             $table->String('so');
+            $table->String('marca');
+            $table->String('observaciones');
+            $table->boolean('uso_stock');
             $table->timestamps();
         });
     }

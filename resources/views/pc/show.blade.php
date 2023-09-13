@@ -21,20 +21,24 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Sector:</strong>
-                            {{ $pc->id_sector }}
+                            <strong>So User:</strong>
+                            {{ $pc->SoUser->so_user }}
                         </div>
                         <div class="form-group">
-                            <strong>Trabajador:</strong>
-                            {{ $pc->trabajador }}
+                            <strong>Geasys User:</strong>
+                            {{ $pc->GeasysUser->geasys_user }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Condicion:</strong>
+                            {{ $pc->condition->condicion }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Etiqueta:</strong>
+                            {{ $pc->etiqueta }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre Pc:</strong>
                             {{ $pc->nombre_pc }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Usuario Geasys:</strong>
-                            {{ $pc->usuario_geasys }}
                         </div>
                         <div class="form-group">
                             <strong>Ip 172:</strong>
@@ -59,6 +63,18 @@
                         <div class="form-group">
                             <strong>So:</strong>
                             {{ $pc->so }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Marca:</strong>
+                            {{ $pc->marca }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Observaciones:</strong>
+                            {{ $pc->observaciones }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Uso Stock:</strong>
+                            {{ $pc->uso_stock }}
                         </div>
 
                     </div>

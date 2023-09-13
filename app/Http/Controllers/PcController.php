@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pc;
-use App\Models\Sectore;
+use App\Models\SoUser;
+use App\Models\GeasysUser;
+use App\Models\Condition;
 use Illuminate\Http\Request;
 
 /**
@@ -33,8 +35,10 @@ class PcController extends Controller
     public function create()
     {
         $pc = new Pc();
-        $sectores = Sectore::pluck('sector','id');
-        return view('pc.create', compact('pc','sectores'));
+        $so_user = SoUser::pluck('so_user', 'id');
+        $geasys_user = GeasysUser::pluck('geasys_user', 'id');
+        $condition = Condition::pluck('condicion', 'id');
+        return view('pc.create', compact('pc', 'so_user', 'geasys_user', 'condition'));
     }
 
     /**
@@ -48,7 +52,6 @@ class PcController extends Controller
         request()->validate(Pc::$rules);
 
         $pc = Pc::create($request->all());
-        //$sectores = Sectore::pluck('sector', 'id');
 
         return redirect()->route('pcs.index')
             ->with('success', 'Pc created successfully.');
@@ -76,9 +79,11 @@ class PcController extends Controller
     public function edit($id)
     {
         $pc = Pc::find($id);
-        $sectores = Sectore::pluck('sector', 'id');
+        $so_user = SoUser::pluck('so_user', 'id');
+        $geasys_user = GeasysUser::pluck('geasys_user', 'id');
+        $condition = Condition::pluck('condicion', 'id');
 
-        return view('pc.edit', compact('pc','sectores'));
+        return view('pc.edit', compact('pc', 'so_user', 'geasys_user', 'condition'));
     }
 
     /**

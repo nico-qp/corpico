@@ -55,29 +55,30 @@
 
                         <!-- NAV AGREGADO -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('pc-stock.index') }}">Pc Stock</a>
+                            <a class="nav-link" href="{{ route('pcs.index') }}">PC</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tonner.index') }}">tonner</a>
+                            <a class="nav-link" href="{{ route('impresoras.index') }}">IMPRESORA</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cartucho.index') }}">cartucho</a>
+                            <a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('impresora-stock.index') }}">impresoras stock</a>
+                            <a class="nav-link" href="{{ route('usos.index') }}">Usos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('so-users.index') }}">S.O usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('geasys-users.index') }}">Geasys usuarios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('conditions.index') }}">Condiciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('pc-imps.index') }}">pc_imps</a>
                         </li>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('pcs.index') }}">PC</a>
-                                </li>
-                                
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('impresoras.index') }}">IMPRESORA</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a>
-                                </li>
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Pc
+    Uso
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Pc') }}
+                                {{ __('Uso') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('pcs.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('usos.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,48 +36,26 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>So User</th>
-										<th>Geasys User</th>
-										<th>Condicion</th>
-										<th>Etiqueta</th>
-										<th>Nombre Pc</th>
-										<th>Ip 172</th>
-										<th>Ip 10</th>
-										<th>Mac</th>
-										<th>Cpu</th>
-										<th>Ram</th>
-										<th>So</th>
-										<th>Marca</th>
-										<th>Observaciones</th>
-										<th>Uso Stock</th>
+										<th>Uso Mensual</th>
+										<th>Uso Semestral</th>
+										<th>Uso Anual</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($pcs as $pc)
+                                    @foreach ($usos as $uso)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $pc->SoUser->so_user }}</td>
-											<td>{{ $pc->GeasysUser->geasys_user }}</td>
-											<td>{{ $pc->condition->condicion }}</td>
-											<td>{{ $pc->etiqueta }}</td>
-											<td>{{ $pc->nombre_pc }}</td>
-											<td>{{ $pc->ip_172 }}</td>
-											<td>{{ $pc->ip_10 }}</td>
-											<td>{{ $pc->mac }}</td>
-											<td>{{ $pc->cpu }}</td>
-											<td>{{ $pc->ram }}</td>
-											<td>{{ $pc->so }}</td>
-											<td>{{ $pc->marca }}</td>
-											<td>{{ $pc->observaciones }}</td>
-											<td>{{ $pc->uso_stock }}</td>
+											<td>{{ $uso->uso_mensual }}</td>
+											<td>{{ $uso->uso_semestral }}</td>
+											<td>{{ $uso->uso_anual }}</td>
 
                                             <td>
-                                                <form action="{{ route('pcs.destroy',$pc->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('pcs.show',$pc->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('pcs.edit',$pc->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('usos.destroy',$uso->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('usos.show',$uso->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('usos.edit',$uso->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -90,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $pcs->links() !!}
+                {!! $usos->links() !!}
             </div>
         </div>
     </div>

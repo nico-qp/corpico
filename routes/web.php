@@ -24,10 +24,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('pcs', App\Http\Controllers\PcController::class);
 Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class);
-
-Route::resource('pc-stock', App\Http\Controllers\PcStockController::class);
-Route::resource('impresora-stock', App\Http\Controllers\ImpresorasStockController::class);
-Route::resource('tonner', App\Http\Controllers\TonnerController::class);
-Route::resource('cartucho', App\Http\Controllers\CartuchoController::class);
-
 Route::resource('sectores', App\Http\Controllers\SectoreController::class);
+Route::resource('usos', App\Http\Controllers\UsoController::class);
+Route::resource('so-users', App\Http\Controllers\SoUserController::class);
+Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class);
+Route::resource('conditions', App\Http\Controllers\ConditionController::class);
+Route::resource('pc-imps', App\Http\Controllers\PcImpController::class);

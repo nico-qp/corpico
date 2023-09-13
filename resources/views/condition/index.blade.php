@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Pc
+    Condition
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Pc') }}
+                                {{ __('Condition') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('pcs.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('conditions.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,48 +36,22 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>So User</th>
-										<th>Geasys User</th>
 										<th>Condicion</th>
-										<th>Etiqueta</th>
-										<th>Nombre Pc</th>
-										<th>Ip 172</th>
-										<th>Ip 10</th>
-										<th>Mac</th>
-										<th>Cpu</th>
-										<th>Ram</th>
-										<th>So</th>
-										<th>Marca</th>
-										<th>Observaciones</th>
-										<th>Uso Stock</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($pcs as $pc)
+                                    @foreach ($conditions as $condition)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $pc->SoUser->so_user }}</td>
-											<td>{{ $pc->GeasysUser->geasys_user }}</td>
-											<td>{{ $pc->condition->condicion }}</td>
-											<td>{{ $pc->etiqueta }}</td>
-											<td>{{ $pc->nombre_pc }}</td>
-											<td>{{ $pc->ip_172 }}</td>
-											<td>{{ $pc->ip_10 }}</td>
-											<td>{{ $pc->mac }}</td>
-											<td>{{ $pc->cpu }}</td>
-											<td>{{ $pc->ram }}</td>
-											<td>{{ $pc->so }}</td>
-											<td>{{ $pc->marca }}</td>
-											<td>{{ $pc->observaciones }}</td>
-											<td>{{ $pc->uso_stock }}</td>
+											<td>{{ $condition->condicion }}</td>
 
                                             <td>
-                                                <form action="{{ route('pcs.destroy',$pc->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('pcs.show',$pc->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('pcs.edit',$pc->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('conditions.destroy',$condition->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('conditions.show',$condition->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('conditions.edit',$condition->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -90,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $pcs->links() !!}
+                {!! $conditions->links() !!}
             </div>
         </div>
     </div>

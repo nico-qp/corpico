@@ -2,24 +2,29 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_sector') }}
-            {{ Form::select('id_sector', $sectores , $pc->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
-            {!! $errors->first('id_sector', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('id_so_user') }}
+            {{ Form::select('id_so_user', $so_user, $pc->id_so_user, ['class' => 'form-control' . ($errors->has('id_so_user') ? ' is-invalid' : ''), 'placeholder' => 'Id So User']) }}
+            {!! $errors->first('id_so_user', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('trabajador') }}
-            {{ Form::text('trabajador', $pc->trabajador, ['class' => 'form-control' . ($errors->has('trabajador') ? ' is-invalid' : ''), 'placeholder' => 'Trabajador']) }}
-            {!! $errors->first('trabajador', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('id_geasys_user') }}
+            {{ Form::select('id_geasys_user', $geasys_user, $pc->id_geasys_user, ['class' => 'form-control' . ($errors->has('id_geasys_user') ? ' is-invalid' : ''), 'placeholder' => 'Id Geasys User']) }}
+            {!! $errors->first('id_geasys_user', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('id_condicion') }}
+            {{ Form::select('id_condicion', $condition, $pc->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Id Condicion']) }}
+            {!! $errors->first('id_condicion', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('etiqueta') }}
+            {{ Form::text('etiqueta', $pc->etiqueta, ['class' => 'form-control' . ($errors->has('etiqueta') ? ' is-invalid' : ''), 'placeholder' => 'Etiqueta']) }}
+            {!! $errors->first('etiqueta', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('nombre_pc') }}
             {{ Form::text('nombre_pc', $pc->nombre_pc, ['class' => 'form-control' . ($errors->has('nombre_pc') ? ' is-invalid' : ''), 'placeholder' => 'Nombre Pc']) }}
             {!! $errors->first('nombre_pc', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('usuario_geasys') }}
-            {{ Form::text('usuario_geasys', $pc->usuario_geasys, ['class' => 'form-control' . ($errors->has('usuario_geasys') ? ' is-invalid' : ''), 'placeholder' => 'Usuario Geasys']) }}
-            {!! $errors->first('usuario_geasys', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('ip_172') }}
@@ -50,6 +55,21 @@
             {{ Form::label('so') }}
             {{ Form::text('so', $pc->so, ['class' => 'form-control' . ($errors->has('so') ? ' is-invalid' : ''), 'placeholder' => 'So']) }}
             {!! $errors->first('so', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('marca') }}
+            {{ Form::text('marca', $pc->marca, ['class' => 'form-control' . ($errors->has('marca') ? ' is-invalid' : ''), 'placeholder' => 'Marca']) }}
+            {!! $errors->first('marca', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('observaciones') }}
+            {{ Form::text('observaciones', $pc->observaciones, ['class' => 'form-control' . ($errors->has('observaciones') ? ' is-invalid' : ''), 'placeholder' => 'Observaciones']) }}
+            {!! $errors->first('observaciones', '<div class="invalid-feedback">:message</div>') !!}
+        </div>
+        <div class="form-group">
+            {{ Form::label('uso_stock') }}
+            {{ Form::text('uso_stock', $pc->uso_stock, ['class' => 'form-control' . ($errors->has('uso_stock') ? ' is-invalid' : ''), 'placeholder' => 'Uso Stock']) }}
+            {!! $errors->first('uso_stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

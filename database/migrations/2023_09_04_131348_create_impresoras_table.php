@@ -16,7 +16,7 @@ class CreateImpresorasTable extends Migration
         Schema::create('impresoras', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_cart_ton');
-            $table->foreign('id_cart_ton')->references('id')->on('cart_ton')->onDelete('cascade');
+            $table->foreign('id_cart_ton')->references('id')->on('cart_tons')->onDelete('cascade');
             $table->unsignedBigInteger('id_sector');
             $table->foreign('id_sector')->references('id')->on('sectores')->onDelete('cascade');
             $table->unsignedBigInteger('id_pc');

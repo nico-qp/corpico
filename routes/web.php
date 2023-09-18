@@ -22,14 +22,14 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('pcs', App\Http\Controllers\PcController::class);
+Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class);
 Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class);
 Route::resource('sectores', App\Http\Controllers\SectoreController::class);
 Route::resource('usos', App\Http\Controllers\UsoController::class);
-Route::resource('so-users', App\Http\Controllers\SoUserController::class);
+Route::resource('usuarios-windows', App\Http\Controllers\UsuariosWindowController::class);
 Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class);
-Route::resource('conditions', App\Http\Controllers\ConditionController::class);
-Route::resource('pc-imps', App\Http\Controllers\PcImpController::class);
-Route::resource('cart-ton', App\Http\Controllers\CartTonController::class);
-Route::resource('pc-programas', App\Http\Controllers\PcProgramaController::class);
-Route::resource('programa', App\Http\Controllers\ProgramaController::class);
+Route::resource('condiciones', App\Http\Controllers\ConditionController::class);
+Route::resource('computadoeas-impresoras', App\Http\Controllers\PcImpController::class);
+Route::resource('consumibles', App\Http\Controllers\CartTonController::class);
+Route::resource('computadoras-softwares', App\Http\Controllers\PcProgramaController::class);
+Route::resource('softwares', App\Http\Controllers\ProgramaController::class);

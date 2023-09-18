@@ -12,6 +12,20 @@
                         @csrf
 
                         <div class="row mb-3">
+                            <label for="user" class="col-md-4 col-form-label text-md-end">{{ __('User') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="user" type="text" class="form-control @error('user') is-invalid @enderror" name="user" value="{{ old('user') }}" required autocomplete="user" autofocus>
+
+                                @error('user')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
 
                             <div class="col-md-6">
@@ -25,7 +39,7 @@
                             </div>
                         </div>
 
-                        <div class="row mb-3">
+                        <!--<div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
 
                             <div class="col-md-6">
@@ -59,7 +73,7 @@
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
-                        </div>
+                        </div>-->
 
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

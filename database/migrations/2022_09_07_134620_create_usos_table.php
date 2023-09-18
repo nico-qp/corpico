@@ -15,9 +15,9 @@ class CreateUsosTable extends Migration
     {
         Schema::create('usos', function (Blueprint $table) {
             $table->id();
-            $table->string('uso_mensual');
-            $table->string('uso_semestral');
-            $table->string('uso_anual');
+            $table->string('mensual');
+            $table->string('semestral');
+            $table->string('anual');
             $table->timestamps();
         });
     }

@@ -55,7 +55,7 @@
 
                         <!-- NAV AGREGADO -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('pcs.index') }}">PC</a>
+                            <a class="nav-link" href="{{ route('computadoras.index') }}">PC</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('impresoras.index') }}">IMPRESORA</a>
@@ -67,27 +67,23 @@
                             <a class="nav-link" href="{{ route('usos.index') }}">Usos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('so-users.index') }}">S.O usuarios</a>
+                            <a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('geasys-users.index') }}">Geasys usuarios</a>
+                            <a class="nav-link" href="{{ route('consumibles.index') }}">cart-ton</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('conditions.index') }}">Condiciones</a>
+                            <a class="nav-link" href="{{ route('computadoras-softwares.index') }}">pc_programa</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('pc-imps.index') }}">pc_imps</a>
+                            <a class="nav-link" href="{{ route('softwares.index') }}">programas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('cart-ton.index') }}">cart-ton</a>
+                            <a class="nav-link" href="{{ route('usuarios-window.index') }}">usuario windows</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('pc-programas.index') }}">pc_programa</a>
+                            <a class="nav-link" href="{{ route('computadoras-impresora.index') }}">pc_imps</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('programa.index') }}">programas</a>
-                        </li>
-
 
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

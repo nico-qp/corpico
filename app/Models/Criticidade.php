@@ -5,45 +5,40 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Software
+ * Class Criticidade
  *
  * @property $id
- * @property $nombre
- * @property $version
- * @property $expira
+ * @property $descripcion
  * @property $created_at
  * @property $updated_at
  *
- * @property ComputadorasSoftware[] $computadorasSoftwares
+ * @property Impresora[] $impresoras
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
-class Software extends Model
+class Criticidade extends Model
 {
     
     static $rules = [
-		'nombre' => 'required',
-		'version' => 'required',
-		'expira' => 'required',
+		'descripcion' => 'required',
     ];
 
     protected $perPage = 20;
-    protected $table = 'softwares';
 
     /**
      * Attributes that should be mass-assignable.
      *
      * @var array
      */
-    protected $fillable = ['nombre','version','expira'];
+    protected $fillable = ['descripcion'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function computadorasSoftwares()
+    public function impresoras()
     {
-        return $this->hasMany('App\Models\ComputadorasSoftware', 'id_software', 'id');
+        return $this->hasMany('App\Models\Impresora', 'id_criticidad', 'id');
     }
     
 

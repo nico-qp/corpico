@@ -16,7 +16,7 @@
                         <span class="card-title">{{ __('Update') }} Usuarios Window</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('usuarios-windows.update', $usuariosWindow->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('usuarios-window.update', $usuariosWindow->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

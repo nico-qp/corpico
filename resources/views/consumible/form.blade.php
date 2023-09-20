@@ -2,13 +2,13 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_uso') }}
-            {{ Form::text('id_uso', $consumible->id_uso, ['class' => 'form-control' . ($errors->has('id_uso') ? ' is-invalid' : ''), 'placeholder' => 'Id Uso']) }}
+            {{ Form::label('Uso mensual') }}
+            {{ Form::select('id_uso', $uso, $consumible->id_uso, ['class' => 'form-control' . ($errors->has('id_uso') ? ' is-invalid' : ''), 'placeholder' => 'uso mensual']) }}
             {!! $errors->first('id_uso', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_tipo') }}
-            {{ Form::text('id_tipo', $consumible->id_tipo, ['class' => 'form-control' . ($errors->has('id_tipo') ? ' is-invalid' : ''), 'placeholder' => 'Id Tipo']) }}
+            {{ Form::label('Tipo de consumible') }}
+            {{ Form::select('id_tipo', $tipo_consumible, $consumible->id_tipo, ['class' => 'form-control' . ($errors->has('id_tipo') ? ' is-invalid' : ''), 'placeholder' => 'Tipo de consumible']) }}
             {!! $errors->first('id_tipo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

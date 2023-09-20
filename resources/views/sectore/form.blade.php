@@ -2,19 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('edificio') }}
-            {{ Form::text('edificio', $sectore->edificio, ['class' => 'form-control' . ($errors->has('edificio') ? ' is-invalid' : ''), 'placeholder' => 'Edificio']) }}
-            {!! $errors->first('edificio', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('id_ubicacion') }}
+            {{ Form::select('id_ubicacion', $ubicacion, $sectore->id_ubicacion, ['class' => 'form-control' . ($errors->has('id_ubicacion') ? ' is-invalid' : ''), 'placeholder' => 'Id Ubicacion']) }}
+            {!! $errors->first('id_ubicacion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('piso') }}
-            {{ Form::text('piso', $sectore->piso, ['class' => 'form-control' . ($errors->has('piso') ? ' is-invalid' : ''), 'placeholder' => 'Piso']) }}
-            {!! $errors->first('piso', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('sector') }}
-            {{ Form::text('sector', $sectore->sector, ['class' => 'form-control' . ($errors->has('sector') ? ' is-invalid' : ''), 'placeholder' => 'Sector']) }}
-            {!! $errors->first('sector', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('nombre') }}
+            {{ Form::text('nombre', $sectore->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
+            {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 
     </div>

@@ -18,10 +18,10 @@ class SoftwareController extends Controller
      */
     public function index()
     {
-        $software = Software::paginate();
+        $softwares = Software::paginate();
 
-        return view('software.index', compact('software'))
-            ->with('i', (request()->input('page', 1) - 1) * $software->perPage());
+        return view('software.index', compact('softwares'))
+            ->with('i', (request()->input('page', 1) - 1) * $softwares->perPage());
     }
 
     /**
@@ -47,7 +47,7 @@ class SoftwareController extends Controller
 
         $software = Software::create($request->all());
 
-        return redirect()->route('software.index')
+        return redirect()->route('softwares.index')
             ->with('success', 'Software created successfully.');
     }
 
@@ -90,7 +90,7 @@ class SoftwareController extends Controller
 
         $software->update($request->all());
 
-        return redirect()->route('software.index')
+        return redirect()->route('softwares.index')
             ->with('success', 'Software updated successfully');
     }
 
@@ -103,7 +103,7 @@ class SoftwareController extends Controller
     {
         $software = Software::find($id)->delete();
 
-        return redirect()->route('software.index')
+        return redirect()->route('softwares.index')
             ->with('success', 'Software deleted successfully');
     }
 }

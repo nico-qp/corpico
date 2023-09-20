@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Sectore
+    Criticidade
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Sectore') }}
+                                {{ __('Criticidade') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('sectores.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('criticidades.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,26 +36,22 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Ubicacion</th>
-                                        <th>Piso</th>
-										<th>Nombre</th>
+										<th>Descripcion</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($sectores as $sectore)
+                                    @foreach ($criticidades as $criticidade)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $sectore->ubicacione->edificio }}</td>
-                                            <td>{{ $sectore->ubicacione->piso }}</td>
-											<td>{{ $sectore->nombre }}</td>
+											<td>{{ $criticidade->descripcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('sectores.destroy',$sectore->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('sectores.show',$sectore->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('sectores.edit',$sectore->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('criticidades.destroy',$criticidade->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('criticidades.show',$criticidade->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('criticidades.edit',$criticidade->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -68,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $sectores->links() !!}
+                {!! $criticidades->links() !!}
             </div>
         </div>
     </div>

@@ -13,7 +13,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('expira') }}
-            {{ Form::text('expira', $software->expira, ['class' => 'form-control' . ($errors->has('expira') ? ' is-invalid' : ''), 'placeholder' => 'Expira']) }}
+            {{ Form::date('expira', $software->expira, ['class' => 'form-control' . ($errors->has('expira') ? ' is-invalid' : ''), 'placeholder' => 'Expira']) }}
             {!! $errors->first('expira', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

@@ -36,9 +36,9 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Uso Mensual</th>
-										<th>Uso Semestral</th>
-										<th>Uso Anual</th>
+										<th>Mensual</th>
+										<th>Semestral</th>
+										<th>Anual</th>
 
                                         <th></th>
                                     </tr>
@@ -48,9 +48,9 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $uso->uso_mensual }}</td>
-											<td>{{ $uso->uso_semestral }}</td>
-											<td>{{ $uso->uso_anual }}</td>
+											<td>{{ $uso->mensual }}</td>
+											<td>{{ $uso->semestral }}</td>
+											<td>{{ $uso->anual }}</td>
 
                                             <td>
                                                 <form action="{{ route('usos.destroy',$uso->id) }}" method="POST">

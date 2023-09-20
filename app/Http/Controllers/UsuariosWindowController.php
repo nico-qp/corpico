@@ -47,7 +47,7 @@ class UsuariosWindowController extends Controller
 
         $usuariosWindow = UsuariosWindow::create($request->all());
 
-        return redirect()->route('usuarios-windows.index')
+        return redirect()->route('usuarios-window.index')
             ->with('success', 'UsuariosWindow created successfully.');
     }
 
@@ -90,7 +90,7 @@ class UsuariosWindowController extends Controller
 
         $usuariosWindow->update($request->all());
 
-        return redirect()->route('usuarios-windows.index')
+        return redirect()->route('usuarios-window.index')
             ->with('success', 'UsuariosWindow updated successfully');
     }
 
@@ -103,7 +103,7 @@ class UsuariosWindowController extends Controller
     {
         $usuariosWindow = UsuariosWindow::find($id)->delete();
 
-        return redirect()->route('usuarios-windows.index')
+        return redirect()->route('usuarios-window.index')
             ->with('success', 'UsuariosWindow deleted successfully');
     }
 }

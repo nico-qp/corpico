@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Sectore;
+use App\Models\Ubicacione;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +33,8 @@ class SectoreController extends Controller
     public function create()
     {
         $sectore = new Sectore();
-        return view('sectore.create', compact('sectore'));
+        $ubicacion = Ubicacione::Pluck('edificio','id');
+        return view('sectore.create', compact('sectore', 'ubicacion'));
     }
 
     /**
@@ -73,8 +75,8 @@ class SectoreController extends Controller
     public function edit($id)
     {
         $sectore = Sectore::find($id);
-
-        return view('sectore.edit', compact('sectore'));
+        $ubicacion = Ubicacione::Pluck('edificio','id');
+        return view('sectore.edit', compact('sectore', 'ubicacion'));
     }
 
     /**

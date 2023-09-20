@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
  * Class Uso
  *
  * @property $id
- * @property $uso_mensual
- * @property $uso_semestral
- * @property $uso_anual
+ * @property $mensual
+ * @property $semestral
+ * @property $anual
  * @property $created_at
  * @property $updated_at
  *
- * @property CartTon[] $cartTons
+ * @property Consumible[] $consumibles
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -22,9 +22,9 @@ class Uso extends Model
 {
     
     static $rules = [
-		'uso_mensual' => 'required',
-		'uso_semestral' => 'required',
-		'uso_anual' => 'required',
+		'mensual' => 'required',
+		'semestral' => 'required',
+		'anual' => 'required',
     ];
 
     protected $perPage = 20;
@@ -34,15 +34,15 @@ class Uso extends Model
      *
      * @var array
      */
-    protected $fillable = ['uso_mensual','uso_semestral','uso_anual'];
+    protected $fillable = ['mensual','semestral','anual'];
 
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function cartTons()
+    public function consumibles()
     {
-        return $this->hasMany('App\Models\CartTon', 'id_usos', 'id');
+        return $this->hasMany('App\Models\Consumible', 'id_uso', 'id');
     }
     
 

@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Consumible') }}
+                                {{ __('Consumibles') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('consumibles.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nueva') }}
                                 </a>
                               </div>
                         </div>
@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Uso</th>
-										<th>Id Tipo</th>
+										<th>Uso Mensual</th>
+										<th>Tipo</th>
 										<th>Codigo</th>
 										<th>Descripcion</th>
 
@@ -49,8 +49,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $consumible->id_uso }}</td>
-											<td>{{ $consumible->id_tipo }}</td>
+											<td>{{ $consumible->uso->mensual }}</td>
+											<td>{{ $consumible->tipoConsumible->nombre }}</td>
 											<td>{{ $consumible->codigo }}</td>
 											<td>{{ $consumible->descripcion }}</td>
 

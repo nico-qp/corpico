@@ -55,13 +55,16 @@
 
                         <!-- NAV AGREGADO -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('computadoras.index') }}">PC</a>
+                            <a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('impresoras.index') }}">IMPRESORA</a>
+                            <a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('ubicaciones.index') }}">ubicaciones</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('usos.index') }}">Usos</a>
@@ -70,19 +73,22 @@
                             <a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('consumibles.index') }}">cart-ton</a>
+                            <a class="nav-link" href="{{ route('consumibles.index') }}">consumibles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('computadoras-softwares.index') }}">pc_programa</a>
+                            <a class="nav-link" href="{{ route('softwares.index') }}">softwares</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('softwares.index') }}">programas</a>
+                            <a class="nav-link" href="{{ route('usuarios-window.index') }}">usuarios windows</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usuarios-window.index') }}">usuario windows</a>
+                            <a class="nav-link" href="{{ route('tipo-consumibles.index') }}">tipo consumibles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('computadoras-impresora.index') }}">pc_imps</a>
+                            <a class="nav-link" href="{{ route('computadoras-impresoras.index') }}">computadoras impresoras</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('criticidades.index') }}">criticidades</a>
                         </li>
 
                             <li class="nav-item dropdown">

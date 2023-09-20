@@ -21,16 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Edificio:</strong>
-                            {{ $sectore->edificio }}
+                            <strong>Id Ubicacion:</strong>
+                            {{ $sectore->id_ubicacion }}
                         </div>
                         <div class="form-group">
-                            <strong>Piso:</strong>
-                            {{ $sectore->piso }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Sector:</strong>
-                            {{ $sectore->sector }}
+                            <strong>Nombre:</strong>
+                            {{ $sectore->nombre }}
                         </div>
 
                     </div>

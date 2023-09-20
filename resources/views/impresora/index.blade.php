@@ -36,16 +36,14 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Cart Ton</th>
 										<th>Id Sector</th>
-										<th>Id Pc</th>
+										<th>Id Criticidad</th>
 										<th>Marca</th>
 										<th>Modelo</th>
-										<th>Conexion</th>
-										<th>Nom Ip</th>
+										<th>Conectividad</th>
+										<th>Ip</th>
 										<th>Autonomia Resma</th>
-										<th>Autonomia Cart Ton</th>
-										<th>Uso</th>
+										<th>Stock</th>
 										<th>Observaciones</th>
 
                                         <th></th>
@@ -56,16 +54,14 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $impresora->id_cart_ton }}</td>
 											<td>{{ $impresora->id_sector }}</td>
-											<td>{{ $impresora->pc->nombre_pc }}</td>
+											<td>{{ $impresora->id_criticidad }}</td>
 											<td>{{ $impresora->marca }}</td>
 											<td>{{ $impresora->modelo }}</td>
-											<td>{{ $impresora->conexion }}</td>
-											<td>{{ $impresora->nom_ip }}</td>
+											<td>{{ $impresora->conectividad }}</td>
+											<td>{{ $impresora->ip }}</td>
 											<td>{{ $impresora->autonomia_resma }}</td>
-											<td>{{ $impresora->autonomia_cart_ton }}</td>
-											<td>{{ $impresora->uso }}</td>
+											<td>{{ $impresora->stock }}</td>
 											<td>{{ $impresora->observaciones }}</td>
 
                                             <td>

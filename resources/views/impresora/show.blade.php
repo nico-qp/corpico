@@ -21,16 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Cart Ton:</strong>
-                            {{ $impresora->id_cart_ton }}
-                        </div>
-                        <div class="form-group">
                             <strong>Id Sector:</strong>
                             {{ $impresora->id_sector }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Pc:</strong>
-                            {{ $impresora->id_pc }}
+                            <strong>Id Criticidad:</strong>
+                            {{ $impresora->id_criticidad }}
                         </div>
                         <div class="form-group">
                             <strong>Marca:</strong>
@@ -41,24 +37,20 @@
                             {{ $impresora->modelo }}
                         </div>
                         <div class="form-group">
-                            <strong>Conexion:</strong>
-                            {{ $impresora->conexion }}
+                            <strong>Conectividad:</strong>
+                            {{ $impresora->conectividad }}
                         </div>
                         <div class="form-group">
-                            <strong>Nom Ip:</strong>
-                            {{ $impresora->nom_ip }}
+                            <strong>Ip:</strong>
+                            {{ $impresora->ip }}
                         </div>
                         <div class="form-group">
                             <strong>Autonomia Resma:</strong>
                             {{ $impresora->autonomia_resma }}
                         </div>
                         <div class="form-group">
-                            <strong>Autonomia Cart Ton:</strong>
-                            {{ $impresora->autonomia_cart_ton }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Uso:</strong>
-                            {{ $impresora->uso }}
+                            <strong>Stock:</strong>
+                            {{ $impresora->stock }}
                         </div>
                         <div class="form-group">
                             <strong>Observaciones:</strong>

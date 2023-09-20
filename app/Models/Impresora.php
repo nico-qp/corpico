@@ -8,24 +8,21 @@ use Illuminate\Database\Eloquent\Model;
  * Class Impresora
  *
  * @property $id
- * @property $id_cart_ton
  * @property $id_sector
- * @property $id_pc
+ * @property $id_criticidad
  * @property $marca
  * @property $modelo
- * @property $conexion
- * @property $nom_ip
+ * @property $conectividad
+ * @property $ip
  * @property $autonomia_resma
- * @property $autonomia_cart_ton
- * @property $uso
+ * @property $stock
  * @property $observaciones
  * @property $created_at
  * @property $updated_at
  *
- * @property CartTon $cartTon
- * @property ImpSector[] $impSectors
- * @property Pc $pc
- * @property PcImp[] $pcImps
+ * @property ComputadorasImpresora[] $computadorasImpresoras
+ * @property ConsumiblesImpresora[] $consumiblesImpresoras
+ * @property Criticidade $criticidade
  * @property Sectore $sectore
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
@@ -34,16 +31,14 @@ class Impresora extends Model
 {
     
     static $rules = [
-		'id_cart_ton' => 'required',
 		'id_sector' => 'required',
-		'id_pc' => 'required',
+		'id_criticidad' => 'required',
 		'marca' => 'required',
 		'modelo' => 'required',
-		'conexion' => 'required',
-		'nom_ip' => 'required',
+		'conectividad' => 'required',
+		'ip' => 'required',
 		'autonomia_resma' => 'required',
-		'autonomia_cart_ton' => 'required',
-		'uso' => 'required',
+		'stock' => 'required',
 		'observaciones' => 'required',
     ];
 
@@ -54,39 +49,31 @@ class Impresora extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_cart_ton','id_sector','id_pc','marca','modelo','conexion','nom_ip','autonomia_resma','autonomia_cart_ton','uso','observaciones'];
+    protected $fillable = ['id_sector','id_criticidad','marca','modelo','conectividad','ip','autonomia_resma','stock','observaciones'];
 
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function cartTon()
+    public function computadorasImpresoras()
     {
-        return $this->hasOne('App\Models\CartTon', 'id', 'id_cart_ton');
+        return $this->hasMany('App\Models\ComputadorasImpresora', 'id_impresora', 'id');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function impSectors()
+    public function consumiblesImpresoras()
     {
-        return $this->hasMany('App\Models\ImpSector', 'id_impresora', 'id');
+        return $this->hasMany('App\Models\ConsumiblesImpresora', 'id_impresora', 'id');
     }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function pc()
+    public function criticidade()
     {
-        return $this->hasOne('App\Models\Pc', 'id', 'id_pc');
-    }
-    
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function pcImps()
-    {
-        return $this->hasMany('App\Models\PcImp', 'id_imp', 'id');
+        return $this->hasOne('App\Models\Criticidade', 'id', 'id_criticidad');
     }
     
     /**

@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
  * Class Sectore
  *
  * @property $id
- * @property $edificio
- * @property $piso
- * @property $sector
+ * @property $id_ubicacion
+ * @property $nombre
  * @property $created_at
  * @property $updated_at
  *
+ * @property Computadora[] $computadoras
  * @property Impresora[] $impresoras
- * @property Pc[] $pcs
+ * @property Ubicacione $ubicacione
  * @package App
  * @mixin \Illuminate\Database\Eloquent\Builder
  */
@@ -23,9 +23,8 @@ class Sectore extends Model
 {
     
     static $rules = [
-		'edificio' => 'required',
-		'piso' => 'required',
-		'sector' => 'required',
+		'id_ubicacion' => 'required',
+		'nombre' => 'required',
     ];
 
     protected $perPage = 20;
@@ -35,9 +34,17 @@ class Sectore extends Model
      *
      * @var array
      */
-    protected $fillable = ['edificio','piso','sector'];
+    protected $fillable = ['id_ubicacion','nombre'];
 
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function computadoras()
+    {
+        return $this->hasMany('App\Models\Computadora', 'id_sectore', 'id');
+    }
+    
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -47,11 +54,11 @@ class Sectore extends Model
     }
     
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
-    public function pcs()
+    public function ubicacione()
     {
-        return $this->hasMany('App\Models\Pc', 'id_sector', 'id');
+        return $this->hasOne('App\Models\Ubicacione', 'id', 'id_ubicacion');
     }
     
 

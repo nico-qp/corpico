@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Computadoras Impresora') }}
+                                {{ __('Conexion entre Computadoras y impresoras') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('computadoras-impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nueva') }}
                                 </a>
                               </div>
                         </div>

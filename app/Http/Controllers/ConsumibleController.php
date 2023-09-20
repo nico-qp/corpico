@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Consumible;
+use App\Models\TipoConsumible;
+use App\Models\Uso;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class ConsumibleController extends Controller
     public function create()
     {
         $consumible = new Consumible();
-        return view('consumible.create', compact('consumible'));
+        $uso = Uso::Pluck('mensual','id');
+        $tipo_consumible = tipoConsumible::Pluck('nombre','id');
+        return view('consumible.create', compact('consumible', 'uso', 'tipo_consumible'));
     }
 
     /**
@@ -73,8 +77,10 @@ class ConsumibleController extends Controller
     public function edit($id)
     {
         $consumible = Consumible::find($id);
+        $uso = Uso::Pluck('mensual','id');
+        $tipo_consumible = tipoConsumible::Pluck('nombre','id');
 
-        return view('consumible.edit', compact('consumible'));
+        return view('consumible.edit', compact('consumible', 'uso', 'tipo_consumible'));
     }
 
     /**

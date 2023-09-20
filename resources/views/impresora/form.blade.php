@@ -2,19 +2,14 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_cart_ton') }}
-            {{ Form::select('id_cart_ton',$uso, $impresora->id_cart_ton, ['class' => 'form-control' . ($errors->has('id_cart_ton') ? ' is-invalid' : ''), 'placeholder' => 'Id Cart Ton']) }}
-            {!! $errors->first('id_cart_ton', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
             {{ Form::label('id_sector') }}
-            {{ Form::select('id_sector',$sector, $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
+            {{ Form::select('id_sector', $sector, $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
             {!! $errors->first('id_sector', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_pc') }}
-            {{ Form::select('id_pc',$pc, $impresora->id_pc, ['class' => 'form-control' . ($errors->has('id_pc') ? ' is-invalid' : ''), 'placeholder' => 'Id Pc']) }}
-            {!! $errors->first('id_pc', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('id_criticidad') }}
+            {{ Form::select('id_criticidad', $criticidades, $impresora->id_criticidad, ['class' => 'form-control' . ($errors->has('id_criticidad') ? ' is-invalid' : ''), 'placeholder' => 'Id Criticidad']) }}
+            {!! $errors->first('id_criticidad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('marca') }}
@@ -27,14 +22,14 @@
             {!! $errors->first('modelo', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('conexion') }}
-            {{ Form::text('conexion', $impresora->conexion, ['class' => 'form-control' . ($errors->has('conexion') ? ' is-invalid' : ''), 'placeholder' => 'Conexion']) }}
-            {!! $errors->first('conexion', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('conectividad') }}
+            {{ Form::text('conectividad', $impresora->conectividad, ['class' => 'form-control' . ($errors->has('conectividad') ? ' is-invalid' : ''), 'placeholder' => 'Conectividad']) }}
+            {!! $errors->first('conectividad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nom_ip') }}
-            {{ Form::text('nom_ip', $impresora->nom_ip, ['class' => 'form-control' . ($errors->has('nom_ip') ? ' is-invalid' : ''), 'placeholder' => 'Nom Ip']) }}
-            {!! $errors->first('nom_ip', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('ip') }}
+            {{ Form::text('ip', $impresora->ip, ['class' => 'form-control' . ($errors->has('ip') ? ' is-invalid' : ''), 'placeholder' => 'Ip']) }}
+            {!! $errors->first('ip', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('autonomia_resma') }}
@@ -42,14 +37,9 @@
             {!! $errors->first('autonomia_resma', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('autonomia_cart_ton') }}
-            {{ Form::text('autonomia_cart_ton', $impresora->autonomia_cart_ton, ['class' => 'form-control' . ($errors->has('autonomia_cart_ton') ? ' is-invalid' : ''), 'placeholder' => 'Autonomia Cart Ton']) }}
-            {!! $errors->first('autonomia_cart_ton', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('uso') }}
-            {{ Form::text('uso', $impresora->uso, ['class' => 'form-control' . ($errors->has('uso') ? ' is-invalid' : ''), 'placeholder' => 'Uso']) }}
-            {!! $errors->first('uso', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('stock') }}
+            {{ Form::text('stock', $impresora->stock, ['class' => 'form-control' . ($errors->has('stock') ? ' is-invalid' : ''), 'placeholder' => 'Stock']) }}
+            {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('observaciones') }}

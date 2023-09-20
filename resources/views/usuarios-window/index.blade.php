@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('usuarios-windows.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('usuarios-window.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -51,9 +51,9 @@
 											<td>{{ $usuariosWindow->contraseña }}</td>
 
                                             <td>
-                                                <form action="{{ route('usuarios-windows.destroy',$usuariosWindow->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('usuarios-windows.show',$usuariosWindow->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('usuarios-windows.edit',$usuariosWindow->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('usuarios-window.destroy',$usuariosWindow->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('usuarios-window.show',$usuariosWindow->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('usuarios-window.edit',$usuariosWindow->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>

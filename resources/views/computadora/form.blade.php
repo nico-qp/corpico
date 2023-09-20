@@ -3,22 +3,22 @@
         
         <div class="form-group">
             {{ Form::label('id_usuario_window') }}
-            {{ Form::text('id_usuario_window', $computadora->id_usuario_window, ['class' => 'form-control' . ($errors->has('id_usuario_window') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario Window']) }}
+            {{ Form::select('id_usuario_window',$usuario_win, $computadora->id_usuario_window, ['class' => 'form-control' . ($errors->has('id_usuario_window') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario Window']) }}
             {!! $errors->first('id_usuario_window', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_user') }}
-            {{ Form::text('id_user', $computadora->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
+            {{ Form::select('id_user',$usuario_gea, $computadora->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
             {!! $errors->first('id_user', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_condicion') }}
-            {{ Form::text('id_condicion', $computadora->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Id Condicion']) }}
+            {{ Form::select('id_condicion',$condicion, $computadora->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Id Condicion']) }}
             {!! $errors->first('id_condicion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_sectore') }}
-            {{ Form::text('id_sectore', $computadora->id_sectore, ['class' => 'form-control' . ($errors->has('id_sectore') ? ' is-invalid' : ''), 'placeholder' => 'Id Sectore']) }}
+            {{ Form::select('id_sectore',$sector, $computadora->id_sectore, ['class' => 'form-control' . ($errors->has('id_sectore') ? ' is-invalid' : ''), 'placeholder' => 'Id Sectore']) }}
             {!! $errors->first('id_sectore', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

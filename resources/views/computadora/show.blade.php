@@ -21,27 +21,27 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Usuario Window:</strong>
-                            {{ $computadora->id_usuario_window }}
+                            <strong>Usuario Window:</strong>
+                            {{ $computadora->usuarioswindow->usuario }}
                         </div>
                         <div class="form-group">
-                            <strong>Id User:</strong>
-                            {{ $computadora->id_user }}
+                            <strong>Usuario Geasys:</strong>
+                            {{ $computadora->User->user }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Condicion:</strong>
-                            {{ $computadora->id_condicion }}
+                            <strong>Condicion:</strong>
+                            {{ $computadora->condicione->descripcion }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Sectore:</strong>
-                            {{ $computadora->id_sectore }}
+                            <strong>Sector:</strong>
+                            {{ $computadora->sectore->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Etiqueta:</strong>
                             {{ $computadora->etiqueta }}
                         </div>
                         <div class="form-group">
-                            <strong>Nombre:</strong>
+                            <strong>Nombre del PC:</strong>
                             {{ $computadora->nombre }}
                         </div>
                         <div class="form-group">

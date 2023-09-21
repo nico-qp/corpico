@@ -3,12 +3,12 @@
         
         <div class="form-group">
             {{ Form::label('id_software') }}
-            {{ Form::text('id_software', $computadorasSoftware->id_software, ['class' => 'form-control' . ($errors->has('id_software') ? ' is-invalid' : ''), 'placeholder' => 'Id Software']) }}
+            {{ Form::select('id_software',$software, $computadorasSoftware->id_software, ['class' => 'form-control' . ($errors->has('id_software') ? ' is-invalid' : ''), 'placeholder' => 'Id Software']) }}
             {!! $errors->first('id_software', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_computadora') }}
-            {{ Form::text('id_computadora', $computadorasSoftware->id_computadora, ['class' => 'form-control' . ($errors->has('id_computadora') ? ' is-invalid' : ''), 'placeholder' => 'Id Computadora']) }}
+            {{ Form::select('id_computadora',$computadora, $computadorasSoftware->id_computadora, ['class' => 'form-control' . ($errors->has('id_computadora') ? ' is-invalid' : ''), 'placeholder' => 'Id Computadora']) }}
             {!! $errors->first('id_computadora', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

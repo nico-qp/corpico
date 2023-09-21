@@ -14,19 +14,21 @@
                             <span class="card-title">{{ __('Show') }} Computadoras Software</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('computadoras-software.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('computadoras-softwares.index') }}"> {{ __('Back') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Software:</strong>
-                            {{ $computadorasSoftware->id_software }}
+                            <strong>Info Software:</strong></br>
+                            <strong>Software: </strong>{{ $computadorasSoftware->Software->nombre }} </br>
+                            <strong>versión: </strong>{{ $computadorasSoftware->Software->version }} </br>
+                            <strong>Fecha de Expiración: </strong>{{ $computadorasSoftware->Software->expira }} </br>
                         </div>
                         <div class="form-group">
-                            <strong>Id Computadora:</strong>
-                            {{ $computadorasSoftware->id_computadora }}
+                            <strong>Info Computadora:</strong>
+                            {{ $computadorasSoftware->Computadora->ip_172 }}
                         </div>
 
                     </div>

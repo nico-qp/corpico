@@ -31,7 +31,7 @@ Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class
 Route::resource('condiciones', App\Http\Controllers\CondicioneController::class);
 Route::resource('computadoras-impresoras', App\Http\Controllers\ComputadorasImpresoraController::class);
 Route::resource('consumibles', App\Http\Controllers\ConsumibleController::class);
-Route::resource('computadoras-softwares', App\Http\Controllers\PcProgramaController::class);
+Route::resource('computadoras-softwares', App\Http\Controllers\ComputadorasSoftwareController::class);
 Route::resource('softwares', App\Http\Controllers\SoftwareController::class);
 Route::resource('ubicaciones', App\Http\Controllers\UbicacioneController::class);
 Route::resource('tipo-consumibles', App\Http\Controllers\TipoConsumibleController::class);

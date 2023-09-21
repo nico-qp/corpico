@@ -34,7 +34,7 @@ class ComputadorasSoftware extends Model
      * @var array
      */
     protected $fillable = ['id_software','id_computadora'];
-
+    protected $table = 'computadoras_softwares';
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasOne

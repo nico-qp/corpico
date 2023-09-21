@@ -17,7 +17,7 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('computadoras-software.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('computadoras-softwares.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,24 +36,24 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Software</th>
-										<th>Id Computadora</th>
+										<th>Software</th>
+										<th>Ip Computadora</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($computadorasSoftware as $computadorasSoftware)
+                                    @foreach ($computadorasSoftwares as $computadorasSoftware)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $computadorasSoftware->id_software }}</td>
-											<td>{{ $computadorasSoftware->id_computadora }}</td>
+											<td>{{ $computadorasSoftware->Software->nombre }}</td>
+											<td>{{ $computadorasSoftware->Computadora->ip_172 }}</td>
 
                                             <td>
-                                                <form action="{{ route('computadoras-software.destroy',$computadorasSoftware->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('computadoras-software.show',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('computadoras-software.edit',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('computadoras-softwares.destroy',$computadorasSoftware->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('computadoras-softwares.show',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('computadoras-softwares.edit',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -66,7 +66,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $computadorasSoftware->links() !!}
+                {!! $computadorasSoftwares->links() !!}
             </div>
         </div>
     </div>

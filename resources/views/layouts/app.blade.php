@@ -58,6 +58,9 @@
                             <a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('computadoras-softwares.index') }}">Computadoras-soft</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a>
                         </li>
                         <li class="nav-item">

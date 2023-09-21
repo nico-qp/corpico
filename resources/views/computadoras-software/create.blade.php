@@ -16,7 +16,7 @@
                         <span class="card-title">{{ __('Create') }} Computadoras Software</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('computadoras-software.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('computadoras-softwares.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('computadoras-software.form')

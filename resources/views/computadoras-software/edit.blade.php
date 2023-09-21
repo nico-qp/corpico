@@ -16,7 +16,7 @@
                         <span class="card-title">{{ __('Update') }} Computadoras Software</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('computadoras-software.update', $computadorasSoftware->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('computadoras-softwares.update', $computadorasSoftware->id) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

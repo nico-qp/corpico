@@ -49,8 +49,8 @@
                             {{ $impresora->autonomia_resma }}
                         </div>
                         <div class="form-group">
-                            <strong>Stock:</strong>
-                            {{ $impresora->stock }}
+                            <strong>Id Estado:</strong>
+                            {{ $impresora->id_estado }}
                         </div>
                         <div class="form-group">
                             <strong>Observaciones:</strong>

@@ -7,6 +7,7 @@ use App\Models\UsuariosWindow;
 use App\Models\User;
 use App\Models\Condicione;
 use App\Models\Sectore;
+use App\Models\Estado;
 use Illuminate\Http\Request;
 
 /**
@@ -40,7 +41,8 @@ class ComputadoraController extends Controller
         $usuario_gea = User::Pluck('user','id');
         $condicion = Condicione::Pluck('descripcion','id');
         $sector = Sectore::Pluck('nombre','id');
-        return view('computadora.create', compact('computadora','usuario_win','usuario_gea','condicion','sector'));
+        $estado = Estado::Pluck('descripcion','id');
+        return view('computadora.create', compact('computadora','usuario_win','usuario_gea','condicion','sector','estado'));
     }
 
     /**
@@ -86,8 +88,9 @@ class ComputadoraController extends Controller
         $usuario_gea = User::Pluck('user','id');
         $condicion = Condicione::Pluck('descripcion','id');
         $sector = Sectore::Pluck('nombre','id');
+        $estado = Estado::Pluck('descripcion','id');
 
-        return view('computadora.edit', compact('computadora','usuario_win','usuario_gea','condicion','sector'));
+        return view('computadora.edit', compact('computadora','usuario_win','usuario_gea','condicion','sector','estado'));
     }
 
     /**

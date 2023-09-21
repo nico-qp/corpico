@@ -33,7 +33,8 @@ class CreateComputadorasTable extends Migration
             $table->String('so');
             $table->String('marca');
             $table->String('observaciones');
-            $table->boolean('stock');
+            $table->unsignedBigInteger('id_estado');
+            $table->foreign('id_estado')->references('id')->on('estados')->onDelete('cascade');
             $table->timestamps();
         });
     }

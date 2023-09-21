@@ -43,7 +43,7 @@
 										<th>Conectividad</th>
 										<th>Ip</th>
 										<th>Autonomia Resma</th>
-										<th>Stock</th>
+										<th>Id Estado</th>
 										<th>Observaciones</th>
 
                                         <th></th>
@@ -61,7 +61,7 @@
 											<td>{{ $impresora->conectividad }}</td>
 											<td>{{ $impresora->ip }}</td>
 											<td>{{ $impresora->autonomia_resma }}</td>
-											<td>{{ $impresora->stock }}</td>
+											<td>{{ $impresora->id_estado }}</td>
 											<td>{{ $impresora->observaciones }}</td>
 
                                             <td>

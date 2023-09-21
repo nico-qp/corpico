@@ -3,12 +3,12 @@
         
         <div class="form-group">
             {{ Form::label('id_sector') }}
-            {{ Form::select('id_sector', $sector, $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
+            {{ Form::select('id_sector', $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
             {!! $errors->first('id_sector', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_criticidad') }}
-            {{ Form::select('id_criticidad', $criticidades, $impresora->id_criticidad, ['class' => 'form-control' . ($errors->has('id_criticidad') ? ' is-invalid' : ''), 'placeholder' => 'Id Criticidad']) }}
+            {{ Form::text('id_criticidad', $impresora->id_criticidad, ['class' => 'form-control' . ($errors->has('id_criticidad') ? ' is-invalid' : ''), 'placeholder' => 'Id Criticidad']) }}
             {!! $errors->first('id_criticidad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -37,9 +37,9 @@
             {!! $errors->first('autonomia_resma', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('stock') }}
-            {{ Form::text('stock', $impresora->stock, ['class' => 'form-control' . ($errors->has('stock') ? ' is-invalid' : ''), 'placeholder' => 'Stock']) }}
-            {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('id_estado') }}
+            {{ Form::select('id_estado', $estado, $impresora->id_estado, ['class' => 'form-control' . ($errors->has('id_estado') ? ' is-invalid' : ''), 'placeholder' => 'Id Estado']) }}
+            {!! $errors->first('id_estado', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('observaciones') }}

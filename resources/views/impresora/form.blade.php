@@ -3,12 +3,12 @@
         
         <div class="form-group">
             {{ Form::label('id_sector') }}
-            {{ Form::select('id_sector', $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
+            {{ Form::select('id_sector', $sector, $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Id Sector']) }}
             {!! $errors->first('id_sector', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('id_criticidad') }}
-            {{ Form::text('id_criticidad', $impresora->id_criticidad, ['class' => 'form-control' . ($errors->has('id_criticidad') ? ' is-invalid' : ''), 'placeholder' => 'Id Criticidad']) }}
+            {{ Form::select('id_criticidad', $criticidades, $impresora->id_criticidad, ['class' => 'form-control' . ($errors->has('id_criticidad') ? ' is-invalid' : ''), 'placeholder' => 'Id Criticidad']) }}
             {!! $errors->first('id_criticidad', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

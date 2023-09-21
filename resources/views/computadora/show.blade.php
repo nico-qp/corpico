@@ -21,12 +21,12 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Usuario Window:</strong>
-                            {{ $computadora->id_usuario_window }}
+                            <strong>Usuario Window:</strong>
+                            {{ $computadora->UsuariosWindow->usuario }}
                         </div>
                         <div class="form-group">
-                            <strong>Id User:</strong>
-                            {{ $computadora->id_user }}
+                            <strong>usuario:</strong>
+                            {{ $computadora->user->name }}
                         </div>
                         <div class="form-group">
                             <strong>Id Condicion:</strong>

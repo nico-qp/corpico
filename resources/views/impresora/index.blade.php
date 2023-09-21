@@ -36,14 +36,14 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Sector</th>
-										<th>Id Criticidad</th>
+										<th>Sector</th>
+										<th>Criticidad</th>
 										<th>Marca</th>
 										<th>Modelo</th>
 										<th>Conectividad</th>
 										<th>Ip</th>
 										<th>Autonomia Resma</th>
-										<th>Id Estado</th>
+										<th>Estado</th>
 										<th>Observaciones</th>
 
                                         <th></th>
@@ -54,14 +54,14 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $impresora->id_sector }}</td>
-											<td>{{ $impresora->id_criticidad }}</td>
+											<td>{{ $impresora->sectore->nombre }}</td>
+											<td>{{ $impresora->criticidade->descripcion }}</td>
 											<td>{{ $impresora->marca }}</td>
 											<td>{{ $impresora->modelo }}</td>
 											<td>{{ $impresora->conectividad }}</td>
 											<td>{{ $impresora->ip }}</td>
 											<td>{{ $impresora->autonomia_resma }}</td>
-											<td>{{ $impresora->id_estado }}</td>
+											<td>{{ $impresora->estado->descripcion }}</td>
 											<td>{{ $impresora->observaciones }}</td>
 
                                             <td>

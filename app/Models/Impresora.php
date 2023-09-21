@@ -15,7 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $conectividad
  * @property $ip
  * @property $autonomia_resma
- * @property $stock
+ * @property $id_estado
  * @property $observaciones
  * @property $created_at
  * @property $updated_at
@@ -38,7 +38,7 @@ class Impresora extends Model
 		'conectividad' => 'required',
 		'ip' => 'required',
 		'autonomia_resma' => 'required',
-		'stock' => 'required',
+		'id_estado' => 'required',
 		'observaciones' => 'required',
     ];
 
@@ -49,7 +49,7 @@ class Impresora extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_sector','id_criticidad','marca','modelo','conectividad','ip','autonomia_resma','stock','observaciones'];
+    protected $fillable = ['id_sector','id_criticidad','marca','modelo','conectividad','ip','autonomia_resma','id_estado','observaciones'];
 
 
     /**
@@ -82,6 +82,10 @@ class Impresora extends Model
     public function sectore()
     {
         return $this->hasOne('App\Models\Sectore', 'id', 'id_sector');
+    }
+    public function estado()
+    {
+        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
     }
     
 

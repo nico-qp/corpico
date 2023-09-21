@@ -36,21 +36,21 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Id Usuario Window</th>
-										<th>Id User</th>
-										<th>Id Condicion</th>
-										<th>Id Sectore</th>
-										<th>Etiqueta</th>
+										<!--<th>Usuario Window</th>-->
+										<th>Usuario Geasys</th>
+										<th>Condicion</th>
+										<th>Sector</th>
+										<!--<th>Etiqueta</th>-->
 										<th>Nombre</th>
 										<th>Ip 172</th>
-										<th>Ip 10</th>
+										<!--<th>Ip 10</th>
 										<th>Mac</th>
 										<th>Procesador</th>
 										<th>Ram</th>
 										<th>So</th>
 										<th>Marca</th>
 										<th>Observaciones</th>
-										<th>Stock</th>
+										<th>Stock</th>-->
 
                                         <th></th>
                                     </tr>
@@ -60,21 +60,21 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $computadora->id_usuario_window }}</td>
-											<td>{{ $computadora->id_user }}</td>
-											<td>{{ $computadora->id_condicion }}</td>
-											<td>{{ $computadora->id_sectore }}</td>
-											<td>{{ $computadora->etiqueta }}</td>
+											<!--<td>{{ $computadora->usuarioswindow->usuario }}</td>-->
+											<td>{{ $computadora->user->user }}</td>
+											<td>{{ $computadora->condicione->descripcion }}</td>
+											<td>{{ $computadora->sectore->nombre }}</td>
+											<!--<td>{{ $computadora->etiqueta }}</td>-->
 											<td>{{ $computadora->nombre }}</td>
 											<td>{{ $computadora->ip_172 }}</td>
-											<td>{{ $computadora->ip_10 }}</td>
+											<!--<td>{{ $computadora->ip_10 }}</td>
 											<td>{{ $computadora->mac }}</td>
 											<td>{{ $computadora->procesador }}</td>
 											<td>{{ $computadora->ram }}</td>
 											<td>{{ $computadora->so }}</td>
 											<td>{{ $computadora->marca }}</td>
 											<td>{{ $computadora->observaciones }}</td>
-											<td>{{ $computadora->stock }}</td>
+											<td>{{ $computadora->stock }}</td>-->
 
                                             <td>
                                                 <form action="{{ route('computadoras.destroy',$computadora->id) }}" method="POST">

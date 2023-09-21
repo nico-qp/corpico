@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Computadora;
+use App\Models\UsuariosWindow;
+use App\Models\User;
+use App\Models\Condicione;
+use App\Models\Sectore;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +36,11 @@ class ComputadoraController extends Controller
     public function create()
     {
         $computadora = new Computadora();
-        return view('computadora.create', compact('computadora'));
+        $usuario_win = UsuariosWindow::Pluck('usuario','id');
+        $usuario_gea = User::Pluck('user','id');
+        $condicion = Condicione::Pluck('descripcion','id');
+        $sector = Sectore::Pluck('nombre','id');
+        return view('computadora.create', compact('computadora','usuario_win','usuario_gea','condicion','sector'));
     }
 
     /**
@@ -73,8 +81,13 @@ class ComputadoraController extends Controller
     public function edit($id)
     {
         $computadora = Computadora::find($id);
+        
+        $usuario_win = UsuariosWindow::Pluck('usuario','id');
+        $usuario_gea = User::Pluck('user','id');
+        $condicion = Condicione::Pluck('descripcion','id');
+        $sector = Sectore::Pluck('nombre','id');
 
-        return view('computadora.edit', compact('computadora'));
+        return view('computadora.edit', compact('computadora','usuario_win','usuario_gea','condicion','sector'));
     }
 
     /**

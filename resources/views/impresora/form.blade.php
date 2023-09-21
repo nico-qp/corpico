@@ -37,9 +37,9 @@
             {!! $errors->first('autonomia_resma', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('stock') }}
-            {{ Form::text('stock', $impresora->stock, ['class' => 'form-control' . ($errors->has('stock') ? ' is-invalid' : ''), 'placeholder' => 'Stock']) }}
-            {!! $errors->first('stock', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('id_estado') }}
+            {{ Form::select('id_estado', $estado, $impresora->id_estado, ['class' => 'form-control' . ($errors->has('id_estado') ? ' is-invalid' : ''), 'placeholder' => 'Id Estado']) }}
+            {!! $errors->first('id_estado', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
             {{ Form::label('observaciones') }}

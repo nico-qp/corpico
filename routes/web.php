@@ -37,3 +37,4 @@ Route::resource('ubicaciones', App\Http\Controllers\UbicacioneController::class)
 Route::resource('tipo-consumibles', App\Http\Controllers\TipoConsumibleController::class);
 Route::resource('criticidades', App\Http\Controllers\CriticidadeController::class);
 Route::resource('consumibles_impresoras', App\Http\Controllers\ConsumiblesImpresoraController::class);
+Route::resource('estados', App\Http\Controllers\EstadoController::class);

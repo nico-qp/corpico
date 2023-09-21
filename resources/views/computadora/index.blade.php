@@ -13,12 +13,12 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Computadoras') }}
+                                {{ __('Computadora') }}
                             </span>
 
                              <div class="float-right">
                                 <a href="{{ route('computadoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear nueva') }}
+                                  {{ __('Create New') }}
                                 </a>
                               </div>
                         </div>
@@ -37,20 +37,20 @@
                                         <th>No</th>
                                         
 										<!--<th>Usuario Window</th>-->
-										<th>Usuario Geasys</th>
+										<th>User</th>
 										<th>Condicion</th>
-										<th>Sector</th>
+										<th>Sectore</th>
 										<!--<th>Etiqueta</th>-->
-										<th>Nombre</th>
+										<!--<th>Nombre</th>-->
 										<th>Ip 172</th>
-										<!--<th>Ip 10</th>
-										<th>Mac</th>
-										<th>Procesador</th>
-										<th>Ram</th>
-										<th>So</th>
-										<th>Marca</th>
-										<th>Observaciones</th>
-										<th>Stock</th>-->
+										<th>Ip 10</th>
+										<!--<th>Mac</th>-->
+										<!--<th>Procesador</th>-->
+										<!--<th>Ram</th>-->
+										<!--<th>So</th>-->
+										<!--<th>Marca</th>-->
+										<!--<th>Observaciones</th>-->
+										<th>Estado</th>
 
                                         <th></th>
                                     </tr>
@@ -60,21 +60,21 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<!--<td>{{ $computadora->usuarioswindow->usuario }}</td>-->
-											<td>{{ $computadora->user->user }}</td>
+											<!--<td>{{ $computadora->UsuariosWindow->usuario }}</td>-->
+											<td>{{ $computadora->user->name }}</td>
 											<td>{{ $computadora->condicione->descripcion }}</td>
 											<td>{{ $computadora->sectore->nombre }}</td>
 											<!--<td>{{ $computadora->etiqueta }}</td>-->
-											<td>{{ $computadora->nombre }}</td>
+											<!--<td>{{ $computadora->nombre }}</td>-->
 											<td>{{ $computadora->ip_172 }}</td>
-											<!--<td>{{ $computadora->ip_10 }}</td>
-											<td>{{ $computadora->mac }}</td>
-											<td>{{ $computadora->procesador }}</td>
-											<td>{{ $computadora->ram }}</td>
-											<td>{{ $computadora->so }}</td>
-											<td>{{ $computadora->marca }}</td>
-											<td>{{ $computadora->observaciones }}</td>
-											<td>{{ $computadora->stock }}</td>-->
+											<td>{{ $computadora->ip_10 }}</td>
+											<!--<td>{{ $computadora->mac }}</td>-->
+											<!--<td>{{ $computadora->procesador }}</td>-->
+											<!--<td>{{ $computadora->ram }}</td>-->
+											<!--<td>{{ $computadora->so }}</td>-->
+											<!--<td>{{ $computadora->marca }}</td>-->
+											<!--<td>{{ $computadora->observaciones }}</td>-->
+											<td>{{ $computadora->estado->descripcion }}</td>
 
                                             <td>
                                                 <form action="{{ route('computadoras.destroy',$computadora->id) }}" method="POST">

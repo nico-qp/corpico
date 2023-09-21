@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Impresora
+    Estado
 @endsection
 
 @section('content')
@@ -13,11 +13,11 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Impresora') }}
+                                {{ __('Estado') }}
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
+                                <a href="{{ route('estados.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Create New') }}
                                 </a>
                               </div>
@@ -36,38 +36,22 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Sector</th>
-										<th>Criticidad</th>
-										<th>Marca</th>
-										<th>Modelo</th>
-										<th>Conectividad</th>
-										<th>Ip</th>
-										<th>Autonomia Resma</th>
-										<th>Estado</th>
-										<th>Observaciones</th>
+										<th>Descripcion</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($impresoras as $impresora)
+                                    @foreach ($estados as $estado)
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $impresora->sectore->nombre }}</td>
-											<td>{{ $impresora->criticidade->descripcion }}</td>
-											<td>{{ $impresora->marca }}</td>
-											<td>{{ $impresora->modelo }}</td>
-											<td>{{ $impresora->conectividad }}</td>
-											<td>{{ $impresora->ip }}</td>
-											<td>{{ $impresora->autonomia_resma }}</td>
-											<td>{{ $impresora->estado->descripcion }}</td>
-											<td>{{ $impresora->observaciones }}</td>
+											<td>{{ $estado->descripcion }}</td>
 
                                             <td>
-                                                <form action="{{ route('impresoras.destroy',$impresora->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('impresoras.show',$impresora->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('impresoras.edit',$impresora->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('estados.destroy',$estado->id) }}" method="POST">
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('estados.show',$estado->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('estados.edit',$estado->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
@@ -80,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $impresoras->links() !!}
+                {!! $estados->links() !!}
             </div>
         </div>
     </div>

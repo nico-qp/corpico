@@ -24,7 +24,8 @@ class CreateImpresorasTable extends Migration
             $table->String('conectividad');
             $table->String('ip');
             $table->String('autonomia_resma');
-            $table->boolean('stock');
+            $table->unsignedBigInteger('id_estado');
+            $table->foreign('id_estado')->references('id')->on('estados')->onDelete('cascade');
             $table->String('observaciones');
             $table->timestamps();
         });

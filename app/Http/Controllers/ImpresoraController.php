@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Impresora;
 use App\Models\Criticidade;
 use App\Models\Sectore;
+use App\Models\Estado;
 use Illuminate\Http\Request;
 
 /**
@@ -36,7 +37,8 @@ class ImpresoraController extends Controller
         $impresora = new Impresora();
         $criticidades = Criticidade::Pluck('descripcion','id');
         $sector = Sectore::Pluck('nombre','id');
-        return view('impresora.create', compact('impresora','criticidades','sector'));
+        $estado = Estado::Pluck('descripcion','id');
+        return view('impresora.create', compact('impresora','criticidades','sector','estado'));
     }
 
     /**
@@ -79,7 +81,8 @@ class ImpresoraController extends Controller
         $impresora = Impresora::find($id);
         $criticidades = Criticidade::Pluck('descripcion','id');
         $sector = Sectore::Pluck('nombre','id');
-        return view('impresora.edit', compact('impresora','criticidades', 'sector'));
+        $estado = Estado::Pluck('descripcion','id');
+        return view('impresora.edit', compact('impresora','criticidades', 'sector','estado'));
     }
 
     /**

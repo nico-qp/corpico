@@ -22,7 +22,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property $so
  * @property $marca
  * @property $observaciones
- * @property $stock
+ * @property $id_estado
  * @property $created_at
  * @property $updated_at
  *
@@ -53,7 +53,7 @@ class Computadora extends Model
 		'so' => 'required',
 		'marca' => 'required',
 		'observaciones' => 'required',
-		'stock' => 'required',
+		'id_estado' => 'required',
     ];
 
     protected $perPage = 20;
@@ -63,7 +63,7 @@ class Computadora extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_usuario_window','id_user','id_condicion','id_sectore','etiqueta','nombre','ip_172','ip_10','mac','procesador','ram','so','marca','observaciones','stock'];
+    protected $fillable = ['id_usuario_window','id_user','id_condicion','id_sectore','etiqueta','nombre','ip_172','ip_10','mac','procesador','ram','so','marca','observaciones','id_estado'];
 
 
     /**
@@ -113,6 +113,9 @@ class Computadora extends Model
     {
         return $this->hasOne('App\Models\UsuariosWindow', 'id', 'id_usuario_window');
     }
-    
+    public function estado()
+    {
+        return $this->hasOne('App\Models\Estado', 'id', 'id_estado');
+    }
 
 }

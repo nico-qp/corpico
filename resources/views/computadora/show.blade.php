@@ -22,26 +22,26 @@
                         
                         <div class="form-group">
                             <strong>Usuario Window:</strong>
-                            {{ $computadora->usuarioswindow->usuario }}
+                            {{ $computadora->UsuariosWindow->usuario }}
                         </div>
                         <div class="form-group">
-                            <strong>Usuario Geasys:</strong>
-                            {{ $computadora->User->user }}
+                            <strong>usuario:</strong>
+                            {{ $computadora->user->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Condicion:</strong>
-                            {{ $computadora->condicione->descripcion }}
+                            <strong>Id Condicion:</strong>
+                            {{ $computadora->id_condicion }}
                         </div>
                         <div class="form-group">
-                            <strong>Sector:</strong>
-                            {{ $computadora->sectore->nombre }}
+                            <strong>Id Sectore:</strong>
+                            {{ $computadora->id_sectore }}
                         </div>
                         <div class="form-group">
                             <strong>Etiqueta:</strong>
                             {{ $computadora->etiqueta }}
                         </div>
                         <div class="form-group">
-                            <strong>Nombre del PC:</strong>
+                            <strong>Nombre:</strong>
                             {{ $computadora->nombre }}
                         </div>
                         <div class="form-group">
@@ -77,8 +77,8 @@
                             {{ $computadora->observaciones }}
                         </div>
                         <div class="form-group">
-                            <strong>Stock:</strong>
-                            {{ $computadora->stock }}
+                            <strong>Id Estado:</strong>
+                            {{ $computadora->id_estado }}
                         </div>
 
                     </div>

@@ -21,12 +21,35 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Computadora:</strong>
-                            {{ $computadorasImpresora->id_computadora }}
+                            <strong>Computadora:</strong>
+                            <br><br>
+                            <strong>Usuario Geasys:</strong>
+                            {{ $computadorasImpresora->computadora->User->name }}
+                            <br>
+                            <strong>IP 10:</strong>
+                            {{ $computadorasImpresora->computadora->ip_10 }}
+                            <br>
+                            <strong>IP 172:</strong>
+                            {{ $computadorasImpresora->computadora->ip_172 }}
+                            <br>
+                            <strong>MAC:</strong>
+                            {{ $computadorasImpresora->computadora->mac }}
+                            <br><br>
                         </div>
                         <div class="form-group">
-                            <strong>Id Impresora:</strong>
-                            {{ $computadorasImpresora->id_impresora }}
+                            <strong>Sector:<strong>
+                            {{ $computadorasImpresora->computadora->sectore->nombre }}
+                        </div>
+                        <div class="form-group">
+                            <br><br>
+                            <strong>impresora:</strong>
+                            <br><br>
+                            <strong>IP:</strong>
+                            {{ $computadorasImpresora->impresora->ip }}
+                            <br>
+                            <strong>Criticidad:</strong>
+                            {{ $computadorasImpresora->impresora->criticidade->descripcion }}
+                            
                         </div>
 
                     </div>

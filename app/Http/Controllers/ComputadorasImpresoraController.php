@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ComputadorasImpresora;
+use App\Models\Computadora;
+use App\Models\Impresora;
 use Illuminate\Http\Request;
 
 /**
@@ -32,7 +34,9 @@ class ComputadorasImpresoraController extends Controller
     public function create()
     {
         $computadorasImpresora = new ComputadorasImpresora();
-        return view('computadoras-impresora.create', compact('computadorasImpresora'));
+        $computadora = Computadora::Pluck('ip_172','id');
+        $impresora = Impresora::Pluck('ip','id');
+        return view('computadoras-impresora.create', compact('computadorasImpresora','computadora','impresora'));
     }
 
     /**
@@ -73,8 +77,9 @@ class ComputadorasImpresoraController extends Controller
     public function edit($id)
     {
         $computadorasImpresora = ComputadorasImpresora::find($id);
-
-        return view('computadoras-impresora.edit', compact('computadorasImpresora'));
+        $computadora = Computadora::Pluck('ip_172','id');
+        $impresora = Impresora::Pluck('ip','id');
+        return view('computadoras-impresora.edit', compact('computadorasImpresora','computadora','impresora'));
     }
 
     /**

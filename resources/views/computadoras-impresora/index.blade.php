@@ -47,8 +47,8 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $computadorasImpresora->id_computadora }}</td>
-											<td>{{ $computadorasImpresora->id_impresora }}</td>
+											<td>{{ $computadorasImpresora->computadora->ip_172 }}</td>
+											<td>{{ $computadorasImpresora->impresora->ip }}</td>
 
                                             <td>
                                                 <form action="{{ route('computadoras-impresoras.destroy',$computadorasImpresora->id) }}" method="POST">

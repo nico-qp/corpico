@@ -17,8 +17,14 @@
                             </span>
 
                              <div class="float-right">
+                                <a href="{{ route('computadoras-impresoras.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                  {{ __('Ver impresoras asignadas') }}
+                                </a>
+                                <a href="{{ route('consumibles_impresoras.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                  {{ __('Ver consumibles asignados') }}
+                                </a>
                                 <a href="{{ route('impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nueva') }}
                                 </a>
                               </div>
                         </div>

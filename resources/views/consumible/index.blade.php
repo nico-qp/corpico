@@ -17,8 +17,11 @@
                             </span>
 
                              <div class="float-right">
+                                <a href="{{ route('consumibles_impresoras.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                  {{ __('Ver consumibles asignados') }}
+                                </a>
                                 <a href="{{ route('consumibles.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear nueva') }}
+                                  {{ __('Crear nuevo') }}
                                 </a>
                               </div>
                         </div>

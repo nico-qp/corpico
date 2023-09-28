@@ -3,9 +3,14 @@
         
         <div class="form-group">
             {{ Form::label('id_ubicacion') }}
-            {{ Form::select('id_ubicacion', $ubicacion, $sectore->id_ubicacion, ['class' => 'form-control' . ($errors->has('id_ubicacion') ? ' is-invalid' : ''), 'placeholder' => 'Id Ubicacion']) }}
-            {!! $errors->first('id_ubicacion', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::select('id', $ubicaciones, Ubicacione->id, ['class' => 'form-control' . ($errors->has('id') ? ' is-invalid' : ''), 'placeholder' => 'Id Ubicacion']) }}
+            {!! $errors->first('id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
+        <!--<select name="id_ubicacion" id="input-role" required="true" aria-required="true" placeholder="id ubicacion">
+            @foreach ( $ubicaciones as $ubicacion)
+                <option value="{{ $ubicacion->id }}">{{ $ubicacion->edificio + $ubicacion->piso}}</option>
+            @endforeach
+        </select>-->
         <div class="form-group">
             {{ Form::label('nombre') }}
             {{ Form::text('nombre', $sectore->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}

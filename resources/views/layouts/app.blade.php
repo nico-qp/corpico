@@ -57,18 +57,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a>
                         </li>
-                        <li class="nav-item">
+                       <!-- <li class="nav-item">
                             <a class="nav-link" href="{{ route('computadoras-softwares.index') }}">Computadoras-soft</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="{{ route('ubicaciones.index') }}">ubicaciones</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('usos.index') }}">Usos</a>
                         </li>
@@ -84,18 +84,18 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('usuarios-window.index') }}">usuarios windows</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="{{ route('tipo-consumibles.index') }}">tipo consumibles</a>
-                        </li>
-                        <li class="nav-item">
+                        </li>-->
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="{{ route('computadoras-impresoras.index') }}">computadoras impresoras</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('criticidades.index') }}">criticidades</a>
                         </li>
-                        <li class="nav-item">
+                        <!--<li class="nav-item">
                             <a class="nav-link" href="{{ route('consumibles_impresoras.index') }}">consumibles impresoras</a>
-                        </li>
+                        </li>-->
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('estados.index') }}">Estados</a>
                         </li>

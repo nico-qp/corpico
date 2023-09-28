@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\ComputadorasSoftware;
+use App\Models\Software;
+use App\Models\Computadora;
 use Illuminate\Http\Request;
 
 /**
@@ -18,10 +20,10 @@ class ComputadorasSoftwareController extends Controller
      */
     public function index()
     {
-        $computadorasSoftware = ComputadorasSoftware::paginate();
+        $computadorasSoftwares = ComputadorasSoftware::paginate();
 
-        return view('computadoras-software.index', compact('computadorasSoftware'))
-            ->with('i', (request()->input('page', 1) - 1) * $computadorasSoftware->perPage());
+        return view('computadoras-software.index', compact('computadorasSoftwares'))
+            ->with('i', (request()->input('page', 1) - 1) * $computadorasSoftwares->perPage());
     }
 
     /**
@@ -32,7 +34,9 @@ class ComputadorasSoftwareController extends Controller
     public function create()
     {
         $computadorasSoftware = new ComputadorasSoftware();
-        return view('computadoras-software.create', compact('computadorasSoftware'));
+        $computadora = Computadora::Pluck('ip_172','id');
+        $software = Software::Pluck('nombre','id');
+        return view('computadoras-software.create', compact('computadorasSoftware', 'computadora', 'software'));
     }
 
     /**
@@ -47,7 +51,7 @@ class ComputadorasSoftwareController extends Controller
 
         $computadorasSoftware = ComputadorasSoftware::create($request->all());
 
-        return redirect()->route('computadoras-software.index')
+        return redirect()->route('computadoras-softwares.index')
             ->with('success', 'ComputadorasSoftware created successfully.');
     }
 
@@ -73,8 +77,10 @@ class ComputadorasSoftwareController extends Controller
     public function edit($id)
     {
         $computadorasSoftware = ComputadorasSoftware::find($id);
+        $computadora = Computadora::Pluck('ip_172','id');
+        $software = Software::Pluck('nombre','id');
 
-        return view('computadoras-software.edit', compact('computadorasSoftware'));
+        return view('computadoras-software.edit', compact('computadorasSoftware', 'computadora', 'software'));
     }
 
     /**
@@ -90,7 +96,7 @@ class ComputadorasSoftwareController extends Controller
 
         $computadorasSoftware->update($request->all());
 
-        return redirect()->route('computadoras-software.index')
+        return redirect()->route('computadoras-softwares.index')
             ->with('success', 'ComputadorasSoftware updated successfully');
     }
 
@@ -103,7 +109,7 @@ class ComputadorasSoftwareController extends Controller
     {
         $computadorasSoftware = ComputadorasSoftware::find($id)->delete();
 
-        return redirect()->route('computadoras-software.index')
+        return redirect()->route('computadoras-softwares.index')
             ->with('success', 'ComputadorasSoftware deleted successfully');
     }
 }

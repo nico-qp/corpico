@@ -15,10 +15,12 @@
                             <span id="card_title">
                                 {{ __('Sectore') }}
                             </span>
-
                              <div class="float-right">
+                                <a href="{{ route('ubicaciones.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                  {{ __('Ubicaciones') }}
+                                </a>
                                 <a href="{{ route('sectores.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nuevo') }}
                                 </a>
                               </div>
                         </div>

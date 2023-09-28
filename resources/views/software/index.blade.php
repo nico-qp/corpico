@@ -17,8 +17,11 @@
                             </span>
 
                              <div class="float-right">
+                                <a href="{{ route('computadoras-softwares.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
+                                  {{ __('Ver softwares asignados') }}
+                                </a>
                                 <a href="{{ route('softwares.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('Crear nuevo') }}
                                 </a>
                               </div>
                         </div>

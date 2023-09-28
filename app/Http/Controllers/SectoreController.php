@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Sectore;
 use App\Models\Ubicacione;
+use Illuminate\Support\Facades\DB;
+
 use Illuminate\Http\Request;
 
 /**
@@ -33,8 +35,9 @@ class SectoreController extends Controller
     public function create()
     {
         $sectore = new Sectore();
-        $ubicacion = Ubicacione::Pluck('edificio','id');
-        return view('sectore.create', compact('sectore', 'ubicacion'));
+        /*$ubicacion = Ubicacione::Pluck('edificio','id');*/
+        $ubicaciones = DB::select("SELECT id, edificio, piso  FROM ubicaciones");
+        return view('sectore.create', compact('sectore', 'ubicaciones'));
     }
 
     /**

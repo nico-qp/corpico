@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('computadoras-impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear nueva') }}
+                                  {{ __('Asignar impresora a pc') }}
                                 </a>
                               </div>
                         </div>

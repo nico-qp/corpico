@@ -27,7 +27,7 @@
             {!! $errors->first('etiqueta', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('nombre') }}
+            {{ Form::label('nombre del dispositivo') }}
             {{ Form::text('nombre', $computadora->nombre, ['class' => 'form-control' . ($errors->has('nombre') ? ' is-invalid' : ''), 'placeholder' => 'Nombre']) }}
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>

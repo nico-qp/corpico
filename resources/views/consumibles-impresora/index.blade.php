@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('consumibles_impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                  {{ __('asignar consumible a impresora') }}
                                 </a>
                               </div>
                         </div>

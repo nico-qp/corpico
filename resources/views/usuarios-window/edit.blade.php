@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Usuarios Window</span>
+                        <span class="card-title">{{ __('Editar') }} Usuario</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('usuarios-window.update', $usuariosWindow->id) }}"  role="form" enctype="multipart/form-data">

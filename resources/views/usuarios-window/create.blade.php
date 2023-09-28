@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Usuarios Window</span>
+                        <span class="card-title">{{ __('Cargar') }} un Usuario de Windows</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('usuarios-window.store') }}"  role="form" enctype="multipart/form-data">

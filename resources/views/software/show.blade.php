@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Software</span>
+                            <span class="card-title">{{ __('Info.') }} de Software</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('softwares.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('softwares.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -25,11 +25,11 @@
                             {{ $software->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Version:</strong>
+                            <strong>Versión:</strong>
                             {{ $software->version }}
                         </div>
                         <div class="form-group">
-                            <strong>Expira:</strong>
+                            <strong>Fecha de expiración:</strong>
                             {{ $software->expira }}
                         </div>
 

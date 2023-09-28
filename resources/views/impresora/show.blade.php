@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Impresora</span>
+                            <span class="card-title">{{ __('Info.') }} de Impresora</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('impresoras.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('impresoras.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -22,11 +22,11 @@
                         
                         <div class="form-group">
                             <strong>Id Sector:</strong>
-                            {{ $impresora->id_sector }}
+                            {{ $impresora->Sector }}
                         </div>
                         <div class="form-group">
                             <strong>Id Criticidad:</strong>
-                            {{ $impresora->id_criticidad }}
+                            {{ $impresora->Criticidad }}
                         </div>
                         <div class="form-group">
                             <strong>Marca:</strong>
@@ -49,8 +49,8 @@
                             {{ $impresora->autonomia_resma }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Estado:</strong>
-                            {{ $impresora->id_estado }}
+                            <strong>Estado:</strong>
+                            {{ $impresora->Estado->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Observaciones:</strong>

@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Tipo Consumible</span>
+                            <span class="card-title">{{ __('Info.') }} del Consumible</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('tipo-consumibles.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('tipo-consumibles.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 

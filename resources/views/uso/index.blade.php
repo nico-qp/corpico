@@ -54,11 +54,11 @@
 
                                             <td>
                                                 <form action="{{ route('usos.destroy',$uso->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('usos.show',$uso->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('usos.edit',$uso->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('usos.show',$uso->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver más') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('usos.edit',$uso->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

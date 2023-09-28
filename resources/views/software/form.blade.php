@@ -7,8 +7,8 @@
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('version') }}
-            {{ Form::text('version', $software->version, ['class' => 'form-control' . ($errors->has('version') ? ' is-invalid' : ''), 'placeholder' => 'Version']) }}
+            {{ Form::label('versión') }}
+            {{ Form::text('version', $software->version, ['class' => 'form-control' . ($errors->has('version') ? ' is-invalid' : ''), 'placeholder' => 'Versión']) }}
             {!! $errors->first('version', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -19,6 +19,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-primary mt-2">{{ __('Guardar') }}</button>
     </div>
 </div>

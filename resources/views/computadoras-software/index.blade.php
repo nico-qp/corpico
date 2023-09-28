@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Computadoras Software') }}
+                                {{ __('Computadora a Software') }}
                             </span>
 
                             <div class="float-right">
@@ -52,11 +52,11 @@
 
                                             <td>
                                                 <form action="{{ route('computadoras-softwares.destroy',$computadorasSoftware->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('computadoras-softwares.show',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('computadoras-softwares.edit',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('computadoras-softwares.show',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver más') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('computadoras-softwares.edit',$computadorasSoftware->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -11,21 +11,21 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Consumible</span>
+                            <span class="card-title">{{ __('Info. de') }} Consumible</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('consumibles.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('consumibles.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Uso:</strong>
+                            <strong>Uso mensual:</strong>
                             {{ $consumible->id_uso }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Tipo:</strong>
+                            <strong>Tipo:</strong>
                             {{ $consumible->id_tipo }}
                         </div>
                         <div class="form-group">

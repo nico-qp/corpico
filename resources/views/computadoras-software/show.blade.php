@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Computadoras Software</span>
+                            <span class="card-title">{{ __('Info. de') }} relación</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('computadoras-softwares.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('computadoras-softwares.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -26,6 +26,7 @@
                             <strong>versión: </strong>{{ $computadorasSoftware->Software->version }} </br>
                             <strong>Fecha de Expiración: </strong>{{ $computadorasSoftware->Software->expira }} </br>
                         </div>
+                        <br>
                         <div class="form-group">
                             <strong>Info Computadora:</strong>
                             {{ $computadorasSoftware->Computadora->ip_172 }}

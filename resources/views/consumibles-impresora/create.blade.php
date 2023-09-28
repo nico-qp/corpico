@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Consumibles Impresora</span>
+                        <span class="card-title">{{ __('Asignar') }} Consumibles a Impresora</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('consumibles_impresoras.store') }}"  role="form" enctype="multipart/form-data">

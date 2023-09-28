@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Computadora') }}
+                                {{ __('Computadoras') }}
                             </span>
 
                              <div class="float-right">
@@ -24,7 +24,7 @@
                                   {{ __('Ver impresoras asignadas') }}
                                 </a>
                                 <a href="{{ route('computadoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Crear nueva') }}
+                                  {{ __('Cargar Nueva') }}
                                 </a>
                               </div>
                         </div>
@@ -84,7 +84,7 @@
 
                                             <td>
                                                 <form action="{{ route('computadoras.destroy',$computadora->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('computadoras.show',$computadora->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Mostrar') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('computadoras.show',$computadora->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver más') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('computadoras.edit',$computadora->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')

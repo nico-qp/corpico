@@ -11,17 +11,17 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Sectore</span>
+                            <span class="card-title">{{ __('Info. de') }} Sector</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('sectores.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('sectores.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Ubicacion:</strong>
+                            <strong>Ubicacion:</strong>
                             {{ $sectore->id_ubicacion }}
                         </div>
                         <div class="form-group">

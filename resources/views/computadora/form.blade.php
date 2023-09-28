@@ -2,13 +2,13 @@
     <div class="box-body">
         
         <div class="form-group">
-            {{ Form::label('id_usuario_window') }}
-            {{ Form::select('id_usuario_window', $usuario_win, $computadora->id_usuario_window, ['class' => 'form-control' . ($errors->has('id_usuario_window') ? ' is-invalid' : ''), 'placeholder' => 'Id Usuario Window']) }}
+            {{ Form::label('usuario_window') }}
+            {{ Form::select('id_usuario_window', $usuario_win, $computadora->id_usuario_window, ['class' => 'form-control' . ($errors->has('id_usuario_window') ? ' is-invalid' : ''), 'placeholder' => 'Usuario Window']) }}
             {!! $errors->first('id_usuario_window', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_user') }}
-            {{ Form::select('id_user', $usuario_gea, $computadora->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'Id User']) }}
+            {{ Form::label('Usuario') }}
+            {{ Form::select('id_user', $usuario_gea, $computadora->id_user, ['class' => 'form-control' . ($errors->has('id_user') ? ' is-invalid' : ''), 'placeholder' => 'User']) }}
             {!! $errors->first('id_user', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
@@ -78,7 +78,7 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+    <div class="box-footer mt-2">
+        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
     </div>
 </div>

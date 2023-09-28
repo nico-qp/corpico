@@ -52,6 +52,8 @@
                                                 <form action="{{ route('criticidades.destroy',$criticidade->id) }}" method="POST">
                                                     <a class="btn btn-sm btn-primary " href="{{ route('criticidades.show',$criticidade->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver más') }}</a>
                                                     <a class="btn btn-sm btn-success" href="{{ route('criticidades.edit',$criticidade->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-primary " href="{{ route('criticidades.show',$criticidade->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver más') }}</a>
+                                                    <a class="btn btn-sm btn-success" href="{{ route('criticidades.edit',$criticidade->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>

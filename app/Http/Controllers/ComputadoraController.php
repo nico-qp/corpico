@@ -85,7 +85,7 @@ class ComputadoraController extends Controller
         $computadora = Computadora::find($id);
         
         $usuario_win = UsuariosWindow::Pluck('usuario','id');
-        $usuario_gea = User::Pluck('user','id');
+        $usuario_gea = User::Pluck('username','id');
         $condicion = Condicione::Pluck('descripcion','id');
         $sector = Sectore::Pluck('nombre','id');
         $estado = Estado::Pluck('descripcion','id');

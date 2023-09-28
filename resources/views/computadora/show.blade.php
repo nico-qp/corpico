@@ -11,10 +11,10 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Computadora</span>
+                            <span class="card-title">{{ __('Info. de') }} Computadora</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('computadoras.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('computadoras.index') }}"> {{ __('Volver') }}</a>
                         </div>
                     </div>
 
@@ -29,11 +29,11 @@
                             {{ $computadora->user->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Condicion:</strong>
+                            <strong>Condicion:</strong>
                             {{ $computadora->id_condicion }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Sectore:</strong>
+                            <strong>Sector:</strong>
                             {{ $computadora->id_sectore }}
                         </div>
                         <div class="form-group">
@@ -77,7 +77,7 @@
                             {{ $computadora->observaciones }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Estado:</strong>
+                            <strong>Estado:</strong>
                             {{ $computadora->id_estado }}
                         </div>
 

@@ -8,7 +8,7 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary mt-2">{{ __('Guardar') }}</button>
+    <div class="box-footer mt-2">
+        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
     </div>
 </div>

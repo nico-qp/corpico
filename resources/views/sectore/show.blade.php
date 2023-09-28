@@ -22,7 +22,11 @@
                         
                         <div class="form-group">
                             <strong>Ubicacion:</strong>
-                            {{ $sectore->id_ubicacion }}
+                            {{ $sectore->ubicacione->edificio }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Piso:</strong>
+                            {{ $sectore->ubicacione->piso }}
                         </div>
                         <div class="form-group">
                             <strong>Nombre:</strong>

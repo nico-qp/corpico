@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Consumible;
 use App\Models\TipoConsumible;
 use App\Models\Uso;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 /**
@@ -34,9 +35,10 @@ class ConsumibleController extends Controller
     public function create()
     {
         $consumible = new Consumible();
-        $uso = Uso::Pluck('mensual','id');
+        //$uso = Uso::Pluck('anual','id');
+        $usos = DB::select("SELECT anual, id FROM usos ORDER BY anual");
         $tipo_consumible = tipoConsumible::Pluck('nombre','id');
-        return view('consumible.create', compact('consumible', 'uso', 'tipo_consumible'));
+        return view('consumible.create', compact('consumible', 'usos', 'tipo_consumible'));
     }
 
     /**
@@ -52,7 +54,7 @@ class ConsumibleController extends Controller
         $consumible = Consumible::create($request->all());
 
         return redirect()->route('consumibles.index')
-            ->with('success', 'Consumible created successfully.');
+            ->with('success', 'Consumible creado correctamente.');
     }
 
     /**
@@ -77,10 +79,10 @@ class ConsumibleController extends Controller
     public function edit($id)
     {
         $consumible = Consumible::find($id);
-        $uso = Uso::Pluck('mensual','id');
+        $usos = DB::select("SELECT anual, id FROM usos ORDER BY anual");
         $tipo_consumible = tipoConsumible::Pluck('nombre','id');
 
-        return view('consumible.edit', compact('consumible', 'uso', 'tipo_consumible'));
+        return view('consumible.edit', compact('consumible', 'usos', 'tipo_consumible'));
     }
 
     /**
@@ -97,7 +99,7 @@ class ConsumibleController extends Controller
         $consumible->update($request->all());
 
         return redirect()->route('consumibles.index')
-            ->with('success', 'Consumible updated successfully');
+            ->with('success', 'Consumible modificado correctamente.');
     }
 
     /**
@@ -110,6 +112,6 @@ class ConsumibleController extends Controller
         $consumible = Consumible::find($id)->delete();
 
         return redirect()->route('consumibles.index')
-            ->with('success', 'Consumible deleted successfully');
+            ->with('success', 'Consumible eliminado correctamente.');
     }
 }

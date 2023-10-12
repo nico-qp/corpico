@@ -48,7 +48,7 @@ class UsoController extends Controller
         $uso = Uso::create($request->all());
 
         return redirect()->route('usos.index')
-            ->with('success', 'Uso created successfully.');
+            ->with('success', 'Uso creado correctamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class UsoController extends Controller
         $uso->update($request->all());
 
         return redirect()->route('usos.index')
-            ->with('success', 'Uso updated successfully');
+            ->with('success', 'Uso modificado correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class UsoController extends Controller
         $uso = Uso::find($id)->delete();
 
         return redirect()->route('usos.index')
-            ->with('success', 'Uso deleted successfully');
+            ->with('success', 'Uso eliminado correctamente.');
     }
 }

@@ -28,7 +28,7 @@ class Consumible extends Model
 		'id_uso' => 'required',
 		'id_tipo' => 'required',
 		'codigo' => 'required',
-		'descripcion' => 'required',
+		'descripcion',
     ];
 
     protected $perPage = 20;

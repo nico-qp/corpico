@@ -52,7 +52,7 @@ class ComputadorasSoftwareController extends Controller
         $computadorasSoftware = ComputadorasSoftware::create($request->all());
 
         return redirect()->route('computadoras-softwares.index')
-            ->with('success', 'ComputadorasSoftware created successfully.');
+            ->with('success', 'Conexión creada correctamente.');
     }
 
     /**
@@ -97,7 +97,7 @@ class ComputadorasSoftwareController extends Controller
         $computadorasSoftware->update($request->all());
 
         return redirect()->route('computadoras-softwares.index')
-            ->with('success', 'ComputadorasSoftware updated successfully');
+            ->with('success', 'conexión modificada correctamente.');
     }
 
     /**
@@ -110,6 +110,6 @@ class ComputadorasSoftwareController extends Controller
         $computadorasSoftware = ComputadorasSoftware::find($id)->delete();
 
         return redirect()->route('computadoras-softwares.index')
-            ->with('success', 'ComputadorasSoftware deleted successfully');
+            ->with('success', 'Conexión eliminada correctamente.');
     }
 }

@@ -32,14 +32,14 @@ class Impresora extends Model
     
     static $rules = [
 		'id_sector' => 'required',
-		'id_criticidad' => 'required',
+		'id_criticidad'=> 'required',
 		'marca' => 'required',
 		'modelo' => 'required',
-		'conectividad' => 'required',
-		'ip' => 'required',
-		'autonomia_resma' => 'required',
+		'conectividad',
+		'ip',
+		'autonomia_resma',
 		'id_estado' => 'required',
-		'observaciones' => 'required',
+		'observaciones',
     ];
 
     protected $perPage = 20;

@@ -48,7 +48,7 @@ class TipoConsumibleController extends Controller
         $tipoConsumible = TipoConsumible::create($request->all());
 
         return redirect()->route('tipo-consumibles.index')
-            ->with('success', 'TipoConsumible created successfully.');
+            ->with('success', 'Tipo de consumible creado correctamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class TipoConsumibleController extends Controller
         $tipoConsumible->update($request->all());
 
         return redirect()->route('tipo-consumibles.index')
-            ->with('success', 'TipoConsumible updated successfully');
+            ->with('success', 'Tipo de consumible modificado correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class TipoConsumibleController extends Controller
         $tipoConsumible = TipoConsumible::find($id)->delete();
 
         return redirect()->route('tipo-consumibles.index')
-            ->with('success', 'TipoConsumible deleted successfully');
+            ->with('success', 'Tipo de consumible eliminado correctamente.');
     }
 }

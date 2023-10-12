@@ -22,11 +22,11 @@
                         
                         <div class="form-group">
                             <strong>Id Sector:</strong>
-                            {{ $impresora->Sector }}
+                            {{ $impresora->Sectore->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Id Criticidad:</strong>
-                            {{ $impresora->Criticidad }}
+                            {{ $impresora->Criticidade->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Marca:</strong>

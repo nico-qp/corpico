@@ -48,7 +48,7 @@ class UsuariosWindowController extends Controller
         $usuariosWindow = UsuariosWindow::create($request->all());
 
         return redirect()->route('usuarios-window.index')
-            ->with('success', 'UsuariosWindow created successfully.');
+            ->with('success', 'Usuario de windows creado correctamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class UsuariosWindowController extends Controller
         $usuariosWindow->update($request->all());
 
         return redirect()->route('usuarios-window.index')
-            ->with('success', 'UsuariosWindow updated successfully');
+            ->with('success', 'Usuario de windows modificado correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class UsuariosWindowController extends Controller
         $usuariosWindow = UsuariosWindow::find($id)->delete();
 
         return redirect()->route('usuarios-window.index')
-            ->with('success', 'UsuariosWindow deleted successfully');
+            ->with('success', 'Usuario de windows eliminado correctamente.');
     }
 }

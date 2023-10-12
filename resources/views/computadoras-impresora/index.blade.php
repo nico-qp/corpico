@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Conexion entre Computadoras y impresoras') }}
+                                {{ __('Conexión entre Computadoras y impresoras') }}
                             </span>
 
                              <div class="float-right">
@@ -38,6 +38,7 @@
                                         
 										<th>Computadora</th>
 										<th>Impresora</th>
+                                        <th>sector</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +49,8 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $computadorasImpresora->computadora->ip_172 }}</td>
-											<td>{{ $computadorasImpresora->impresora->ip }}</td>
+											<td>{{ $computadorasImpresora->impresora->modelo }}</td>
+                                            <td>{{ $computadorasImpresora->computadora->sectore->nombre }}</td>
 
                                             <td>
                                                 <form action="{{ route('computadoras-impresoras.destroy',$computadorasImpresora->id) }}" method="POST">

@@ -48,7 +48,7 @@ class CondicioneController extends Controller
         $condicione = Condicione::create($request->all());
 
         return redirect()->route('condiciones.index')
-            ->with('success', 'Condicione created successfully.');
+            ->with('success', 'Condición creada correctamente.');
     }
 
     /**

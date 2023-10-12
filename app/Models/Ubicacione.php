@@ -22,7 +22,7 @@ class Ubicacione extends Model
     
     static $rules = [
 		'edificio' => 'required',
-		'piso' => 'required',
+		'piso',
     ];
 
     protected $perPage = 20;

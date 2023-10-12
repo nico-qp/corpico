@@ -21,15 +21,15 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Info Software:</strong></br>
+                            <strong class="fs-4">Info Software:</strong></br>
                             <strong>Software: </strong>{{ $computadorasSoftware->Software->nombre }} </br>
                             <strong>versión: </strong>{{ $computadorasSoftware->Software->version }} </br>
                             <strong>Fecha de Expiración: </strong>{{ $computadorasSoftware->Software->expira }} </br>
                         </div>
                         <br>
                         <div class="form-group">
-                            <strong>Info Computadora:</strong>
-                            {{ $computadorasSoftware->Computadora->ip_172 }}
+                            <strong class="fs-4">Info Computadora:</strong><br>
+                            <strong>IP: </strong>{{ $computadorasSoftware->Computadora->ip_172 }} </br>
                         </div>
 
                     </div>

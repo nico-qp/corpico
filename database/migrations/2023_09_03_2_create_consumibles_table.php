@@ -20,7 +20,7 @@ class CreateConsumiblesTable extends Migration
             $table->unsignedBigInteger('id_tipo');
             $table->foreign('id_tipo')->references('id')->on('tipo_consumibles')->onDelete('cascade');
             $table->string('codigo');
-            $table->string('descripcion');
+            $table->string('descripcion')->nullable();
             $table->timestamps();
         });
     }

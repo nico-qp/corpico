@@ -36,8 +36,8 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Codigo del consumible</th>
-										<th>IP de la impresora</th>
+										<th>Código del consumible</th>
+										<th>Modelo de la impresora</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +48,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $consumiblesImpresora->consumible->codigo }}</td>
-											<td>{{ $consumiblesImpresora->impresora->ip }}</td>
+											<td>{{ $consumiblesImpresora->impresora->modelo }}</td>
 
                                             <td>
                                                 <form action="{{ route('consumibles_impresoras.destroy',$consumiblesImpresora->id) }}" method="POST">

@@ -30,11 +30,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Condicion:</strong>
-                            {{ $computadora->id_condicion }}
+                            {{ $computadora->condicione->descripcion }}
                         </div>
                         <div class="form-group">
                             <strong>Sector:</strong>
-                            {{ $computadora->id_sectore }}
+                            {{ $computadora->sectore->nombre }}
                         </div>
                         <div class="form-group">
                             <strong>Etiqueta:</strong>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Estado:</strong>
-                            {{ $computadora->id_estado }}
+                            {{ $computadora->estado->descripcion }}
                         </div>
 
                     </div>

@@ -42,7 +42,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Uso Mensual</th>
+										<th>Uso anual</th>
 										<th>Tipo</th>
 										<th>Codigo</th>
 										<th>Descripcion</th>
@@ -55,7 +55,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $consumible->uso->mensual }}</td>
+											<td>{{ $consumible->uso->anual }}</td>
 											<td>{{ $consumible->tipoConsumible->nombre }}</td>
 											<td>{{ $consumible->codigo }}</td>
 											<td>{{ $consumible->descripcion }}</td>

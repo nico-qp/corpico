@@ -46,11 +46,11 @@
 										<th>Criticidad</th>
 										<th>Marca</th>
 										<th>Modelo</th>
-										<th>Conectividad</th>
+										<!--<th>Conectividad</th>
 										<th>Ip</th>
-										<th>Autonomia Resma</th>
+										<th>Autonomia Resma</th>-->
 										<th>Estado</th>
-										<th>Observaciones</th>
+										<!--<th>Observaciones</th>-->
 
                                         <th></th>
                                     </tr>
@@ -64,11 +64,11 @@
 											<td>{{ $impresora->criticidade->descripcion }}</td>
 											<td>{{ $impresora->marca }}</td>
 											<td>{{ $impresora->modelo }}</td>
-											<td>{{ $impresora->conectividad }}</td>
+											<!--<td>{{ $impresora->conectividad }}</td>
 											<td>{{ $impresora->ip }}</td>
-											<td>{{ $impresora->autonomia_resma }}</td>
+											<td>{{ $impresora->autonomia_resma }}</td>-->
 											<td>{{ $impresora->estado->descripcion }}</td>
-											<td>{{ $impresora->observaciones }}</td>
+											<!--<td>{{ $impresora->observaciones }}</td>-->
 
                                             <td>
                                                 <form action="{{ route('impresoras.destroy',$impresora->id) }}" method="POST">

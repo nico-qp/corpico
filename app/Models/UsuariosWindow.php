@@ -22,7 +22,7 @@ class UsuariosWindow extends Model
     
     static $rules = [
 		'usuario' => 'required',
-		'contraseña' => 'required',
+		'contraseña',
     ];
 
     protected $perPage = 20;

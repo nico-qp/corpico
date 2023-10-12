@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Impresora;
 use App\Models\Criticidade;
 use App\Models\Sectore;
+use Illuminate\Support\Facades\DB;
 use App\Models\Estado;
 use Illuminate\Http\Request;
 
@@ -36,9 +37,9 @@ class ImpresoraController extends Controller
     {
         $impresora = new Impresora();
         $criticidades = Criticidade::Pluck('descripcion','id');
-        $sector = Sectore::Pluck('nombre','id');
+        $sectores = DB::select("SELECT nombre, id FROM sectores ORDER BY id_ubicacion");
         $estado = Estado::Pluck('descripcion','id');
-        return view('impresora.create', compact('impresora','criticidades','sector','estado'));
+        return view('impresora.create', compact('impresora','criticidades','sectores','estado'));
     }
 
     /**
@@ -52,9 +53,9 @@ class ImpresoraController extends Controller
         request()->validate(Impresora::$rules);
 
         $impresora = Impresora::create($request->all());
-
+        
         return redirect()->route('impresoras.index')
-            ->with('success', 'Impresora created successfully.');
+            ->with('success', 'Impresora creada correctamente.');
     }
 
     /**
@@ -80,9 +81,9 @@ class ImpresoraController extends Controller
     {
         $impresora = Impresora::find($id);
         $criticidades = Criticidade::Pluck('descripcion','id');
-        $sector = Sectore::Pluck('nombre','id');
+        $sectores = DB::select("SELECT nombre, id FROM sectores ORDER BY id_ubicacion");
         $estado = Estado::Pluck('descripcion','id');
-        return view('impresora.edit', compact('impresora','criticidades', 'sector','estado'));
+        return view('impresora.edit', compact('impresora','criticidades', 'sectores','estado'));
     }
 
     /**
@@ -99,7 +100,7 @@ class ImpresoraController extends Controller
         $impresora->update($request->all());
 
         return redirect()->route('impresoras.index')
-            ->with('success', 'Impresora updated successfully');
+            ->with('success', 'Impresora modificada correctamente.');
     }
 
     /**
@@ -112,6 +113,6 @@ class ImpresoraController extends Controller
         $impresora = Impresora::find($id)->delete();
 
         return redirect()->route('impresoras.index')
-            ->with('success', 'Impresora deleted successfully');
+            ->with('success', 'Impresora eliminada correctamente.');
     }
 }

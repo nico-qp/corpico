@@ -48,7 +48,7 @@ class CriticidadeController extends Controller
         $criticidade = Criticidade::create($request->all());
 
         return redirect()->route('criticidades.index')
-            ->with('success', 'Criticidade created successfully.');
+            ->with('success', 'Criticidad creada correctamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class CriticidadeController extends Controller
         $criticidade->update($request->all());
 
         return redirect()->route('criticidades.index')
-            ->with('success', 'Criticidade updated successfully');
+            ->with('success', 'Criticidad modificada correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class CriticidadeController extends Controller
         $criticidade = Criticidade::find($id)->delete();
 
         return redirect()->route('criticidades.index')
-            ->with('success', 'Criticidade deleted successfully');
+            ->with('success', 'Criticidad eliminada correctamente.');
     }
 }

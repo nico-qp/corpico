@@ -1,19 +1,24 @@
 <div class="box box-info padding-1">
     <div class="box-body">
+        {{ Form::label('computadoras') }}
+        <select class="form-control{{ $errors->has('id_computadora') ? ' is-invalid' : '' }}" name="id_computadora" id="id_computadora" required="true" aria-required="true">
+            <option value="">{{ __('computadoras') }}</option>
+            @foreach ($computadoras as $computadora)
+                <option value="{{ $computadora->id }}">{{ $computadora->nombre_sector.", ".$computadora->ip_172.", ".$computadora->nombre}}</option>
+            @endforeach
+        </select>
+        {{ Form::label('impresoras') }}
+        <select class="form-control{{ $errors->has('id_impresora') ? ' is-invalid' : '' }}" name="id_impresora" id="id_impresora" required="true" aria-required="true">
+            <option value="">{{ __('impresoras') }}</option>
+            @foreach ($impresoras as $impresora)
+                <option value="{{ $impresora->id }}">{{ $impresora->nombre_sector.", ".$impresora->modelo.", ".$impresora->ip}}</option>
+            @endforeach
+        </select>
         
-        <div class="form-group">
-            {{ Form::label('computadora') }}
-            {{ Form::select('id_computadora', $computadora, $computadorasImpresora->id_computadora, ['class' => 'form-control' . ($errors->has('id_computadora') ? ' is-invalid' : ''), 'placeholder' => 'Computadora']) }}
-            {!! $errors->first('id_computadora', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
-        <div class="form-group">
-            {{ Form::label('impresora') }}
-            {{ Form::select('id_impresora', $impresora, $computadorasImpresora->id_impresora, ['class' => 'form-control' . ($errors->has('id_impresora') ? ' is-invalid' : ''), 'placeholder' => 'Impresora']) }}
-            {!! $errors->first('id_impresora', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
 
     </div>
-    <div class="box-footer mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
+    <div class="box-footer mt-3 position-relative mb-3 pb-4">
+        <button type="submit" class="btn btn-primary position-absolute top-0 start-0">{{ __('Guardar') }}</button>
+        <a class="btn btn-danger position-absolute top-0 end-0" href="{{ route('computadoras-impresoras.index') }}">{{ __('Cancelar') }}</a>
     </div>
 </div>

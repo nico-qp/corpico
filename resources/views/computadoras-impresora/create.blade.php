@@ -15,6 +15,11 @@
                     <div class="card-header">
                         <span class="card-title">{{ __('Asignar') }} Computadoras a Impresora</span>
                     </div>
+                    @if ($message = Session::get('error'))
+                        <div class="alert alert-danger">
+                            <p>{{ $message }}</p>
+                        </div>
+                    @endif
                     <div class="card-body">
                         <form method="POST" action="{{ route('computadoras-impresoras.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf

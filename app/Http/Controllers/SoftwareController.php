@@ -48,7 +48,7 @@ class SoftwareController extends Controller
         $software = Software::create($request->all());
 
         return redirect()->route('softwares.index')
-            ->with('success', 'Software created successfully.');
+            ->with('success', 'Software creado correctamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class SoftwareController extends Controller
         $software->update($request->all());
 
         return redirect()->route('softwares.index')
-            ->with('success', 'Software updated successfully');
+            ->with('success', 'Software modificado correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class SoftwareController extends Controller
         $software = Software::find($id)->delete();
 
         return redirect()->route('softwares.index')
-            ->with('success', 'Software deleted successfully');
+            ->with('success', 'Software eliminado correctamente.');
     }
 }

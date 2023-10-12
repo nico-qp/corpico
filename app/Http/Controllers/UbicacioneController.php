@@ -48,7 +48,7 @@ class UbicacioneController extends Controller
         $ubicacione = Ubicacione::create($request->all());
 
         return redirect()->route('ubicaciones.index')
-            ->with('success', 'Ubicacione created successfully.');
+            ->with('success', 'Ubicación creada correctamente.');
     }
 
     /**
@@ -91,7 +91,7 @@ class UbicacioneController extends Controller
         $ubicacione->update($request->all());
 
         return redirect()->route('ubicaciones.index')
-            ->with('success', 'Ubicacione updated successfully');
+            ->with('success', 'Ubicación modificada correctamente.');
     }
 
     /**
@@ -104,6 +104,6 @@ class UbicacioneController extends Controller
         $ubicacione = Ubicacione::find($id)->delete();
 
         return redirect()->route('ubicaciones.index')
-            ->with('success', 'Ubicacione deleted successfully');
+            ->with('success', 'Ubicación eliminada correctamente.');
     }
 }

@@ -1,11 +1,13 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        
-        <div class="form-group">
-            {{ Form::label('Uso mensual') }}
-            {{ Form::select('id_uso', $uso, $consumible->id_uso, ['class' => 'form-control' . ($errors->has('id_uso') ? ' is-invalid' : ''), 'placeholder' => 'uso mensual']) }}
-            {!! $errors->first('id_uso', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+            {{ Form::label('Uso anual') }}
+            <select class="form-control{{ $errors->has('id_uso') ? ' is-invalid' : '' }}" name="id_uso" id="id_uso" required="true" aria-required="true">
+                <option value="">{{ __('anual') }}</option>
+                @foreach ($usos as $uso)
+                    <option value="{{ $uso->id }}">{{ $uso->anual}}</option>
+                @endforeach
+            </select>
+
         <div class="form-group">
             {{ Form::label('Tipo de consumible') }}
             {{ Form::select('id_tipo', $tipo_consumible, $consumible->id_tipo, ['class' => 'form-control' . ($errors->has('id_tipo') ? ' is-invalid' : ''), 'placeholder' => 'Tipo de consumible']) }}
@@ -23,7 +25,8 @@
         </div>
 
     </div>
-    <div class="box-footer mt-2">
-        <button type="submit" class="btn btn-primary">{{ __('Guardar') }}</button>
+    <div class="box-footer mt-3 position-relative mb-3 pb-4">
+        <button type="submit" class="btn btn-primary position-absolute top-0 start-0">{{ __('Guardar') }}</button>
+        <a class="btn btn-danger position-absolute top-0 end-0" href="{{ route('consumibles.index') }}">{{ __('Cancelar') }}</a>
     </div>
 </div>

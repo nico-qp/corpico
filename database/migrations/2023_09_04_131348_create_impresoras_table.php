@@ -21,12 +21,12 @@ class CreateImpresorasTable extends Migration
             $table->foreign('id_criticidad')->references('id')->on('criticidades')->onDelete('cascade');
             $table->String('marca');
             $table->String('modelo');
-            $table->String('conectividad');
-            $table->String('ip');
-            $table->String('autonomia_resma');
+            $table->String('conectividad')->nullable();
+            $table->String('ip')->nullable();
+            $table->String('autonomia_resma')->nullable();
             $table->unsignedBigInteger('id_estado');
             $table->foreign('id_estado')->references('id')->on('estados')->onDelete('cascade');
-            $table->String('observaciones');
+            $table->String('observaciones')->nullable();
             $table->timestamps();
         });
     }

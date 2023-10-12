@@ -76,13 +76,13 @@
                             <a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('consumibles.index') }}">consumibles</a>
+                            <a class="nav-link" href="{{ route('consumibles.index') }}">Consumibles</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('softwares.index') }}">softwares</a>
+                            <a class="nav-link" href="{{ route('softwares.index') }}">Softwares</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usuarios-window.index') }}">usuarios windows</a>
+                            <a class="nav-link" href="{{ route('usuarios-window.index') }}">Usuarios windows</a>
                         </li>
                         <!--<li class="nav-item">
                             <a class="nav-link" href="{{ route('tipo-consumibles.index') }}">tipo consumibles</a>
@@ -91,7 +91,7 @@
                             <a class="nav-link" href="{{ route('computadoras-impresoras.index') }}">computadoras impresoras</a>
                         </li>-->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('criticidades.index') }}">criticidades</a>
+                            <a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a>
                         </li>
                         <!--<li class="nav-item">
                             <a class="nav-link" href="{{ route('consumibles_impresoras.index') }}">consumibles impresoras</a>

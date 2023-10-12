@@ -21,7 +21,7 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Consumible:</strong>
+                            <strong class="fs-4">Info. Consumible:</strong>
                             <br>
                             <strong>Codigo:</strong>
                             {{ $consumiblesImpresora->consumible->codigo }}
@@ -29,15 +29,15 @@
                             <strong>Tipo:</strong>
                             {{ $consumiblesImpresora->consumible->TipoConsumible->nombre }}
                             <br>
-                            <strong>Uso:</strong>
-                            {{ $consumiblesImpresora->consumible->Uso->mensual }}
+                            <strong>Uso anual:</strong>
+                            {{ $consumiblesImpresora->consumible->Uso->anual }}
                             <br>
                             <strong>Descripcion:</strong>
                             {{ $consumiblesImpresora->consumible->descripcion }}
                             <br>
                         </div>
                         <div class="form-group">
-                            <strong>Impresora:</strong>
+                            <strong class="fs-4">Info. Impresora:</strong>
                             <br>
                             <strong>IP:</strong>
                             {{ $consumiblesImpresora->impresora->ip }}

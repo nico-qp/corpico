@@ -58,7 +58,7 @@ class ComputadoraController extends Controller
         $computadora = Computadora::create($request->all());
 
         return redirect()->route('computadoras.index')
-            ->with('success', 'Computadora created successfully.');
+            ->with('success', 'Computadora creada correctamente.');
     }
 
     /**
@@ -107,7 +107,7 @@ class ComputadoraController extends Controller
         $computadora->update($request->all());
 
         return redirect()->route('computadoras.index')
-            ->with('success', 'Computadora updated successfully');
+            ->with('success', 'Computadora modificada correctamente.');
     }
 
     /**
@@ -120,6 +120,6 @@ class ComputadoraController extends Controller
         $computadora = Computadora::find($id)->delete();
 
         return redirect()->route('computadoras.index')
-            ->with('success', 'Computadora deleted successfully');
+            ->with('success', 'Computadora eliminada correctamente.');
     }
 }

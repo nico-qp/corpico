@@ -16,7 +16,7 @@ class CreateUsuariosWindowsTable extends Migration
         Schema::create('usuarios_windows', function (Blueprint $table) {
             $table->id();
             $table->string('usuario');
-            $table->string('contraseña');
+            $table->string('contraseña')->nullable();
             $table->timestamps();
         });
     }

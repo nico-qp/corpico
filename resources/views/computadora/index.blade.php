@@ -42,14 +42,14 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<!--<th>Usuario Window</th>-->
-										<th>User</th>
+										<!--<th>Usuario Window</th>
+										<th>User</th>-->
 										<th>Condicion</th>
-										<th>Sectore</th>
+										<th>Sectores</th>
 										<!--<th>Etiqueta</th>-->
 										<!--<th>Nombre</th>-->
 										<th>Ip 172</th>
-										<th>Ip 10</th>
+										<!--<th>Ip 10</th>-->
 										<!--<th>Mac</th>-->
 										<!--<th>Procesador</th>-->
 										<!--<th>Ram</th>-->
@@ -67,14 +67,14 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<!--<td>{{ $computadora->UsuariosWindow->usuario }}</td>-->
-											<td>{{ $computadora->user->name }}</td>
+											<!--<td>{{ $computadora->user->name }}</td>-->
 											<td>{{ $computadora->condicione->descripcion }}</td>
 											<td>{{ $computadora->sectore->nombre }}</td>
 											<!--<td>{{ $computadora->etiqueta }}</td>-->
 											<!--<td>{{ $computadora->nombre }}</td>-->
 											<td>{{ $computadora->ip_172 }}</td>
-											<td>{{ $computadora->ip_10 }}</td>
-											<!--<td>{{ $computadora->mac }}</td>-->
+											<!--<td>{{ $computadora->ip_10 }}</td>
+											<td>{{ $computadora->mac }}</td>-->
 											<!--<td>{{ $computadora->procesador }}</td>-->
 											<!--<td>{{ $computadora->ram }}</td>-->
 											<!--<td>{{ $computadora->so }}</td>-->

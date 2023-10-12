@@ -13,7 +13,8 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary mt-2">{{ __('Cargar') }}</button>
+    <div class="box-footer mt-3 position-relative mb-3 pb-4">
+        <button type="submit" class="btn btn-primary position-absolute top-0 start-0">{{ __('Guardar') }}</button>
+        <a class="btn btn-danger position-absolute top-0 end-0" href="{{ route('ubicaciones.index') }}">{{ __('Cancelar') }}</a>
     </div>
 </div>

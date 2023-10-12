@@ -1,11 +1,13 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-        <div class="form-group">
             {{ Form::label('Sector') }}
-            {{ Form::select('id_sector', $sector, $impresora->id_sector, ['class' => 'form-control' . ($errors->has('id_sector') ? ' is-invalid' : ''), 'placeholder' => 'Sector']) }}
-            {!! $errors->first('id_sector', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+            <select class="form-control{{ $errors->has('id_sector') ? ' is-invalid' : '' }}" name="id_sector" id="id_sector" required="true" aria-required="true">
+                <option value="">{{ __('sector') }}</option>
+                @foreach ($sectores as $sectore)
+                    <option value="{{ $sectore->id }}">{{ $sectore->nombre}}</option>
+                @endforeach
+            </select>
         <div class="form-group">
             {{ Form::label('Criticidad') }}
             {{ Form::select('id_criticidad', $criticidades, $impresora->id_criticidad, ['class' => 'form-control' . ($errors->has('id_criticidad') ? ' is-invalid' : ''), 'placeholder' => 'Criticidad']) }}
@@ -48,7 +50,8 @@
         </div>
 
     </div>
-    <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary mt-2">{{ __('Guardar') }}</button>
+    <div class="box-footer mt-3 position-relative mb-3 pb-4">
+        <button type="submit" class="btn btn-primary position-absolute top-0 start-0">{{ __('Guardar') }}</button>
+        <a class="btn btn-danger position-absolute top-0 end-0" href="{{ route('impresoras.index') }}">{{ __('Cancelar') }}</a>
     </div>
 </div>

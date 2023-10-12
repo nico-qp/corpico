@@ -16,7 +16,7 @@ class CreateUbicacionesTable extends Migration
         Schema::create('ubicaciones', function (Blueprint $table) {
             $table->id();
             $table->string('edificio');
-            $table->integer('piso');
+            $table->string('piso')->nullable();
             $table->timestamps();
         });
     }

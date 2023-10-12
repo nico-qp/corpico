@@ -21,8 +21,8 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Computadora:</strong>
-                            <br><br>
+                            <strong class="fs-4">Info. Computadora:</strong>
+                            <br>
                             <strong>Usuario Geasys:</strong>
                             {{ $computadorasImpresora->computadora->User->name }}
                             <br>
@@ -34,24 +34,22 @@
                             <br>
                             <strong>MAC:</strong>
                             {{ $computadorasImpresora->computadora->mac }}
-                            <br><br>
                         </div>
+                        <div class="form-group">
+                            <br>
+                            <strong class="fs-4">Info. Impresora:</strong>
+                            <br>
+                            <strong>Modelo:</strong>
+                            {{ $computadorasImpresora->impresora->modelo }}
+                            <br>
+                            <strong>Criticidad:</strong>
+                            {{ $computadorasImpresora->impresora->criticidade->descripcion }}
+                        </div>
+                        <br>
                         <div class="form-group">
                             <strong>Sector:<strong>
                             {{ $computadorasImpresora->computadora->sectore->nombre }}
                         </div>
-                        <div class="form-group">
-                            <br>
-                            <strong>impresora:</strong>
-                            <br><br>
-                            <strong>IP:</strong>
-                            {{ $computadorasImpresora->impresora->ip }}
-                            <br>
-                            <strong>Criticidad:</strong>
-                            {{ $computadorasImpresora->impresora->criticidade->descripcion }}
-                            
-                        </div>
-
                     </div>
                 </div>
             </div>

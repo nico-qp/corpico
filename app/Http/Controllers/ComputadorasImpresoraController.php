@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\ComputadorasImpresora;
 use App\Models\Computadora;
 use App\Models\Impresora;
+use App\Models\Sectore;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 /**
@@ -34,9 +36,10 @@ class ComputadorasImpresoraController extends Controller
     public function create()
     {
         $computadorasImpresora = new ComputadorasImpresora();
-        $computadora = Computadora::Pluck('ip_172','id');
-        $impresora = Impresora::Pluck('ip','id');
-        return view('computadoras-impresora.create', compact('computadorasImpresora','computadora','impresora'));
+        $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
+        //$impresoras = DB::select("SELECT id, modelo, ip, id_sector FROM impresoras WHERE id_estado = 2 ORDER BY modelo");
+        $impresoras = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id_estado = 2 ORDER BY nombre_sector");
+        return view('computadoras-impresora.create', compact('computadorasImpresora','computadoras','impresoras'));
     }
 
     /**
@@ -49,10 +52,20 @@ class ComputadorasImpresoraController extends Controller
     {
         request()->validate(ComputadorasImpresora::$rules);
 
-        $computadorasImpresora = ComputadorasImpresora::create($request->all());
+        $id_impresora = $request->request->get('id_impresora');
+        $id_computadora = $request->request->get('id_computadora');
+        $verificacion = DB::select("SELECT * FROM computadoras_impresoras WHERE id_impresora = $id_impresora AND id_computadora = $id_computadora");
 
-        return redirect()->route('computadoras-impresoras.index')
-            ->with('success', 'ComputadorasImpresora created successfully.');
+        if (count($verificacion) == 0) {
+            $computadorasImpresora = ComputadorasImpresora::create($request->all());
+
+            return redirect()->route('computadoras-impresoras.index')
+            ->with('success', 'Conexión creada correctamente.');
+        } else {
+            return redirect()->route('computadoras-impresoras.create')
+                ->with('error', 'Esta conexión ya está creada.');
+        }
+        
     }
 
     /**
@@ -77,9 +90,9 @@ class ComputadorasImpresoraController extends Controller
     public function edit($id)
     {
         $computadorasImpresora = ComputadorasImpresora::find($id);
-        $computadora = Computadora::Pluck('ip_172','id');
-        $impresora = Impresora::Pluck('ip','id');
-        return view('computadoras-impresora.edit', compact('computadorasImpresora','computadora','impresora'));
+        $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
+        $impresoras = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id_estado = 2 ORDER BY nombre_sector");
+        return view('computadoras-impresora.edit', compact('computadorasImpresora','computadoras','impresoras'));
     }
 
     /**
@@ -93,10 +106,19 @@ class ComputadorasImpresoraController extends Controller
     {
         request()->validate(ComputadorasImpresora::$rules);
 
-        $computadorasImpresora->update($request->all());
+        $id_impresora = $request->request->get('id_impresora');
+        $id_computadora = $request->request->get('id_computadora');
+        $verificacion = DB::select("SELECT * FROM computadoras_impresoras WHERE id_impresora = $id_impresora AND id_computadora = $id_computadora");
 
-        return redirect()->route('computadoras-impresoras.index')
-            ->with('success', 'ComputadorasImpresora updated successfully');
+        if (count($verificacion) == 0) {
+            $computadorasImpresora = ComputadorasImpresora::create($request->all());
+
+            return redirect()->route('computadoras-impresoras.index')
+            ->with('success', 'Conexión modificada correctamente.');
+        } else {
+            return redirect()->route('computadoras-impresoras.create')
+                ->with('error', 'Esta conexión ya está creada.');
+        }
     }
 
     /**
@@ -109,6 +131,6 @@ class ComputadorasImpresoraController extends Controller
         $computadorasImpresora = ComputadorasImpresora::find($id)->delete();
 
         return redirect()->route('computadoras-impresoras.index')
-            ->with('success', 'ComputadorasImpresora deleted successfully');
+            ->with('success', 'Conexión eliminada correctamente.');
     }
 }

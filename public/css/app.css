@@ -186,6 +186,7 @@ li{
 *::before,
 *::after {
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -348,10 +349,6 @@ sup {
   top: -0.5em;
 }
 
-a {
-  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
-  text-decoration: underline;
-}
 a:hover {
   --bs-link-color-rgb: var(--bs-link-hover-color-rgb);
 }
@@ -359,6 +356,11 @@ a:hover {
 a:not([href]):not([class]), a:not([href]):not([class]):hover {
   color: inherit;
   text-decoration: none;
+}
+a{
+  text-decoration: none;
+  color:none;
+
 }
 
 pre,

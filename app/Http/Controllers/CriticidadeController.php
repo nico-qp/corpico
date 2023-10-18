@@ -16,6 +16,10 @@ class CriticidadeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function index()
     {
         $criticidades = Criticidade::paginate();

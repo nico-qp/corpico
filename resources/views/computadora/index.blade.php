@@ -24,7 +24,7 @@
                                   {{ __('Ver impresoras asignadas') }}
                                 </a>
                                 <a href="{{ route('computadoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Cargar Nueva') }}
+                                  {{ __('Cargar nueva') }}
                                 </a>
                               </div>
                         </div>

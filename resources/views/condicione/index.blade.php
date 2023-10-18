@@ -18,7 +18,7 @@
 
                              <div class="float-right">
                                 <a href="{{ route('condiciones.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Cargar Nueva') }}
+                                  {{ __('Cargar nueva') }}
                                 </a>
                               </div>
                         </div>

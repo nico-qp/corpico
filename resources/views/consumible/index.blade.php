@@ -24,7 +24,7 @@
                                   {{ __('tipos de consumibles') }}
                                 </a>
                                 <a href="{{ route('consumibles.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Cargar Nuevo') }}
+                                  {{ __('Cargar nuevo') }}
                                 </a>
                               </div>
                         </div>

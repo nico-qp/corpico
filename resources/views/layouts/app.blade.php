@@ -20,12 +20,41 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel"><img src="{{ asset('img\Corpico_logo.svg') }}" style="width:30%"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a></li>
+                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('softwares.index') }}">Softwares</a></li>
+                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('usuarios-window.index') }}">Usuarios windows</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a></li>
+                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('consumibles.index') }}">Consumibles</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a></li>
+                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('ubicaciones.index') }}">Ubicaciones</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('usos.index') }}">Usos</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('estados.index') }}">Estados</a></li>
+            </ul>
+        </div>
+    </div>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    Corpico
+            <div class="container-xxl">
+                <a class="me-5" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="35" height="35" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <path d="M4 6l16 0" />
+                <path d="M4 12l16 0" />
+                <path d="M4 18l16 0" />
+                </svg>
                 </a>
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <img src="{{ asset('img\Corpico_logo.svg') }}" style="width:30%">
+                </a>
+                
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -52,55 +81,6 @@
                                 </li>
                             @endif
                         @else
-
-                        <!-- NAV AGREGADO -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a>
-                        </li>
-                       <!-- <li class="nav-item">
-                            <a class="nav-link" href="{{ route('computadoras-softwares.index') }}">Computadoras-soft</a>
-                        </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a>
-                        </li>
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="{{ route('ubicaciones.index') }}">ubicaciones</a>
-                        </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usos.index') }}">Usos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('consumibles.index') }}">Consumibles</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('softwares.index') }}">Softwares</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('usuarios-window.index') }}">Usuarios windows</a>
-                        </li>
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="{{ route('tipo-consumibles.index') }}">tipo consumibles</a>
-                        </li>-->
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="{{ route('computadoras-impresoras.index') }}">computadoras impresoras</a>
-                        </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a>
-                        </li>
-                        <!--<li class="nav-item">
-                            <a class="nav-link" href="{{ route('consumibles_impresoras.index') }}">consumibles impresoras</a>
-                        </li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('estados.index') }}">Estados</a>
-                        </li>
-
-
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

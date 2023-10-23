@@ -47,7 +47,7 @@
                         </div>
                         <br>
                         <div class="form-group">
-                            <strong>Sector:<strong>
+                            <strong>Sector:</strong>
                             {{ $computadorasImpresora->computadora->sectore->nombre }}
                         </div>
                     </div>

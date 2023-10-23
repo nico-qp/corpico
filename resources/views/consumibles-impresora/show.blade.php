@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <strong class="fs-4">Info. Consumible:</strong>
                             <br>
-                            <strong>Codigo:</strong>
+                            <strong>Código:</strong>
                             {{ $consumiblesImpresora->consumible->codigo }}
                             <br>
                             <strong>Tipo:</strong>
@@ -32,7 +32,7 @@
                             <strong>Uso anual:</strong>
                             {{ $consumiblesImpresora->consumible->Uso->anual }}
                             <br>
-                            <strong>Descripcion:</strong>
+                            <strong>Descripción:</strong>
                             {{ $consumiblesImpresora->consumible->descripcion }}
                             <br>
                         </div>

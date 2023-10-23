@@ -13,7 +13,7 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Cargar') }} una Criticidad</span>
+                        <span class="card-title">{{ __('Cargar') }} Criticidad</span>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('criticidades.store') }}"  role="form" enctype="multipart/form-data">

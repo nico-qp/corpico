@@ -36,7 +36,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Descripcion</th>
+										<th>Descripción</th>
 
                                         <th></th>
                                     </tr>

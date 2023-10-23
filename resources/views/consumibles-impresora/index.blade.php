@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Consumibles de Impresora') }}
+                                {{ __('Consumibles de Impresoras') }}
                             </span>
                              <div class="float-right">
                                 <a href="{{ route('consumibles_impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">

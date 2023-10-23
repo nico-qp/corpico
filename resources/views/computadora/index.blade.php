@@ -43,7 +43,7 @@
 										<!--<th>Usuario Window</th>
 										<th>User</th>-->
 										<th>Condicion</th>
-										<th>Sectores</th>
+										<th>Sector</th>
 										<!--<th>Etiqueta</th>-->
 										<!--<th>Nombre</th>-->
 										<th>Ip 172</th>

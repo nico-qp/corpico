@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Conexión entre Computadoras y impresoras') }}
+                                {{ __('Conexión entre Computadoras e Impresoras') }}
                             </span>
 
                              <div class="float-right">
@@ -38,7 +38,7 @@
                                         
 										<th>Computadora</th>
 										<th>Impresora</th>
-                                        <th>sector</th>
+                                        <th>Sector</th>
 
                                         <th></th>
                                     </tr>

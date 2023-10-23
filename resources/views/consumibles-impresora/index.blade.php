@@ -70,7 +70,32 @@
     </div>
     <script>
     $(document).ready( function () {
-        $('#tabla_consumibles_impresoras').DataTable();
+        $('#tabla_consumibles_impresoras').DataTable({
+            language: {
+                "decimal":        ",",
+                "emptyTable":     "No hay registros existentes en esta tabla",
+                "info":           "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                "infoEmpty":      "Mostrando 0 a 0 de 0 registros",
+                "infoFiltered":   "(_MAX_ registros totales)",
+                "infoPostFix":    "",
+                "thousands":      ".",
+                "lengthMenu":     "Mostrando _MENU_ registros",
+                "loadingRecords": "Cargando...",
+                "processing":     "",
+                "search":         "Buscar:",
+                "zeroRecords":    "No se encontraron registros",
+                "paginate": {
+                    "first":      "Primera",
+                    "last":       "Ultima",
+                    "next":       "Siguiente",
+                    "previous":   "Anterior"
+                },
+                "aria": {
+                    "sortAscending":  ": Activar el ordenado de columnas ascendente",
+                    "sortDescending": ": Activar el ordenado de columnas descendente"
+                }
+            }
+        });
     });
     </script>
 @endsection

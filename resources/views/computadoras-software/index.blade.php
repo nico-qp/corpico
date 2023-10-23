@@ -37,7 +37,7 @@
                                         <th>No</th>
                                         
 										<th>Software</th>
-										<th>Ip Computadora</th>
+										<th>IP Computadora</th>
 
                                         <th></th>
                                     </tr>

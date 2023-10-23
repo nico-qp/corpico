@@ -22,10 +22,9 @@ class CondicioneController extends Controller
     }
     public function index()
     {
-        $condiciones = Condicione::paginate();
+        $condiciones = Condicione::get();
 
-        return view('condicione.index', compact('condiciones'))
-            ->with('i', (request()->input('page', 1) - 1) * $condiciones->perPage());
+        return view('condicione.index', compact('condiciones'))->with('i');
     }
 
     /**

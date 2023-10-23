@@ -31,7 +31,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="tabla_usos" class="table table-striped table-hover table-bordered">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
@@ -68,8 +68,12 @@
                         </div>
                     </div>
                 </div>
-                {!! $usos->links() !!}
             </div>
         </div>
     </div>
+    <script>
+    $(document).ready( function () {
+        $('#tabla_usos').DataTable();
+    });
+    </script>
 @endsection

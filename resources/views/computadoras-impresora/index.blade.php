@@ -15,16 +15,6 @@
                             <span id="card_title">
                                 {{ __('Conexión entre Computadoras y impresoras') }}
                             </span>
-                            <form method="GET" action="{{ route('computadoras-impresoras.index') }}" class="d-flex" >
-                                <label for="order_by">Ordenar por:</label>
-                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
-                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
-                                    <option value="id_computadora" @if ($order_by == 'id_computadora') selected @endif>Computadora</option>
-                                    <option value="id_impresora" @if ($order_by == 'id_impresora') selected @endif>Impresora</option>
-                                </select>
-
-                                <button type="submit" class="btn btn-success">ordenar</button>
-                            </form>
 
                              <div class="float-right">
                                 <a href="{{ route('computadoras-impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
@@ -41,7 +31,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="tabla_computadoras_impresoras" class="table table-striped table-hover table-bordered">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
@@ -78,8 +68,12 @@
                         </div>
                     </div>
                 </div>
-                {{ $computadorasImpresoras->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>
+    <script>
+    $(document).ready( function () {
+        $('#tabla_computadoras_impresoras').DataTable();
+    });
+    </script>
 @endsection

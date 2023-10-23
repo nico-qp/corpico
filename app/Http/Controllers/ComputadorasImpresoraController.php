@@ -24,19 +24,11 @@ class ComputadorasImpresoraController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(Request $request)
+    public function index()
     {
-        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
+        $computadorasImpresoras = ComputadorasImpresora::get();
 
-        $query = ComputadorasImpresora::query();
-
-        //aplica el ordenamiento
-        $query->orderBy($order_by);
-
-        $computadorasImpresoras = $query->paginate();
-
-        return view('computadoras-impresora.index', compact('computadorasImpresoras', 'order_by'))
-            ->with('i', ($request->input('page', 1) - 1) * $computadorasImpresoras->perPage());
+        return view('computadoras-impresora.index', compact('computadorasImpresoras'))->with('i');
     }
     
     /**

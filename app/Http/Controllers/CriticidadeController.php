@@ -22,10 +22,9 @@ class CriticidadeController extends Controller
     }
     public function index()
     {
-        $criticidades = Criticidade::paginate();
+        $criticidades = Criticidade::get();
 
-        return view('criticidade.index', compact('criticidades'))
-            ->with('i', (request()->input('page', 1) - 1) * $criticidades->perPage());
+        return view('criticidade.index', compact('criticidades'))->with('i');
     }
 
     /**

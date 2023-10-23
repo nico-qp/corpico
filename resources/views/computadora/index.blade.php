@@ -14,19 +14,6 @@
                             <span id="card_title">
                                 {{ __('Computadoras') }}
                             </span>
-                            
-                            <form method="GET" action="{{ route('computadoras.index') }}" class="d-flex" >
-                                <label for="order_by">Ordenar por:</label>
-                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
-                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
-                                    <option value="id_condicion" @if ($order_by == 'id_condicion') selected @endif>Condicion</option>
-                                    <option value="id_sectore" @if ($order_by == 'id_sectore') selected @endif>Sector</option>
-                                    <option value="id_estado" @if ($order_by == 'id_estado') selected @endif>Estado</option>
-
-                                </select>
-
-                                <button type="submit" class="btn btn-success">ordenar</button>
-                            </form>
                             <div class="float-right">
                                 <a href="{{ route('computadoras-softwares.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
                                   {{ __('Ver softwares asignados') }}
@@ -48,7 +35,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover">
+                            <table id="tabla_computadoras" class="table table-striped table-hover table-bordered">
                                 <thead class="thead">
                                     <tr>
                                         <th>No</th>
@@ -68,7 +55,6 @@
 										<!--<th>Marca</th>-->
 										<!--<th>Observaciones</th>-->
 										<th>Estado</th>
-
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -109,8 +95,12 @@
                         </div>
                     </div>
                 </div>
-                {{ $computadoras->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>
+    <script>
+    $(document).ready( function () {
+        $('#tabla_computadoras').DataTable();
+    });
+    </script>
 @endsection

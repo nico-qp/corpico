@@ -23,19 +23,11 @@ class ConsumiblesImpresoraController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(Request $request)
+    public function index()
     {
-        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
+        $consumiblesImpresoras = ConsumiblesImpresora::get();
 
-        $query = ConsumiblesImpresora::query();
-
-        //aplica el ordenamiento
-        $query->orderBy($order_by);
-
-        $consumiblesImpresoras = $query->paginate();
-
-        return view('consumibles-impresora.index', compact('consumiblesImpresoras', 'order_by'))
-            ->with('i', ($request->input('page', 1) - 1) * $consumiblesImpresoras->perPage());
+        return view('consumibles-impresora.index', compact('consumiblesImpresoras'))->with('i');
     }
 
     /**

@@ -24,19 +24,11 @@ class ImpresoraController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index(Request $request)
+    public function index()
     {
-        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
+        $impresoras = Impresora::get();
 
-        $query = Impresora::query();
-
-        //aplica el ordenamiento
-        $query->orderBy($order_by);
-
-        $impresoras = $query->paginate();
-
-        return view('impresora.index', compact('impresoras', 'order_by'))
-            ->with('i', ($request->input('page', 1) - 1) * $impresoras->perPage());
+        return view('impresora.index', compact('impresoras'))->with('i');
     }
 
     /**

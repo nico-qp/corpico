@@ -22,10 +22,9 @@ class UbicacioneController extends Controller
     }
     public function index()
     {
-        $ubicaciones = Ubicacione::paginate();
+        $ubicaciones = Ubicacione::get();
 
-        return view('ubicacione.index', compact('ubicaciones'))
-            ->with('i', (request()->input('page', 1) - 1) * $ubicaciones->perPage());
+        return view('ubicacione.index', compact('ubicaciones'))->with('i');
     }
 
     /**

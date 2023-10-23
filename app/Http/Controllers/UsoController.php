@@ -22,15 +22,9 @@ class UsoController extends Controller
     }
     public function index()
     {
-        $query = Uso::query();
+        $usos = Uso::get();
 
-        //aplica el ordenamiento
-        $query->orderBy("anual");
-
-        $usos = $query->paginate();
-
-        return view('uso.index', compact('usos'))
-        ->with('i', (request()->input('page', 1) - 1) * $usos->perPage());
+        return view('uso.index', compact('usos'))->with('i');
     }
 
     /**

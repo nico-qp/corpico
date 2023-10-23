@@ -22,10 +22,9 @@ class SoftwareController extends Controller
     }
     public function index()
     {
-        $softwares = Software::paginate();
+        $softwares = Software::get();
 
-        return view('software.index', compact('softwares'))
-            ->with('i', (request()->input('page', 1) - 1) * $softwares->perPage());
+        return view('software.index', compact('softwares'))->with('i');
     }
 
     /**

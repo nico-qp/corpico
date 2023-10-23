@@ -22,10 +22,9 @@ class TipoConsumibleController extends Controller
     }
     public function index()
     {
-        $tipoConsumibles = TipoConsumible::paginate();
+        $tipoConsumibles = TipoConsumible::get();
 
-        return view('tipo-consumible.index', compact('tipoConsumibles'))
-            ->with('i', (request()->input('page', 1) - 1) * $tipoConsumibles->perPage());
+        return view('tipo-consumible.index', compact('tipoConsumibles'))->with('i');
     }
 
     /**

@@ -56,7 +56,7 @@ class Computadora extends Model
 		'id_estado' => 'required',
     ];
 
-    protected $perPage = 20;
+    //protected $perPage = 20;
 
     /**
      * Attributes that should be mass-assignable.

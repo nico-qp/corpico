@@ -80,10 +80,13 @@ class ImpresoraController extends Controller
     public function edit($id)
     {
         $impresora = Impresora::find($id);
+        //dd($impresora);
         $criticidades = Criticidade::Pluck('descripcion','id');
         $sectores = DB::select("SELECT nombre, id FROM sectores ORDER BY id_ubicacion");
+        $id_sectores = DB::select("SELECT nombre, id FROM sectores WHERE id = $impresora->id_sector");
+
         $estado = Estado::Pluck('descripcion','id');
-        return view('impresora.edit', compact('impresora','criticidades', 'sectores','estado'));
+        return view('impresora.edit', compact('impresora','criticidades', 'sectores','estado','id_sectores'));
     }
 
     /**

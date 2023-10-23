@@ -92,7 +92,12 @@ class ComputadorasImpresoraController extends Controller
         $computadorasImpresora = ComputadorasImpresora::find($id);
         $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
         $impresoras = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id_estado = 2 ORDER BY nombre_sector");
-        return view('computadoras-impresora.edit', compact('computadorasImpresora','computadoras','impresoras'));
+        
+        $id_computadora = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id = $computadorasImpresora->id_computadora ORDER BY nombre_sector");
+        $id_impresora = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id = $computadorasImpresora->id_impresora ORDER BY nombre_sector");
+        
+        //dd($id_computadora);
+        return view('computadoras-impresora.edit', compact('computadorasImpresora','computadoras','impresoras','id_computadora','id_impresora'));
     }
 
     /**
@@ -111,12 +116,12 @@ class ComputadorasImpresoraController extends Controller
         $verificacion = DB::select("SELECT * FROM computadoras_impresoras WHERE id_impresora = $id_impresora AND id_computadora = $id_computadora");
 
         if (count($verificacion) == 0) {
-            $computadorasImpresora = ComputadorasImpresora::create($request->all());
+            $computadorasImpresora->update($request->all());
 
             return redirect()->route('computadoras-impresoras.index')
             ->with('success', 'Conexión modificada correctamente.');
         } else {
-            return redirect()->route('computadoras-impresoras.create')
+            return redirect()->route('computadoras-impresora.create')
                 ->with('error', 'Esta conexión ya está creada.');
         }
     }

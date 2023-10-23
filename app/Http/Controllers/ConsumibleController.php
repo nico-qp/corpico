@@ -80,9 +80,11 @@ class ConsumibleController extends Controller
     {
         $consumible = Consumible::find($id);
         $usos = DB::select("SELECT anual, id FROM usos ORDER BY anual");
+        $id_usos = DB::select("SELECT anual, id FROM usos WHERE id = $consumible->id_uso");
+        
         $tipo_consumible = tipoConsumible::Pluck('nombre','id');
 
-        return view('consumible.edit', compact('consumible', 'usos', 'tipo_consumible'));
+        return view('consumible.edit', compact('consumible', 'usos', 'tipo_consumible','id_usos'));
     }
 
     /**

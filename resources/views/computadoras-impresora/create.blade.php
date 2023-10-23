@@ -24,6 +24,7 @@
                         <form method="POST" action="{{ route('computadoras-impresoras.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
+                            <?php $id_computadora[0] = NULL ?>
                             @include('computadoras-impresora.form')
 
                         </form>

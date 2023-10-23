@@ -91,8 +91,10 @@ class ConsumiblesImpresoraController extends Controller
         $consumiblesImpresora = ConsumiblesImpresora::find($id);
         $consumible = Consumible::Pluck('codigo','id');
         //$impresora = Impresora::Pluck('ip','id');
-        $impresoras = DB::select("SELECT id, modelo FROM `impresoras` GROUP BY modelo ORDER BY modelo");
-        return view('consumibles-impresora.edit', compact('consumiblesImpresora','consumible','impresoras'));
+        $impresoras = DB::select("SELECT id, modelo FROM impresoras GROUP BY modelo ORDER BY modelo");
+        $id_impresoras = DB::select("SELECT id, modelo FROM impresoras WHERE id = $consumiblesImpresora->id_impresora");
+
+        return view('consumibles-impresora.edit', compact('consumiblesImpresora','consumible','impresoras','id_impresoras'));
     }
 
     /**
@@ -106,15 +108,13 @@ class ConsumiblesImpresoraController extends Controller
     {
         request()->validate(ConsumiblesImpresora::$rules);
 
-        $consumiblesImpresora->update($request->all());
         $id_impresora = $request->request->get('id_impresora');
         $id_consumible = $request->request->get('id_consumible');
         $verificacion = DB::select("SELECT * FROM consumibles_impresoras WHERE id_impresora = $id_impresora AND id_consumible = $id_consumible");
         if (count($verificacion) == 0) {
-            $consumiblesImpresora = ConsumiblesImpresora::update($request->all());
-
+            $consumiblesImpresora->update($request->all());
             return redirect()->route('consumibles_impresoras.index')
-                ->with('success', 'Conexión actualizada correctamente.');
+                ->with('success', 'Conexión actualizada correctamente.'); 
         } else {
             return redirect()->route('consumibles_impresoras.create')
                 ->with('error', 'Esta conexion ya está creada.');

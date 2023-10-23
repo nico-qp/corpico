@@ -1,8 +1,8 @@
 <div class="box box-info padding-1">
     <div class="box-body">
-        {{ Form::label('ubicacion') }}
+        {{ Form::label('ubicación') }}
         <select class="form-control{{ $errors->has('id_ubicacion') ? ' is-invalid' : '' }}" name="id_ubicacion" id="id_ubicacion" required="true" aria-required="true">
-            <option value="">{{ __('ubicacion') }}</option>
+            <option value="">{{ __('ubicación') }}</option>
             @foreach ($ubicaciones as $ubicacion)
                 <option value="{{ $ubicacion->id }}">{{ $ubicacion->edificio.", ".$ubicacion->piso}}</option>
             @endforeach

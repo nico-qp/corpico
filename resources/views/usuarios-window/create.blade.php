@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ __('Create') }} Usuarios Window
+    {{ __('Create') }} Usuarios Windows
 @endsection
 
 @section('content')

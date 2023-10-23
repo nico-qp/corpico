@@ -43,8 +43,8 @@
                                         
 										<th>Uso anual</th>
 										<th>Tipo</th>
-										<th>Codigo</th>
-										<th>Descripcion</th>
+										<th>Código</th>
+										<th>Descripción</th>
 
                                         <th></th>
                                     </tr>

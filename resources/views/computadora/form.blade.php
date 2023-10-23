@@ -57,8 +57,8 @@
             {!! $errors->first('ram', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('so') }}
-            {{ Form::text('so', $computadora->so, ['class' => 'form-control' . ($errors->has('so') ? ' is-invalid' : ''), 'placeholder' => 'So']) }}
+            {{ Form::label('SO') }}
+            {{ Form::text('so', $computadora->so, ['class' => 'form-control' . ($errors->has('so') ? ' is-invalid' : ''), 'placeholder' => 'SO']) }}
             {!! $errors->first('so', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

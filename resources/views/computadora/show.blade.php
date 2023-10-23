@@ -21,15 +21,15 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Usuario Window:</strong>
+                            <strong>Usuario Windows:</strong>
                             {{ $computadora->UsuariosWindow->usuario }}
                         </div>
                         <div class="form-group">
-                            <strong>usuario:</strong>
+                            <strong>Usuario:</strong>
                             {{ $computadora->user->name }}
                         </div>
                         <div class="form-group">
-                            <strong>Condicion:</strong>
+                            <strong>Condición:</strong>
                             {{ $computadora->condicione->descripcion }}
                         </div>
                         <div class="form-group">
@@ -45,11 +45,11 @@
                             {{ $computadora->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Ip 172:</strong>
+                            <strong>IP 172:</strong>
                             {{ $computadora->ip_172 }}
                         </div>
                         <div class="form-group">
-                            <strong>Ip 10:</strong>
+                            <strong>IP 10:</strong>
                             {{ $computadora->ip_10 }}
                         </div>
                         <div class="form-group">

@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Sector') }}
+                                {{ __('Sectores') }}
                             </span>
                              <div class="float-right">
                                 <a href="{{ route('ubicaciones.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
@@ -38,7 +38,7 @@
                                     <tr>
                                         <th>No</th>
                                         
-										<th>Ubicacion</th>
+										<th>Ubicación</th>
                                         <th>Piso</th>
 										<th>Nombre</th>
 

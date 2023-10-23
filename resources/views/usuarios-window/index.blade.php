@@ -15,6 +15,17 @@
                             <span id="card_title">
                                 {{ __('Usuarios de Windows') }}
                             </span>
+                            <form method="GET" action="{{ route('usuarios-window.index') }}" class="d-flex" >
+                                <label for="order_by">Ordenar por:</label>
+                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
+                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
+                                    <option value="usuario" @if ($order_by == 'usuario') selected @endif>Usuario</option>
+                                    <option value="contraseña" @if ($order_by == 'contraseña') selected @endif>Contraseña</option>
+
+                                </select>
+
+                                <button type="submit" class="btn btn-success">ordenar</button>
+                            </form>
 
                              <div class="float-right">
                                 <a href="{{ route('usuarios-window.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
@@ -66,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $usuariosWindows->links() !!}
+                {{ $usuariosWindows->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>

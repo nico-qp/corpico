@@ -20,12 +20,19 @@ class UsuariosWindowController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $usuariosWindows = UsuariosWindow::paginate();
+        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
 
-        return view('usuarios-window.index', compact('usuariosWindows'))
-            ->with('i', (request()->input('page', 1) - 1) * $usuariosWindows->perPage());
+        $query = UsuariosWindow::query();
+
+        //aplica el ordenamiento
+        $query->orderBy($order_by);
+
+        $usuariosWindows = $query->paginate();
+
+        return view('usuarios-window.index', compact('usuariosWindows', 'order_by'))
+            ->with('i', ($request->input('page', 1) - 1) * $usuariosWindows->perPage());
     }
 
     /**

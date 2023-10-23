@@ -25,14 +25,20 @@ class ComputadoraController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $computadoras = Computadora::paginate();
+        $order_by = $request->input('order_by', 'id'); // Por defecto, ordena por el campo 'id'.
 
-        return view('computadora.index', compact('computadoras'))
-            ->with('i', (request()->input('page', 1) - 1) * $computadoras->perPage());
+        $query = Computadora::query();
+
+        // Aplicar ordenamiento
+        $query->orderBy($order_by);
+
+        $computadoras = $query->paginate();
+        
+        return view('computadora.index', compact('computadoras', 'order_by'))
+            ->with('i', ($request->input('page', 1) - 1) * $computadoras->perPage());
     }
-
     /**
      * Show the form for creating a new resource.
      *

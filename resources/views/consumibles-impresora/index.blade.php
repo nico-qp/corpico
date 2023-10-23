@@ -15,6 +15,17 @@
                             <span id="card_title">
                                 {{ __('Consumibles de Impresora') }}
                             </span>
+                            <form method="GET" action="{{ route('consumibles_impresoras.index') }}" class="d-flex" >
+                                <label for="order_by">Ordenar por:</label>
+                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
+                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
+                                    <option value="id_consumible" @if ($order_by == 'id_consumible') selected @endif>consumible</option>
+                                    <option value="id_impresora" @if ($order_by == 'id_impresora') selected @endif>impresora</option>
+
+                                </select>
+
+                                <button type="submit" class="btn btn-success">ordenar</button>
+                            </form>
 
                              <div class="float-right">
                                 <a href="{{ route('consumibles_impresoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
@@ -66,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $consumiblesImpresoras->links() !!}
+                {{ $consumiblesImpresoras->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>

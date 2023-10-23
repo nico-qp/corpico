@@ -15,6 +15,17 @@
                             <span id="card_title">
                                 {{ __('Sector') }}
                             </span>
+                            <form method="GET" action="{{ route('sectores.index') }}" class="d-flex" >
+                                <label for="order_by">Ordenar por:</label>
+                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
+                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
+                                    <option value="id_ubicacion" @if ($order_by == 'id_ubicacion') selected @endif>Ubicacion</option>
+                                    <option value="nombre" @if ($order_by == 'nombre') selected @endif>Nombre</option>
+
+                                </select>
+
+                                <button type="submit" class="btn btn-success">ordenar</button>
+                            </form>
                              <div class="float-right">
                                 <a href="{{ route('ubicaciones.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
                                   {{ __('Ubicaciones') }}
@@ -70,7 +81,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $sectores->links() !!}
+                {{ $sectores->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>

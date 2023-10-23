@@ -23,14 +23,21 @@ class ConsumibleController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $consumibles = Consumible::paginate();
+        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
 
-        return view('consumible.index', compact('consumibles'))
-            ->with('i', (request()->input('page', 1) - 1) * $consumibles->perPage());
+        $query = Consumible::query();
+
+        //aplica el ordenamiento
+        $query->orderBy($order_by);
+
+        $consumibles = $query->paginate();
+
+        return view('consumible.index', compact('consumibles', 'order_by'))
+            ->with('i', ($request->input('page', 1) - 1) * $consumibles->perPage());
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *

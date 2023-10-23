@@ -65,7 +65,7 @@
                             {{ $computadora->ram }}
                         </div>
                         <div class="form-group">
-                            <strong>So:</strong>
+                            <strong>SO:</strong>
                             {{ $computadora->so }}
                         </div>
                         <div class="form-group">

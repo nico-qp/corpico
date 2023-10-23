@@ -11,12 +11,23 @@
                 <div class="card">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
                             <span id="card_title">
                                 {{ __('Computadoras') }}
                             </span>
+                            
+                            <form method="GET" action="{{ route('computadoras.index') }}" class="d-flex" >
+                                <label for="order_by">Ordenar por:</label>
+                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
+                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
+                                    <option value="id_condicion" @if ($order_by == 'id_condicion') selected @endif>Condicion</option>
+                                    <option value="id_sectore" @if ($order_by == 'id_sectore') selected @endif>Sector</option>
+                                    <option value="id_estado" @if ($order_by == 'id_estado') selected @endif>Estado</option>
 
-                             <div class="float-right">
+                                </select>
+
+                                <button type="submit" class="btn btn-success">ordenar</button>
+                            </form>
+                            <div class="float-right">
                                 <a href="{{ route('computadoras-softwares.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
                                   {{ __('Ver softwares asignados') }}
                                 </a>
@@ -26,7 +37,7 @@
                                 <a href="{{ route('computadoras.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
                                   {{ __('Cargar nueva') }}
                                 </a>
-                              </div>
+                            </div>
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -98,7 +109,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $computadoras->links() !!}
+                {{ $computadoras->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>

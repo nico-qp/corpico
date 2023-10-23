@@ -15,6 +15,20 @@
                             <span id="card_title">
                                 {{ __('Impresoras') }}
                             </span>
+                            <form method="GET" action="{{ route('impresoras.index') }}" class="d-flex" >
+                                <label for="order_by">Ordenar por:</label>
+                                <select class="form-control ms-2 me-2" name="order_by" id="order_by">
+                                    <option value="id" @if ($order_by == 'id') selected @endif>Sin orden</option>
+                                    <option value="id_sector" @if ($order_by == 'id_sector') selected @endif>Sector</option>
+                                    <option value="id_criticidad" @if ($order_by == 'id_criticidad') selected @endif>Criticidad</option>
+                                    <option value="marca" @if ($order_by == 'marca') selected @endif>Marca</option>
+                                    <option value="modelo" @if ($order_by == 'modelo') selected @endif>Modelo</option>
+                                    <option value="id_estado" @if ($order_by == 'id_estado') selected @endif>Estado</option>
+
+                                </select>
+
+                                <button type="submit" class="btn btn-success">ordenar</button>
+                            </form>
 
                              <div class="float-right">
                                 <a href="{{ route('computadoras-impresoras.index') }}" class="btn btn-success btn-sm float-right"  data-placement="left">
@@ -86,7 +100,7 @@
                         </div>
                     </div>
                 </div>
-                {!! $impresoras->links() !!}
+                {{ $impresoras->appends(['order_by' => $order_by])->links() }}
             </div>
         </div>
     </div>

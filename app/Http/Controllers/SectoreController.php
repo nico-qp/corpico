@@ -23,12 +23,19 @@ class SectoreController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $sectores = Sectore::paginate();
+        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
 
-        return view('sectore.index', compact('sectores'))
-            ->with('i', (request()->input('page', 1) - 1) * $sectores->perPage());
+        $query = Sectore::query();
+
+        //aplica el ordenamiento
+        $query->orderBy($order_by);
+
+        $sectores = $query->paginate();
+
+        return view('sectore.index', compact('sectores', 'order_by'))
+            ->with('i', ($request->input('page', 1) - 1) * $sectores->perPage());
     }
 
     /**

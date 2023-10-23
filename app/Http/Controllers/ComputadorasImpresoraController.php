@@ -24,14 +24,21 @@ class ComputadorasImpresoraController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $computadorasImpresoras = ComputadorasImpresora::paginate();
+        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
 
-        return view('computadoras-impresora.index', compact('computadorasImpresoras'))
-            ->with('i', (request()->input('page', 1) - 1) * $computadorasImpresoras->perPage());
+        $query = ComputadorasImpresora::query();
+
+        //aplica el ordenamiento
+        $query->orderBy($order_by);
+
+        $computadorasImpresoras = $query->paginate();
+
+        return view('computadoras-impresora.index', compact('computadorasImpresoras', 'order_by'))
+            ->with('i', ($request->input('page', 1) - 1) * $computadorasImpresoras->perPage());
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -115,7 +122,7 @@ class ComputadorasImpresoraController extends Controller
         $verificacion = DB::select("SELECT * FROM computadoras_impresoras WHERE id_impresora = $id_impresora AND id_computadora = $id_computadora");
 
         if (count($verificacion) == 0) {
-            $computadorasImpresora = ComputadorasImpresora::create($request->all());
+            $computadorasImpresora->update($request->all());
 
             return redirect()->route('computadoras-impresoras.index')
             ->with('success', 'Conexión modificada correctamente.');

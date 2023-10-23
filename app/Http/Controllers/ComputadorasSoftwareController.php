@@ -22,12 +22,19 @@ class ComputadorasSoftwareController extends Controller
     {
         $this->middleware('auth');
     }
-    public function index()
+    public function index(Request $request)
     {
-        $computadorasSoftwares = ComputadorasSoftware::paginate();
+        $order_by = $request->input('order_by', 'id'); // por defecto ordena por el id
 
-        return view('computadoras-software.index', compact('computadorasSoftwares'))
-            ->with('i', (request()->input('page', 1) - 1) * $computadorasSoftwares->perPage());
+        $query = ComputadorasSoftware::query();
+
+        //aplica el ordenamiento
+        $query->orderBy($order_by);
+
+        $computadorasSoftwares = $query->paginate();
+
+        return view('computadoras-software.index', compact('computadorasSoftwares', 'order_by'))
+            ->with('i', ($request->input('page', 1) - 1) * $computadorasSoftwares->perPage());
     }
 
     /**

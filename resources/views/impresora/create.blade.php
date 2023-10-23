@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <form method="POST" action="{{ route('impresoras.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
-
+                            <?php $id_sectores[0] = NULL ?>
                             @include('impresora.form')
 
                         </form>

@@ -21,11 +21,11 @@
                     <div class="card-body">
                         
                         <div class="form-group">
-                            <strong>Id Sector:</strong>
+                            <strong>Sector:</strong>
                             {{ $impresora->Sectore->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Id Criticidad:</strong>
+                            <strong>Criticidad:</strong>
                             {{ $impresora->Criticidade->descripcion }}
                         </div>
                         <div class="form-group">
@@ -41,7 +41,7 @@
                             {{ $impresora->conectividad }}
                         </div>
                         <div class="form-group">
-                            <strong>Ip:</strong>
+                            <strong>IP:</strong>
                             {{ $impresora->ip }}
                         </div>
                         <div class="form-group">

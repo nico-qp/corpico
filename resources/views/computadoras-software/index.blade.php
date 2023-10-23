@@ -13,7 +13,7 @@
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
                             <span id="card_title">
-                                {{ __('Computadora a Software') }}
+                                {{ __('Softwares de Computadoras') }}
                             </span>
 
                             <div class="float-right">

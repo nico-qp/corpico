@@ -30,8 +30,8 @@
                 {!! $errors->first('conectividad', '<div class="invalid-feedback">:message</div>') !!}
             </div>
             <div class="form-group">
-                {{ Form::label('ip') }}
-                {{ Form::text('ip', $impresora->ip, ['class' => 'form-control' . ($errors->has('ip') ? ' is-invalid' : ''), 'placeholder' => 'Ip']) }}
+                {{ Form::label('IP') }}
+                {{ Form::text('ip', $impresora->ip, ['class' => 'form-control' . ($errors->has('ip') ? ' is-invalid' : ''), 'placeholder' => 'IP']) }}
                 {!! $errors->first('ip', '<div class="invalid-feedback">:message</div>') !!}
             </div>
             <div class="form-group">

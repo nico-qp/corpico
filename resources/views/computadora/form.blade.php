@@ -12,13 +12,13 @@
             {!! $errors->first('id_user', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_condicion') }}
-            {{ Form::select('id_condicion', $condicion, $computadora->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Id Condicion']) }}
+            {{ Form::label('Condición') }}
+            {{ Form::select('id_condicion', $condicion, $computadora->id_condicion, ['class' => 'form-control' . ($errors->has('id_condicion') ? ' is-invalid' : ''), 'placeholder' => 'Condición']) }}
             {!! $errors->first('id_condicion', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_sectore') }}
-            {{ Form::select('id_sectore', $sector, $computadora->id_sectore, ['class' => 'form-control' . ($errors->has('id_sectore') ? ' is-invalid' : ''), 'placeholder' => 'Id Sectore']) }}
+            {{ Form::label('Sector') }}
+            {{ Form::select('id_sectore', $sector, $computadora->id_sectore, ['class' => 'form-control' . ($errors->has('id_sectore') ? ' is-invalid' : ''), 'placeholder' => 'Sector']) }}
             {!! $errors->first('id_sectore', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

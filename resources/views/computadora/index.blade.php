@@ -42,7 +42,7 @@
                                         
 										<!--<th>Usuario Window</th>
 										<th>User</th>-->
-										<th>Condicion</th>
+										<th>Condición</th>
 										<th>Sector</th>
 										<!--<th>Etiqueta</th>-->
 										<!--<th>Nombre</th>-->

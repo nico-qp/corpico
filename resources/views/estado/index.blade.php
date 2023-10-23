@@ -46,7 +46,7 @@
                                         <tr>
                                             <td>{{ ++$i }}</td>
                                             
-											<td>{{ $estado->descripcion }}</td>
+											<td>{{ $estado->descripción }}</td>
 
                                             <td>
                                                 <form action="{{ route('estados.destroy',$estado->id) }}" method="POST">

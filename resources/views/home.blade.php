@@ -11,7 +11,7 @@
                     @if (Route::has('login'))
                         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
-                            <h3 class="text-sm text-gray-700 dark:text-gray-500 underline text-center">Ya estas logeado</h3>
+                            <h3 class="text-sm text-gray-700 dark:text-gray-500 underline text-center">Bienvenido  {{ Auth::user()->name }}, al sistema de gestion.</h3>
                             <br>
                             <div class="card-group">
                                 <a href="{{ route('computadoras.index') }}" class="card text-center">

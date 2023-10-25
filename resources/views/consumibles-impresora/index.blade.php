@@ -33,7 +33,7 @@
                             <table id="tabla_consumibles_impresoras" class="table table-striped table-hover table-bordered">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
+                                        <th>Nro.</th>
                                         
 										<th>Código del consumible</th>
 										<th>Modelo de la impresora</th>
@@ -55,7 +55,9 @@
                                                     <a class="btn btn-sm btn-success" href="{{ route('consumibles_impresoras.edit',$consumiblesImpresora->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="button" class="btn btn-danger btn-sm delete-button" data-delete-url="{{ route('consumibles_impresoras.destroy', $consumiblesImpresora->id) }}">
+                                                        <i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}
+                                                    </button>
                                                 </form>
                                             </td>
                                         </tr>
@@ -68,6 +70,28 @@
             </div>
         </div>
     </div>
+    <!-- Modal de confirmación de eliminación -->
+    <div class="modal fade" id="confirmDeleteModal" tabindex="-1" role="dialog" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#fdcb05;">
+                    <h5 class="modal-title" id="confirmDeleteModalLabel">Confirmar Eliminación</h5>
+                </div>
+                <div class="modal-body">
+                    ¿Estás seguro de que deseas eliminar este registro?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <form id="deleteForm" method="POST" action="">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">Eliminar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
     $(document).ready( function () {
         $('#tabla_consumibles_impresoras').DataTable({
@@ -95,6 +119,17 @@
                     "sortDescending": ": Activar el ordenado de columnas descendente"
                 }
             }
+        });
+        
+        // Manejar la confirmación de eliminación
+        $('.delete-button').on('click', function () {
+            var deleteUrl = $(this).data('delete-url');
+            $('#deleteForm').attr('action', deleteUrl);
+            $('#confirmDeleteModal').modal('show');
+        });
+        // Cerrar el modal al hacer clic en "Cancelar"
+        $('#confirmDeleteModal .btn-secondary').on('click', function () {
+            $('#confirmDeleteModal').modal('hide');
         });
     });
     </script>

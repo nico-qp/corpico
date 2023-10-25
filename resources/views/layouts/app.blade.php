@@ -24,7 +24,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:#035938;">
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -35,13 +35,13 @@
         <div class="offcanvas-body">
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"><a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a></li>
-                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('softwares.index') }}">Softwares</a></li>
-                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('usuarios-window.index') }}">Usuarios windows</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('softwares.index') }}">Softwares</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('usuarios-window.index') }}">Usuarios windows</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a></li>
-                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('consumibles.index') }}">Consumibles</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('consumibles.index') }}">Consumibles</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a></li>
-                <li class="list-group-item"><a class="nav-link ms-4" href="{{ route('ubicaciones.index') }}">Ubicaciones</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('usos.index') }}">Usos</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('ubicaciones.index') }}">Ubicaciones</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('usos.index') }}">Usos de consumibles</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('estados.index') }}">Estados</a></li>
@@ -78,7 +78,7 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
+                                    <a class="btn btn-primary" href="{{ route('login') }}">{{ __('Iniciar sesión') }}</a>
                                 </li>
                             @endif
 

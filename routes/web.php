@@ -22,7 +22,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class);
+Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class)->middleware('roles:2,1');
 Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class);
 Route::resource('sectores', App\Http\Controllers\SectoreController::class);
 Route::resource('usos', App\Http\Controllers\UsoController::class);

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use App\Models\Role;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -65,12 +66,13 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \App\Models\User
      */
+
+    /* funcion default q anda*/
     protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
             'username' => $data['username'],
-            
             'id_rol' => $data['id_rol'],
             'email' => '',
             //'email' => $data['email'],

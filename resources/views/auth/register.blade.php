@@ -46,8 +46,12 @@
                             <label for="id_rol" class="col-md-4 col-form-label text-md-end">{{ __('Usuario ROL') }}</label>
 
                             <div class="col-md-6">
-                                <input id="id_rol" type="text" class="form-control @error('id_rol') is-invalid @enderror" name="id_rol" value="{{ old('id_rol') }}" required autocomplete="id_rol" autofocus>
-
+                            <select class="form-control{{ $errors->has('id_rol') ? ' is-invalid' : '' }}" name="id_rol" id="id_rol" required="true" aria-required="true" placehorder="">
+                                <option value="">{{ __('') }}</option>
+                                <option value="{{ 1 }}">{{ __('Administrador') }}</option>
+                                <option value="{{ 2 }}">{{ __('Compras') }}</option>
+                                <option value="{{ 3 }}">{{ __('Usuario') }}</option>
+                            </select>
                                 @error('id_rol')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

@@ -45,6 +45,7 @@
                 <li class="list-group-item"><a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a></li>
                 <li class="list-group-item"><a class="nav-link" href="{{ route('estados.index') }}">Estados</a></li>
+                <li class="list-group-item"><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
             </ul>
         </div>
     </div>

@@ -41,6 +41,22 @@
                         </div>
                         <!--AGREGADO DE USERNAME-->
 
+                        <!--AGREGADO DE ROL-->
+                        <div class="row mb-3">
+                            <label for="id_rol" class="col-md-4 col-form-label text-md-end">{{ __('Usuario ROL') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="id_rol" type="text" class="form-control @error('id_rol') is-invalid @enderror" name="id_rol" value="{{ old('id_rol') }}" required autocomplete="id_rol" autofocus>
+
+                                @error('id_rol')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+                        <!--AGREGADO DE ROL-->
+
                         <!--
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>

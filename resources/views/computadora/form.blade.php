@@ -72,8 +72,8 @@
             {!! $errors->first('observaciones', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('id_estado') }}
-            {{ Form::select('id_estado', $estado, $computadora->id_estado, ['class' => 'form-control' . ($errors->has('id_estado') ? ' is-invalid' : ''), 'placeholder' => 'Id Estado']) }}
+            {{ Form::label('Estado') }}
+            {{ Form::select('id_estado', $estado, $computadora->id_estado, ['class' => 'form-control' . ($errors->has('id_estado') ? ' is-invalid' : ''), 'placeholder' => 'Estado']) }}
             {!! $errors->first('id_estado', '<div class="invalid-feedback">:message</div>') !!}
         </div>
 

@@ -41,7 +41,7 @@ class ComputadorasImpresoraController extends Controller
         $computadorasImpresora = new ComputadorasImpresora();
         $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
         //$impresoras = DB::select("SELECT id, modelo, ip, id_sector FROM impresoras WHERE id_estado = 2 ORDER BY modelo");
-        $impresoras = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id_estado = 2 ORDER BY nombre_sector");
+        $impresoras = DB::select("SELECT id, modelo FROM impresoras WHERE id_estado = 2 GROUP BY modelo ORDER BY modelo");
         return view('computadoras-impresora.create', compact('computadorasImpresora','computadoras','impresoras'));
     }
 
@@ -94,7 +94,7 @@ class ComputadorasImpresoraController extends Controller
     {
         $computadorasImpresora = ComputadorasImpresora::find($id);
         $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
-        $impresoras = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id_estado = 2 ORDER BY nombre_sector");
+        $impresoras = DB::select("SELECT id, modelo FROM impresoras WHERE id_estado = 2 GROUP BY modelo ORDER BY modelo");
         
         $id_computadora = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id = $computadorasImpresora->id_computadora ORDER BY nombre_sector");
         $id_impresora = DB::select("SELECT impresoras.id, modelo, ip, id_sector, sectores.nombre AS nombre_sector FROM impresoras INNER JOIN sectores ON impresoras.id_sector = sectores.id WHERE impresoras.id = $computadorasImpresora->id_impresora ORDER BY nombre_sector");
@@ -124,7 +124,7 @@ class ComputadorasImpresoraController extends Controller
             return redirect()->route('computadoras-impresoras.index')
             ->with('success', 'Conexión modificada correctamente.');
         } else {
-            return redirect()->route('computadoras-impresora.create')
+            return redirect()->route('computadoras-impresoras.create')
                 ->with('error', 'Esta conexión ya está creada.');
         }
     }

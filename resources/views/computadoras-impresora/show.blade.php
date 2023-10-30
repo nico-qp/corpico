@@ -21,6 +21,10 @@
                     <div class="card-body">
                         
                         <div class="form-group">
+                            <div class="form-group">
+                                <strong>Sector:</strong>
+                                {{ $computadorasImpresora->computadora->sectore->nombre }}
+                            </div>
                             <strong class="fs-4">Info. Computadora:</strong>
                             <br>
                             <strong>Usuario Geasys:</strong>
@@ -41,15 +45,8 @@
                             <br>
                             <strong>Modelo:</strong>
                             {{ $computadorasImpresora->impresora->modelo }}
-                            <br>
-                            <strong>Criticidad:</strong>
-                            {{ $computadorasImpresora->impresora->criticidade->descripcion }}
                         </div>
-                        <br>
-                        <div class="form-group">
-                            <strong>Sector:</strong>
-                            {{ $computadorasImpresora->computadora->sectore->nombre }}
-                        </div>
+                        
                     </div>
                 </div>
             </div>

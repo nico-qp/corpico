@@ -32,18 +32,18 @@
             {!! $errors->first('nombre', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('ip_172') }}
-            {{ Form::text('ip_172', $computadora->ip_172, ['class' => 'form-control' . ($errors->has('ip_172') ? ' is-invalid' : ''), 'placeholder' => 'Ip 172']) }}
+            {{ Form::label('IP_172') }}
+            {{ Form::text('ip_172', $computadora->ip_172, ['class' => 'form-control' . ($errors->has('ip_172') ? ' is-invalid' : ''), 'placeholder' => 'IP 172']) }}
             {!! $errors->first('ip_172', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('ip_10') }}
-            {{ Form::text('ip_10', $computadora->ip_10, ['class' => 'form-control' . ($errors->has('ip_10') ? ' is-invalid' : ''), 'placeholder' => 'Ip 10']) }}
+            {{ Form::label('IP_10') }}
+            {{ Form::text('ip_10', $computadora->ip_10, ['class' => 'form-control' . ($errors->has('ip_10') ? ' is-invalid' : ''), 'placeholder' => 'IP 10']) }}
             {!! $errors->first('ip_10', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('mac') }}
-            {{ Form::text('mac', $computadora->mac, ['class' => 'form-control' . ($errors->has('mac') ? ' is-invalid' : ''), 'placeholder' => 'Mac']) }}
+            {{ Form::label('MAC') }}
+            {{ Form::text('mac', $computadora->mac, ['class' => 'form-control' . ($errors->has('mac') ? ' is-invalid' : ''), 'placeholder' => 'MAC']) }}
             {!! $errors->first('mac', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

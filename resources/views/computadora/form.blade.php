@@ -42,8 +42,8 @@
             {!! $errors->first('ip_10', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('mac') }}
-            {{ Form::text('mac', $computadora->mac, ['class' => 'form-control' . ($errors->has('mac') ? ' is-invalid' : ''), 'placeholder' => 'Mac']) }}
+            {{ Form::label('MAC') }}
+            {{ Form::text('mac', $computadora->mac, ['class' => 'form-control' . ($errors->has('mac') ? ' is-invalid' : ''), 'placeholder' => 'MAC']) }}
             {!! $errors->first('mac', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

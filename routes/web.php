@@ -22,16 +22,16 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class);
-Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class);
+Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class)->middleware('roles:1,3');
+Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class)->middleware('roles:1,3');
 Route::resource('sectores', App\Http\Controllers\SectoreController::class)->middleware('roles:1,none');
 Route::resource('usos', App\Http\Controllers\UsoController::class)->middleware('roles:1,2');
 Route::resource('usuarios-window', App\Http\Controllers\UsuariosWindowController::class)->middleware('roles:1,none');
 /*Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class);*/
 Route::resource('condiciones', App\Http\Controllers\CondicioneController::class)->middleware('roles:1,none');
-Route::resource('computadoras-impresoras', App\Http\Controllers\ComputadorasImpresoraController::class);
+Route::resource('computadoras-impresoras', App\Http\Controllers\ComputadorasImpresoraController::class)->middleware('roles:1,3');
 Route::resource('consumibles', App\Http\Controllers\ConsumibleController::class)->middleware('roles:1,2');
-Route::resource('computadoras-softwares', App\Http\Controllers\ComputadorasSoftwareController::class);
+Route::resource('computadoras-softwares', App\Http\Controllers\ComputadorasSoftwareController::class)->middleware('roles:1,3');
 Route::resource('softwares', App\Http\Controllers\SoftwareController::class)->middleware('roles:1,3');
 Route::resource('ubicaciones', App\Http\Controllers\UbicacioneController::class)->middleware('roles:1,none');
 Route::resource('tipo-consumibles', App\Http\Controllers\TipoConsumibleController::class)->middleware('roles:1,2');

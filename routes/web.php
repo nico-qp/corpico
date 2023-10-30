@@ -22,23 +22,23 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class)->middleware('roles:2,1');
+Route::resource('computadoras', App\Http\Controllers\ComputadoraController::class);
 Route::resource('impresoras', App\Http\Controllers\ImpresoraController::class);
-Route::resource('sectores', App\Http\Controllers\SectoreController::class);
-Route::resource('usos', App\Http\Controllers\UsoController::class);
-Route::resource('usuarios-window', App\Http\Controllers\UsuariosWindowController::class);
-Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class);
-Route::resource('condiciones', App\Http\Controllers\CondicioneController::class);
+Route::resource('sectores', App\Http\Controllers\SectoreController::class)->middleware('roles:1,none');
+Route::resource('usos', App\Http\Controllers\UsoController::class)->middleware('roles:1,2');
+Route::resource('usuarios-window', App\Http\Controllers\UsuariosWindowController::class)->middleware('roles:1,none');
+/*Route::resource('geasys-users', App\Http\Controllers\GeasysUserController::class);*/
+Route::resource('condiciones', App\Http\Controllers\CondicioneController::class)->middleware('roles:1,none');
 Route::resource('computadoras-impresoras', App\Http\Controllers\ComputadorasImpresoraController::class);
-Route::resource('consumibles', App\Http\Controllers\ConsumibleController::class);
+Route::resource('consumibles', App\Http\Controllers\ConsumibleController::class)->middleware('roles:1,2');
 Route::resource('computadoras-softwares', App\Http\Controllers\ComputadorasSoftwareController::class);
-Route::resource('softwares', App\Http\Controllers\SoftwareController::class);
-Route::resource('ubicaciones', App\Http\Controllers\UbicacioneController::class);
-Route::resource('tipo-consumibles', App\Http\Controllers\TipoConsumibleController::class);
-Route::resource('criticidades', App\Http\Controllers\CriticidadeController::class);
-Route::resource('consumibles_impresoras', App\Http\Controllers\ConsumiblesImpresoraController::class);
-Route::resource('estados', App\Http\Controllers\EstadoController::class);
-Route::resource('roles', App\Http\Controllers\RoleController::class);
+Route::resource('softwares', App\Http\Controllers\SoftwareController::class)->middleware('roles:1,3');
+Route::resource('ubicaciones', App\Http\Controllers\UbicacioneController::class)->middleware('roles:1,none');
+Route::resource('tipo-consumibles', App\Http\Controllers\TipoConsumibleController::class)->middleware('roles:1,2');
+Route::resource('criticidades', App\Http\Controllers\CriticidadeController::class)->middleware('roles:1,none');
+Route::resource('consumibles_impresoras', App\Http\Controllers\ConsumiblesImpresoraController::class)->middleware('roles:1,2');
+Route::resource('estados', App\Http\Controllers\EstadoController::class)->middleware('roles:1,none');
+Route::resource('roles', App\Http\Controllers\RoleController::class)->middleware('roles:1,none');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

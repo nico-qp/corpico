@@ -81,8 +81,8 @@ class SectoreController extends Controller
     public function edit($id)
     {
         $sectore = Sectore::find($id);
-        $ubicacion = Ubicacione::Pluck('edificio','id');
-        return view('sectore.edit', compact('sectore', 'ubicacion'));
+        $ubicaciones = DB::select("SELECT id, edificio, piso  FROM ubicaciones");
+        return view('sectore.edit', compact('sectore', 'ubicaciones'));
     }
 
     /**

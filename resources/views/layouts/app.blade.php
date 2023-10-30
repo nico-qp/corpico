@@ -34,18 +34,28 @@
         </div>
         <div class="offcanvas-body">
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"><a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('softwares.index') }}">Softwares</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('usuarios-window.index') }}">Usuarios windows</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('consumibles.index') }}">Consumibles</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('ubicaciones.index') }}">Ubicaciones</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('usos.index') }}">Usos de consumibles</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('estados.index') }}">Estados</a></li>
-                <li class="list-group-item"><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
+                <?php if (auth()->check()) {
+                    if (auth()->user()->id_rol == 3 || auth()->user()->id_rol == 1) { ?>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('computadoras.index') }}">Computadoras</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('impresoras.index') }}">Impresoras</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('softwares.index') }}">Softwares</a></li>
+                    <?php }
+                    if (auth()->user()->id_rol == 2 || auth()->user()->id_rol == 1) { ?>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('usos.index') }}">Usos de consumibles</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('consumibles.index') }}">Consumibles</a></li>
+                    <?php }
+                    if (auth()->user()->id_rol == 1) { ?>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('usuarios-window.index') }}">Usuarios windows</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('sectores.index') }}">Sectores</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('ubicaciones.index') }}">Ubicaciones</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('condiciones.index') }}">Condiciones</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('criticidades.index') }}">Criticidades</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('estados.index') }}">Estados</a></li>
+                        <li class="list-group-item"><a class="nav-link" href="{{ route('roles.index') }}">Roles</a></li>
+                    <?php }
+                }else { ?>
+                    <li class="list-group-item"><a class="nav-link" href="">No estas registrado</a></li>
+                <?php } ?>               
             </ul>
         </div>
     </div>

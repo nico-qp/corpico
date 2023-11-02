@@ -6,6 +6,7 @@ use App\Models\ComputadorasSoftware;
 use App\Models\Software;
 use App\Models\Computadora;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class ComputadorasSoftwareController
@@ -36,9 +37,9 @@ class ComputadorasSoftwareController extends Controller
     public function create()
     {
         $computadorasSoftware = new ComputadorasSoftware();
-        $computadora = Computadora::Pluck('ip_172','id');
+        $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
         $software = Software::Pluck('nombre','id');
-        return view('computadoras-software.create', compact('computadorasSoftware', 'computadora', 'software'));
+        return view('computadoras-software.create', compact('computadorasSoftware', 'computadoras', 'software'));
     }
 
     /**
@@ -79,10 +80,12 @@ class ComputadorasSoftwareController extends Controller
     public function edit($id)
     {
         $computadorasSoftware = ComputadorasSoftware::find($id);
-        $computadora = Computadora::Pluck('ip_172','id');
+        $computadoras = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id_estado = 2 ORDER BY nombre_sector");
         $software = Software::Pluck('nombre','id');
 
-        return view('computadoras-software.edit', compact('computadorasSoftware', 'computadora', 'software'));
+        $id_computadora = DB::select("SELECT computadoras.id, computadoras.nombre, ip_172, id_sectore, sectores.nombre as nombre_sector FROM computadoras INNER JOIN sectores ON computadoras.id_sectore = sectores.id WHERE computadoras.id = $computadorasSoftware->id_computadora ORDER BY nombre_sector");
+
+        return view('computadoras-software.edit', compact('computadorasSoftware', 'computadoras', 'software','id_computadora'));
     }
 
     /**

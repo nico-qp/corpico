@@ -37,7 +37,7 @@
                                         <th>Nro.</th>
                                         
 										<th>Software</th>
-										<th>IP Computadora</th>
+										<th>Computadora</th>
 
                                         <th></th>
                                     </tr>
@@ -48,7 +48,7 @@
                                             <td>{{ ++$i }}</td>
                                             
 											<td>{{ $computadorasSoftware->Software->nombre }}</td>
-											<td>{{ $computadorasSoftware->Computadora->ip_172 }}</td>
+											<td>{{ $computadorasSoftware->computadora->sectore->nombre}} | {{ $computadorasSoftware->Computadora->ip_172 }}</td>
 
                                             <td>
                                                 <form action="{{ route('computadoras-softwares.destroy',$computadorasSoftware->id) }}" method="POST">

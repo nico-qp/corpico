@@ -29,6 +29,8 @@
                         <br>
                         <div class="form-group">
                             <strong class="fs-4">Info Computadora:</strong><br>
+                            <strong>Sector: </strong>{{ $computadorasSoftware->Computadora->sectore->nombre }} </br>
+                            <strong>Nombre del PC: </strong>{{ $computadorasSoftware->Computadora->nombre }} </br>
                             <strong>IP: </strong>{{ $computadorasSoftware->Computadora->ip_172 }} </br>
                         </div>
 

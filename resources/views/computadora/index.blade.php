@@ -46,7 +46,7 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbody">
                                     @foreach ($computadoras as $computadora)
                                         <tr>
                                             <td>{{ ++$i }}</td>
@@ -127,7 +127,7 @@
             });
 
             // Manejar la confirmación de eliminación
-            $('.delete-button').on('click', function () {
+            $('#tbody').on('click', '.delete-button', function () {
                 var deleteUrl = $(this).data('delete-url');
                 $('#deleteForm').attr('action', deleteUrl);
                 $('#confirmDeleteModal').modal('show');

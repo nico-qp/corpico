@@ -42,7 +42,7 @@
                                         <th></th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="tbody">
                                     @foreach ($computadorasSoftwares as $computadorasSoftware)
                                         <tr>
                                             <td>{{ ++$i }}</td>
@@ -123,11 +123,11 @@
         });
         
         // Manejar la confirmación de eliminación
-        $('.delete-button').on('click', function () {
-            var deleteUrl = $(this).data('delete-url');
-            $('#deleteForm').attr('action', deleteUrl);
-            $('#confirmDeleteModal').modal('show');
-        });
+        $('#tbody').on('click', '.delete-button', function () {
+                var deleteUrl = $(this).data('delete-url');
+                $('#deleteForm').attr('action', deleteUrl);
+                $('#confirmDeleteModal').modal('show');
+            });
         // Cerrar el modal al hacer clic en "Cancelar"
         $('#confirmDeleteModal .btn-secondary').on('click', function () {
             $('#confirmDeleteModal').modal('hide');
